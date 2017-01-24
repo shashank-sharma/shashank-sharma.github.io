@@ -16,28 +16,347 @@
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script type="text/javascript" src="js/file.js"></script>
-<div class="container">
+      <script>
+           $( document ).ready(function(){
+         $(".button-collapse").sideNav();
+     });
+               $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+
+//Materialize.scrollFire([{ selector:"#staggered-test", offset: 0, callback: function(el) {
+ //     Materialize.showStaggeredList($(el));
+   // }}]);
+$(document).ready( function() {
+    $("#staggered-test").hide(); //hide your div initially
+    var topOfOthDiv = $("#othd").offset().top;
+    $(window).scroll(function() {
+        if($(window).scrollTop() > topOfOthDiv) { //scrolled past the other div?
+    $("#staggered-test").show(1000);
+        }
+    });
+});
+      </script>
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper blue">
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="hide-on-med-and-down">
+        <li><a href="#about">About</a></li>
+        <li><a href="#dayscode">#100DaysOfCode</a></li>
+        <li><a href="#codeing">Google-Code-In</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="https://shashank-sharma.github.io/about.html">About</a></li>
+        <li><a href="https://shashank-sharma.github.io/100-days-of-code/">#100DaysOfCode</a></li>
+        <li><a href="https://shashank-sharma.github.io/Google-Code-in-projects/">Google-Code-In</a></li>
+      </ul>
+    </div>
+  </nav>
+  </div>
+
+    <div class="parallax-container">
+      <div class="parallax"><img src="img/back.png">
+      </div>
+      <center>
+      <br>
+            <img src="img/shashank.jpg" alt="" class="circle responsive-img z-depth-5" height = "200px" width = "200px">
+            </center>
+    </div>
+<div class="container" id="othd">
 <center>
-<img src="img/shashank.jpg" alt="" class="circle responsive-img" height = "30%" width = "30%">
 <h3>Shashank Sharma</h3>
-<b>"  Python enthusiast who is trying to learn everything  "</b>
-<hr>
+<b style="font-size: 50px;">"</b><b> Python enthusiast who is trying to learn everything</b>  <b style="font-size: 50px">"</b>
+<br>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/shashank-sharma" data-style="mega" data-count-href="/shashank-sharma/followers" data-count-api="/users/shashank-sharma#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @shashank-sharma on GitHub">Follow @shashank-sharma</a>
+<a class="twitter-follow-button"
+  href="https://twitter.com/shashanksharma9"
+  data-size="large">
+Follow @Shashank</a>
+<hr class="z-depth-5">
 <p class="flow-text">Currently doing Computer Science engineering from Acropolis Technical Campus.<br>
 Programming languages:</p> 
-<div class="chip teal">
+<div class="chip blue">
 Python
 </div>
-<div class="chip teal">
+<div class="chip blue">
 C++
 </div>
-<div class="chip teal">
+<div class="chip blue">
 C
 </div>
-<div class="chip teal">
+<div class="chip blue">
 Javascript
 </div>
-<h3>Site under construction</h3>
+<h3>Projects</h3>
 </center>
 </div>
+<div class="row black" id="dayscode">
+<h3 style="color: white">&nbsp&nbsp#100DaysOfCode</h3>
+  <nav>
+    <div class="nav-wrapper black">
+      <div class="col s12">
+        <a href="#!" class="breadcrumb">Started</a>
+        <a href="#!" class="breadcrumb">Ongoing</a>
+      </div>
+    </div>
+  </nav>
+<div class="center" style="margin-left: auto;margin-right: auto;width: 95%">
+<!--################# ROW 1 ######################-->
+<div class="col s12 blue" style="color: white">
+<div class="col s6">
+<ul id="#" style="">
+	<li><img src="img/youbot.png" height="100%" width="100%"></li>
+</ul>
+</div>
+<div class="col s6">
+<h3>Youbot Python Project</h3>
+<p>Its is a Python based project whose main motive is to manipulate youtube data and serve them in much interactive way.</p>
+        <a href = "http://shashank-sharma.github.io/youbot/" target="_blank"><button class="btn waves-effect waves-light blue darken-4" type="submit" name="action">Link</button></a>
+        <br><br>
+<div class="chip black">
+<h7 style="color: white">Python</h7>
+</div>
+<div class="chip blue darken-3">
+Web Scraping
+</div>
+<div class="chip blue darken-3">
+BeautifulSoup
+</div>
+<div class="chip blue darken-3">
+Requests
+</div>
+</div>
+</div>
+<!--################# ROW 1 ######################-->
+<!--################# ROW 2 ######################-->
+<div class="col s12 indigo darken-4"  style="color: white">
+<div class="col s6">
+<ul id="#" style="overflow: hidden">
+	<li><img src="img/twitter.png" height="100%" width="100%"></li>
+</ul>
+</div>
+<div class="col s6">
+<h3>Twitter Followers Geolocation</h3>
+<p>It helps you to get all followers geolocation and represent them in the form of graph. All you need to do is paste the page URL and all the work will be done with this program</p>
+        <a href = "http://shashank-sharma.github.io/youbot/" target="_blank"><button class="btn waves-effect waves-light blue darken-4" type="submit" name="action">Link</button></a>
+        <br><br>
+<div class="chip black">
+<h7 style="color: white">Python</h7>
+</div>
+<div class="chip blue darken-3">
+loklak
+</div>
+<div class="chip blue darken-3">
+Web Scraping
+</div>
+<div class="chip blue darken-3">
+BeautifulSoup
+</div>
+<div class="chip blue darken-3">
+Plotly
+</div>
+<div class="chip blue darken-3">
+Requests
+</div>
+</div>
+</div>
+<!--################# ROW 2 ######################-->
+<!--################# ROW 3 ######################-->
+<div class="col s12 teal darken-2"  style="color: white">
+<div class="col s6">
+<ul id="#" style="overflow: hidden">
+	<li><img src="img/qypo.png" height="100%" width="100%"></li>
+</ul>
+</div>
+<div class="col s6">
+<h3>Qypo Typing Helper</h3>
+<p>Qypo makes typing interesting. First it tracks your record storing it in database and shows when you reached your high score. Fun part is that the text you recieve are the quotes which are totally random and those quotes also get saved in file. Means day by day you get familiar with new quotes + your typing speed will increase.</p>
+        <a href = "http://shashank-sharma.github.io/youbot/" target="_blank"><button class="btn waves-effect waves-light blue darken-4" type="submit" name="action">Link</button></a>
+        <br><br>
+<div class="chip black">
+<h7 style="color: white">Python</h7>
+</div>
+<div class="chip indigo">
+Web Scraping
+</div>
+<div class="chip indigo">
+BeautifulSoup
+</div>
+<div class="chip indigo">
+Plotly
+</div>
+<div class="chip indigo">
+Requests
+</div>
+</div>
+</div>
+<!--################# ROW 3 ######################-->
+<!--################# ROW 4 ######################-->
+<div class="col s12 light-blue"  style="color: white">
+<div class="col s6">
+<ul id="#" style="overflow: hidden">
+	<li><img src="img/fabot.png" height="100%" width="100%"></li>
+</ul>
+</div>
+<div class="col s6">
+<h3>Fabot - Facebook bot</h3>
+<p>Fabot gives whole new experience of logging in and getting messages, notification etc. Say it a messenger or your personal notification reminder it can do everything.</p>
+        <a href = "https://github.com/shashank-sharma/fabot" target="_blank"><button class="btn waves-effect waves-light blue darken-4" type="submit" name="action">In Progress</button></a>
+        <br><br>
+<div class="chip black">
+<h7 style="color: white">Python</h7>
+</div>
+<div class="chip indigo">
+Web Scraping
+</div>
+<div class="chip indigo">
+BeautifulSoup
+</div>
+<div class="chip indigo">
+Cookies
+</div>
+<div class="chip indigo">
+Mechanize
+</div>
+</div>
+</div>
+<!--################# ROW 4 ######################-->
+<!--################# ROW 5 ######################-->
+<div class="col s12 teal darken-4"  style="color: white">
+<div class="col s6">
+<ul id="#" style="overflow: hidden">
+	<li><img src="img/imdb.png" height="100%" width="100%"></li>
+</ul>
+</div>
+<div class="col s6">
+<h3>IMDB Movie rating</h3>
+<p>This program allows you to enter any movie name and then it will give you all possible outcomes. Then all you have to do is to choose the right one and it will give movie summary and ratings.</p>
+        <a href = "https://github.com/shashank-sharma/100-days-of-code/blob/master/imdb.py" target="_blank"><button class="btn waves-effect waves-light blue darken-4" type="submit" name="action">Link</button></a>
+        <br><br>
+<div class="chip black">
+<h7 style="color: white">Python</h7>
+</div>
+<div class="chip indigo">
+Web Scraping
+</div>
+<div class="chip indigo">
+BeautifulSoup
+</div>
+<div class="chip indigo">
+Requests
+</div>
+</div>
+</div>
+<!--################# ROW 5 ######################-->
+<!--################# ROW 6 ######################-->
+<div class="col s12 teal lighten-1"  style="color: white">
+<div class="col s6">
+<ul id="#" style="overflow: hidden">
+	<li><img src="img/imgd.png" height="100%" width="100%"></li>
+</ul>
+</div>
+<div class="col s6">
+<h3>Website image downloader</h3>
+<p>Feel the power of this program. It can download all images from any URL. Just paste the URL and it will work for you. The best part is that if any image file extension is unknown then it will first get the extension and verify that if it is downloadable or not and then it will proceed.</p>
+        <a href = "https://github.com/shashank-sharma/100-days-of-code/blob/master/img.py" target="_blank"><button class="btn waves-effect waves-light blue darken-4" type="submit" name="action">Link</button></a>
+        <br><br>
+<div class="chip black">
+<h7 style="color: white">Python</h7>
+</div>
+<div class="chip indigo">
+Web Scraping
+</div>
+<div class="chip indigo">
+BeautifulSoup
+</div>
+<div class="chip indigo">
+urllib
+</div>
+</div>
+</div>
+</div>
+<!--################# ROW 6 ######################-->
+<!--################# ROW 7 MAIN ######################-->
+<div class="row black">
+<br>
+<br>
+<h1 style="color: white">&nbsp&nbspGoogle Code In</h1>
+  <nav>
+    <div class="nav-wrapper black">
+      <div class="col s12">
+        <a href="#!" class="breadcrumb">Started</a>
+        <a href="#!" class="breadcrumb">Ongoing</a>
+        <a href="#!" class="breadcrumb">Completed</a>
+      </div>
+    </div>
+  </nav>
+<div class="center" style="margin-left: auto;margin-right: auto;width: 95%">
+<div class="col s12 blue"  style="color: white">
+<div class="col s6">
+<ul id="#" style="overflow: hidden">
+	<li><img src="https://codein.withgoogle.com/static/img/codein-logo.svg" height="60%" width="60%"></li>
+</ul>
+</div>
+<div class="col s6">
+<h3 id="codeing">Google Code In Projects</h3>
+<p>All Google Code In task which I have done during contest time period.</p>
+        <a href = "https://shashank-sharma.github.io/Google-Code-in-projects/" target="_blank"><button class="btn waves-effect waves-light blue darken-4" type="submit" name="action">Link</button></a>
+        <br><br>
+<div class="chip black">
+<h7 style="color: white">FOSSASIA</h7>
+</div>
+<div class="chip black">
+<h7 style="color: white">Ubuntu</h7>
+</div>
+<div class="chip indigo">
+HTML
+</div>
+<div class="chip indigo">
+CSS
+</div>
+<div class="chip indigo">
+Python
+</div>
+<div class="chip indigo">
+loklak
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--################# ROW 7 ######################-->
+</div>
+<div class="container" id="about">
+<h1>Shashank Sharma</h1>
+<h6><i class="material-icons">email</i>&nbsp&nbspshashank.sharma98@gmail.com</h6>
+<a href="http://stackexchange.com/users/4312856/shashank"><img src="http://stackexchange.com/users/flair/4312856.png" width="208" height="58" alt="profile for Shashank on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Shashank on Stack Exchange, a network of free, community-driven Q&amp;A sites"></a>
+</div>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
 </body>
+<footer>
+<br>
+<br>
+	<p style="color: white">
+	<center>Made with <img src = "img/heart.png" height="15px" width="15px"> by Shashank</center>
+	</p>
+</footer>
 </html>
