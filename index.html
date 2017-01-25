@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="add.css">
 </head>
 <body>
+
 <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
@@ -65,6 +66,13 @@ $(document).ready( function() {
     </div>
 <div class="container" id="othd">
 <center>
+		<div id="load">
+        <h4>Loading</h4>
+        <div class="progress">
+      <div class="indeterminate"></div>
+  </div>
+  </div>
+  <div id = "contents">
 <h3>Shashank Sharma</h3>
 <b style="font-size: 50px;">"</b><b> Python enthusiast who is trying to learn everything</b>  <b style="font-size: 50px">"</b>
 <br>
@@ -350,7 +358,23 @@ loklak
   };
 
   return t;
-}(document, "script", "twitter-wjs"));</script>
+}(document, "script", "twitter-wjs"));
+
+document.onreadystatechange = function () {
+  var state = document.readyState
+  if (state == 'interactive') {
+       document.getElementById('contents').style.visibility="hidden";
+  } else if (state == 'complete') {
+      setTimeout(function(){
+         document.getElementById('interactive');
+         document.getElementById('load').style.visibility="hidden";
+         document.getElementById('contents').style.visibility="visible";
+      },1000);
+  }
+}
+
+</script>
+</div>
 </body>
 <footer>
 <br>
