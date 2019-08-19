@@ -130,3 +130,7 @@ body{
 	background: #ff6600;
 	color: white;
 }
+
+#sidenav-overlay {
+	z-index: 0 !important;
+}
