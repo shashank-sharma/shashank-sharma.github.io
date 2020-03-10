@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Javascript: Language of the Web
+title: '[Notes] Javascript: Language of the Web'
 ---
 
 <p class="message">
-  Hey there! Just to be clear, this is not my original content, it's just the compilation of what I understood from different resources, in short notes<br/>
+  Just to be clear, this blog is not my original content, it's just the compilation of what I understood from different resources, in short notes<br/>
   <b>Note: It's buggy :c</b>
 </p>
 
