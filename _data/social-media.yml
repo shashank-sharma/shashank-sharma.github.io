@@ -1,0 +1,29 @@
+email:
+  id: 'shashank.sharma98@gmail.com'
+  href: 'mailto:'
+  title: 'Email'
+  fa-icon: 'fa-envelope-square'
+
+github:
+  id: 'shashank-sharma'
+  href: 'https://github.com/'
+  title: 'GitHub'
+  fa-icon: 'fa-github-square'
+
+linkedin:
+  id: 'shashank-developer'
+  href: 'https://linkedin.com/in/'
+  title: 'Linkedin'
+  fa-icon: 'fa-linkedin-square'
+
+facebook:
+  id: 'shashank.sharma.902'
+  href: 'https://www.facebook.com/'
+  title: 'Facebook'
+  fa-icon: 'fa-facebook-square'
+
+twitter:
+  id: 'shashank_py'
+  href: 'https://www.twitter.com/'
+  title: 'Twitter'
+  fa-icon: 'fa-twitter-square'
