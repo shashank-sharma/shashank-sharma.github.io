@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-Data Engineering Intern at Atlan
+Backend Engineer at Atlan
 
 Right now I am on a journey to explore the true meaning of data and understanding problems faced by other organization
 
