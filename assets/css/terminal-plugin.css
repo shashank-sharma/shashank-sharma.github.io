@@ -4,6 +4,7 @@
     flex-direction: column;
     top: 15vh;
     left: 15vw;
+    z-index: 999;
     font-size: 1vw;
     width: 70vw;
     height: 0;

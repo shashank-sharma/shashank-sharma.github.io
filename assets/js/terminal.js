@@ -1,3 +1,15 @@
+const config = {
+  backend_base_url: 'https://shashank-sharma.herokuapp.com',
+  loading_animation: ['|', '/', '-', '\\']
+};
+
+const HTTP_STATUS_CODE = {
+  200: "[[b;green;]Morty, you are in ... Wubba Lubba Dab Dab !",
+  400: "[[b;red;]Piece of shit Morty, what is this ?",
+  404: "[[b;orange;]Page not found",
+  500: "[[b;red;]Morty, What did you do !!!! ... It's over",
+}
+
 $(document).ready(function () {
   const scanlines = $('.scanlines');
   const flicker = $('.flicker');
@@ -14,25 +26,79 @@ $(document).ready(function () {
   }
 
   function loading() {
-    let counter = 1;
+    let counter = 0;
     loadingAnimation = setInterval(() => {
-      term.update(-1, ". ".repeat(counter));
+      term.update(-1, config.loading_animation[counter]);
       counter++;
-    }, 700);
+      if (counter > loadingAnimation.length) {
+        counter = 0
+      }
+    }, 200);
   }
 
-  function login() {
-    this.read('username: ').then(username => {
-      this.set_mask('').read('pass: ').then(pass => {
-        this.echo(" ");
-        this.set_mask(false);
-        loading();
-        setTimeout(() => {
+  function authenticate(username, password) {
+    const settings = {
+      "url": config.backend_base_url + "/api/accounts/login/",
+      "method": "POST",
+      "headers": {
+        "content-type": "application/json",
+      },
+      "data": JSON.stringify({
+        "phone_number": username,
+        "password": password
+      }),
+      statusCode: {
+        404: () => {
+          term.update(-1, HTTP_STATUS_CODE["404"])
+        },
+        400: () => {
+          term.update(-1, HTTP_STATUS_CODE["400"]);
+        },
+        200: () => {
+          term.update(-1, HTTP_STATUS_CODE["200"]);
+        },
+        500: () => {
+          term.update(-1, HTTP_STATUS_CODE["500"]);
+        }
+      }
+    };
+
+    return new Promise(resolve => {
+      $.ajax(settings)
+        .done((response) => {
+        clearInterval(loadingAnimation);
+        console.log(response);
+        resolve(response);
+      })
+        .fail(() => {
           clearInterval(loadingAnimation);
-          this.echo(username + " " + pass);
-        }, 5000);
+          resolve({});
+        });
+    });
+  }
+
+  function getLoginInput() {
+    return new Promise(resolve => {
+      term.read('username: ').then(username => {
+        term.set_mask('').read('password: ').then(password => {
+          term.echo(" ");
+          term.set_mask(false);
+          resolve([
+            username,
+            password
+          ]);
+        });
       });
     });
+  }
+
+  async function login() {
+    const [username, password] = await getLoginInput();
+    loading();
+    const response = await authenticate(username, password);
+    if (response['token']) {
+      localStorage.setItem("token", response['token']);
+    }
   }
 
   function clear() {
