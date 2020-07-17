@@ -5,7 +5,7 @@ permalink:           pretty
 title:               'Shashank Sharma'
 tagline:             'Backend Engineer'
 description:         'Just a guy who is hero for fun'
-url:                 'http://shashank-sharma.xyz'
+url:                 'https://shashank-sharma.xyz'
 paginate:            10
 baseurl:             ''
 google_analytics:    'UA-160110852-1'
