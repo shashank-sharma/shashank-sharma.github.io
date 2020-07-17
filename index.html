@@ -3,38 +3,46 @@ layout: default
 title: Home
 ---
 
+<script src="{{ base.url | prepend: site.url }}/assets/js/terminal-plugin.js"></script>
+<link rel="stylesheet" href="{{ base.url | prepend: site.url }}/assets/css/terminal-plugin.css"/>
+
+
+
+<iframe class="terminal-plugin" style="visibility:hidden;" title="Terminal plugin">
+
+
 <p class="message">
-  Hey there! Right now this website is in progress ! Do come back for more info
+	Hey there! Right now this website is in progress ! Do come back for more info
 </p>
 
 <div class="posts">
-  {% for post in paginator.posts %}
-  <article class="post">
-    <h1 class="post-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+	{% for post in paginator.posts %}
+	<article class="post">
+		<h1 class="post-title">
+			<a href="{{ site.baseurl }}{{ post.url }}">
+				{{ post.title }}
+			</a>
+		</h1>
 
-    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
+		<time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
 
-    {{ post.content | truncatewords: 60 }}
-    <a href="{{ site.baseurl }}{{ post.url }}">
-      Keep reading
-    </a>
-  </article>
-  {% endfor %}
+		{{ post.content | truncatewords: 60 }}
+		<a href="{{ site.baseurl }}{{ post.url }}">
+			Keep reading
+		</a>
+	</article>
+	{% endfor %}
 </div>
 
 <div class="pagination">
-  {% if paginator.next_page %}
-  <a class="pagination-item older" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
-  {% else %}
-  <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-  <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
-  {% else %}
-  <span class="pagination-item newer">Newer</span>
-  {% endif %}
+	{% if paginator.next_page %}
+	<a class="pagination-item older" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
+	{% else %}
+	<span class="pagination-item older">Older</span>
+	{% endif %}
+	{% if paginator.previous_page %}
+	<a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
+	{% else %}
+	<span class="pagination-item newer">Newer</span>
+	{% endif %}
 </div>
