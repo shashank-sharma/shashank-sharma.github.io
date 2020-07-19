@@ -34,6 +34,10 @@
  * Update the foundational and global aspects of the page.
  */
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Prevent scroll on narrow devices */
 html,
 body {

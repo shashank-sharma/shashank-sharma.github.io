@@ -13,7 +13,7 @@ const HTTP_STATUS_CODE = {
   404: "[[b;orange;]Page not found",
   500: "[[b;red;]Morty, What did you do !!!! ... It's over",
   503: "[[b;red;]Morty, I think portal is not working"
-}
+};
 
 $(document).ready(function () {
   const scanlines = $('.scanlines');
@@ -32,7 +32,6 @@ $(document).ready(function () {
 
   function loading() {
     let counter = 0;
-    term.echo("");
     loadingAnimation = setInterval(() => {
       term.update(-1, config.loading_animation[counter]);
       counter++;
@@ -46,7 +45,7 @@ $(document).ready(function () {
     const token = localStorage.getItem("token");
     return new Promise(async (resolve) => {
       if (token === undefined || token === "") {
-        resolve(["[[b;red;]Not logged in", false])
+        resolve(["[[b;red;]Not logged in", false]);
         this.echo('');
       } else {
         const response = await request(url = config.profile, method = "GET");

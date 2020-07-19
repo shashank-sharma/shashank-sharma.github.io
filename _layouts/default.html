@@ -23,10 +23,13 @@
         {{ content }}
       </div>
     </div>
-    <iframe class="terminal-plugin" style="visibility:hidden;" title="Terminal plugin">
+    <iframe class="terminal-plugin" style="visibility:hidden;" title="Terminal plugin" ></iframe>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
+    <div class="wrap">
+      {% include footer.html %}
+    </div>
     <script>
       (function(document) {
         var toggle = document.querySelector('.sidebar-toggle');
