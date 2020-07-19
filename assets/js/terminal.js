@@ -32,8 +32,8 @@ $(document).ready(function () {
 
   function loading() {
     let counter = 0;
+    term.echo("");
     loadingAnimation = setInterval(() => {
-      term.echo("");
       term.update(-1, config.loading_animation[counter]);
       counter++;
       if (counter > loadingAnimation.length) {
