@@ -2,6 +2,7 @@ const config = {
   backend_base_url: 'https://shashank-sharma.herokuapp.com',
   spreadsheet: "/api/docs/spreadsheet/",
   profile: "/api/accounts/user/",
+  health: "/api/health/",
   loading_animation: ['⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷']
 };
 
@@ -19,6 +20,8 @@ $(document).ready(function () {
   const scanlines = $('.scanlines');
   const flicker = $('.flicker');
   const consoleElement = $('.console');
+  const loginStatus = document.getElementById("login-status");
+  const backendStatus = document.getElementById("backend-status");
   let loadingAnimation = null;
 
   function set_size() {
@@ -99,7 +102,7 @@ $(document).ready(function () {
     });
   }
 
-  function request(url, method = "GET", json_data = false) {
+  function request(url, method = "GET", json_data = false, auth, debug) {
     loading();
     const settings = {
       "url": config.backend_base_url + url,
@@ -132,6 +135,15 @@ $(document).ready(function () {
       }
     };
 
+    if (!debug) {
+      settings["statusCode"] = {};
+    }
+
+    if (!auth) {
+      console.log("Headers off");
+      settings['headers'] = {};
+    }
+
     if (json_data) {
       settings["data"] = JSON.stringify(json_data);
     }
@@ -146,6 +158,19 @@ $(document).ready(function () {
           clearInterval(loadingAnimation);
           resolve({});
         });
+    });
+  }
+
+
+  function check_health_status() {
+    return new Promise(async (resolve) => {
+      const response = await request(url = config.health, method = "GET", auth = false, debug=false);
+      console.log(response);
+      if (JSON.stringify(response) === "{}") {
+        resolve(false);
+      } else {
+        resolve(true);
+      }
     });
   }
 
@@ -171,7 +196,9 @@ $(document).ready(function () {
     const response = await authenticate(username, password);
     if (response['token']) {
       localStorage.setItem("token", response['token']);
-      this.set_prompt("[[b;#90EE90;]shashank@server$ ")
+      this.set_prompt("[[b;#90EE90;]shashank@server$ ");
+      loginStatus.innerHTML = "lock_open";
+      loginStatus.style.color = "#90EE90";
     }
     this.resume();
   }
@@ -241,7 +268,7 @@ $(document).ready(function () {
     checkArity: false,
     enabled: $('body').attr('onload') === undefined,
     onResize: set_size,
-    onInit: function () {
+    onInit: async function () {
       this.pause();
       set_size();
       // [[b;#fff;]exit]
@@ -254,14 +281,28 @@ $(document).ready(function () {
       this.echo('This ... this place is loaded with looooot of things');
       this.echo('Go ahead morty .... type something');
       this.echo('');
-      check_token().then((response) => {
-        this.echo(response[0]);
-        this.echo('');
-        if (response[1]) {
-          this.set_prompt("[[b;#90EE90;]shashank@server$ ");
-        }
-        this.resume();
-      });
+
+      const status = await check_health_status();
+      if (status) {
+        backendStatus.innerHTML = "cloud_done";
+        backendStatus.style.color = "#90EE90";
+      } else {
+        backendStatus.innerHTML = "cloud_off";
+        backendStatus.style.color = "red";
+      }
+
+      const response = await check_token();
+      this.echo(response[0]);
+      this.echo('');
+      if (response[1]) {
+        loginStatus.innerHTML = "lock_open";
+        loginStatus.style.color = "#90EE90";
+        this.set_prompt("[[b;#90EE90;]shashank@server$ ");
+      } else {
+        loginStatus.innerHTML = "no_encryption";
+        loginStatus.style.color = "red";
+      }
+      this.resume();
     },
     prompt: "[[b;#90EE90;]guest@server$ "
   });
