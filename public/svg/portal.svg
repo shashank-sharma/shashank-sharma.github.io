@@ -8,9 +8,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    version="1.1"
    id="svg7674"
-   viewBox="0 0 353.68015 369.01624"
-   height="104.14458mm"
-   width="99.816399mm">
+   viewBox="0 0 389.76378 389.76381"
+   height="110mm"
+   width="110mm">
   <defs
      id="defs7676">
     <clipPath
@@ -35,7 +35,7 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(-217.44564,-353.56836)"
+     transform="translate(-217.44564,-332.82082)"
      id="layer1">
     <image
        width="729.59998"
@@ -47,7 +47,7 @@
        x="-901.22217"
        y="-35.180294"
        clip-path="url(#clipPath7055)"
-       transform="matrix(0.4848993,0,0,0.4848993,654.34528,370.38981)" />
+       transform="matrix(0.4848993,0,0,0.4848993,672.4265,361.27741)" />
   </g>
     <animateTransform attributeName="transform"
                       attributeType="XML"
