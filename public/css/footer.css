@@ -16,8 +16,7 @@
 }
 
 .footer-portal {
-    height: 25vh;
-    width: 25vh;
+    width: 25vmin;
     left: 40vw;
     top: 0;
     position: relative;

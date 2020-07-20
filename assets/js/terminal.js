@@ -2,7 +2,7 @@ const config = {
   backend_base_url: 'https://shashank-sharma.herokuapp.com',
   spreadsheet: "/api/docs/spreadsheet/",
   profile: "/api/accounts/user/",
-  loading_animation: ['|', '/', '-', '\\']
+  loading_animation: ['⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷']
 };
 
 const HTTP_STATUS_CODE = {
@@ -35,8 +35,8 @@ $(document).ready(function () {
     loadingAnimation = setInterval(() => {
       term.update(-1, config.loading_animation[counter]);
       counter++;
-      if (counter > loadingAnimation.length) {
-        counter = 0
+      if (counter >= config.loading_animation.length) {
+        counter = 0;
       }
     }, 200);
   }
@@ -46,7 +46,6 @@ $(document).ready(function () {
     return new Promise(async (resolve) => {
       if (token === undefined || token === "") {
         resolve(["[[b;red;]Not logged in", false]);
-        this.echo('');
       } else {
         const response = await request(url = config.profile, method = "GET");
         console.log(response);

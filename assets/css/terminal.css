@@ -188,8 +188,7 @@ body {
 }
 
 .portal {
-    height: 25vh;
-    width: 25vh;
+    width: 25vmin;
     left: 40vw;
     position: relative;
     -webkit-animation:spin 40s linear infinite;
