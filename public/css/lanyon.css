@@ -578,6 +578,8 @@ a.pagination-item:hover {
 
 .home-header-portal {
   width: 50vmin;
+  z-index: 21;
+  position: relative;
 }
 
 @media (max-width: 60em) {
@@ -598,4 +600,51 @@ a.pagination-item:hover {
   position: relative;
   top: -40px;
   font-family: Gilroy,Arial,sans-serif;
+}
+
+.loading-page {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: black;
+  z-index: 20;
+}
+
+.loading-page.collapse {
+  animation: size 2s ease-in;
+  animation-fill-mode: forwards;
+}
+.loading-page.collapse:before {
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: black;
+  z-index: 1;
+  /*opacity: 0;*/
+  /*animation: opacity 2s ease-out;*/
+  /*animation-fill-mode: forwards;*/
+}
+
+@keyframes opacity {
+  to { opacity: 1; }
+}
+@keyframes size {
+  50% {
+    transform: scaleX(calc(1 / var(--width)));
+    opacity: 1;
+  }
+  98% {
+    transform: scaleX(calc(1 / var(--width))) scaleY(calc(1 / var(--height)));
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(calc(1 / var(--width))) scaleY(calc(1 / var(--height)));
+    opacity: 0;
+  }
 }
