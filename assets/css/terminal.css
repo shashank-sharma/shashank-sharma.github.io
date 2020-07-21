@@ -205,7 +205,6 @@ body {
 
 .portal {
     width: 25vmin;
-    left: 40vw;
     position: relative;
     -webkit-animation:spin 40s linear infinite;
     -moz-animation:spin 40s linear infinite;

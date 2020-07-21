@@ -1,15 +1,17 @@
 <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
      styles, `#sidebar-checkbox` for behavior. -->
-
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" {% if page.title=="Home" %}checked{% endif %}>
+<!-- {% if page.title=="Home" %}checked{% endif %} -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
 
-    <img src="https://avatars2.githubusercontent.com/u/9320644" style="padding: 20px;" alt="shashank-sharma"/>
+    <p align="center">
+        <img src="https://avatars2.githubusercontent.com/u/9320644" style="width: 150px;margin-top:20px;" alt="shashank-sharma"/>
+    </p>
 
-    <div class="sidebar-item">
-        <p>{{ site.description }}</p>
-    </div>
+    <!--<div class="sidebar-item">-->
+        <!--<p>{{ site.description }}</p>-->
+    <!--</div>-->
 
     <nav class="sidebar-nav">
         <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}"

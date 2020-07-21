@@ -272,9 +272,9 @@ $(document).ready(function () {
       this.pause();
       set_size();
       // [[b;#fff;]exit]
-      const img = $('<a href="https://github.com/shashank-sharma/shashank-sharma.github.io" target="_blank">' +
+      const img = $('<p align="center"><a href="https://github.com/shashank-sharma/shashank-sharma.github.io" target="_blank">' +
         '<img class="portal" src="/img/portal.png">' +
-        '</a>');
+        '</a></p>');
       this.echo(img);
       this.echo('');
       this.echo('Welcome to the land of Mythicality Morty .... *BURP* ....');

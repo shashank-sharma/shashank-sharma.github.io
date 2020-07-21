@@ -10,6 +10,18 @@
     <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
          content to avoid any CSS collisions with our real content. -->
     <div class="wrap">
+      {% if page.title == "Home" %}
+      <div class="home-header">
+        <div class="home-header-image" align="center">
+          <img class="home-header-portal" src="{{ site.baseurl }}/public/svg/portal.svg" />
+        </div>
+        <div class="home-header-text">
+          <p>
+            {{ site.description }}
+          </p>
+        </div>
+      </div>
+      {% else %}
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
@@ -18,6 +30,7 @@
           </h3>
         </div>
       </div>
+      {% endif %}
 
       <div class="container content">
         {{ content }}

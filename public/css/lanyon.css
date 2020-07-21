@@ -565,3 +565,37 @@ a.pagination-item:hover {
 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
   box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
 }
+
+.home-header {
+  height: 100vh;
+  background-color: white;
+}
+
+.home-header-image {
+  position: relative;
+  top: 25vh;
+}
+
+.home-header-portal {
+  width: 50vmin;
+}
+
+@media (max-width: 60em) {
+  .home-header-text {
+    width: 90% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 10vw !important;
+    padding: 30px !important;
+  }
+}
+
+.home-header-text {
+  font-weight: 500;
+  padding-left: 5vw;
+  padding-right: 50px;
+  width: 35%;
+  position: relative;
+  top: -40px;
+  font-family: Gilroy,Arial,sans-serif;
+}
