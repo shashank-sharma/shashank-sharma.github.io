@@ -568,6 +568,10 @@ a.pagination-item:hover {
 .home-header {
   height: 100vh;
   background-color: white;
+  left: 0;
+  overflow: hidden;
+  transition: left 1.5s ease-in-out, opacity 1s ease-in-out;
+  position: relative;
 }
 
 .home-header-image {
@@ -586,19 +590,31 @@ a.pagination-item:hover {
     width: 90% !important;
     position: absolute !important;
     top: 0 !important;
-    left: 10vw !important;
+    left: 8vw !important;
     padding: 30px !important;
+    margin-top: 15vh;
+  }
+
+  .home-header {
+    padding-top: 10vh;
+  }
+
+  .ss-logo {
+    width: 50px !important;
   }
 }
 
 .home-header-text {
   font-weight: 500;
-  padding-left: 5vw;
+  padding-left: 6vw;
   padding-right: 50px;
+  opacity: 1;
+  display: block;
   width: 35%;
   position: relative;
   top: -40px;
   color: #161f38;
+  transition: opacity 0.5s ease-in-out, top 0.5s ease-in-out;
 }
 
 .loading-page {
@@ -628,6 +644,62 @@ a.pagination-item:hover {
   /*opacity: 0;*/
   /*animation: opacity 2s ease-out;*/
   /*animation-fill-mode: forwards;*/
+}
+
+.header-writing {
+  position: fixed;
+  display: block;
+  bottom: 0;
+  right: 0;
+  margin: 30px;
+  color: #161f38;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.header-design {
+  position: fixed;
+  display: block;
+  bottom: 0;
+  left: 0;
+  margin: 30px;
+  color: #161f38;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.ss-logo {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 60px;
+  margin: 30px;
+  cursor: pointer;
+}
+
+.home-writing {
+  opacity: 0;
+  position: absolute;
+  display: none;
+  margin: 100px 0 0 0;
+  top: 0;
+  right: 0;
+  overflow: hidden scroll;
+  height: 83vh;
+  transition: opacity 1s ease-in-out;
+}
+
+.home-design {
+  opacity: 0;
+  position: absolute;
+  display: none;
+  margin: 100px 20px 40px 20px;
+  top: 0;
+  left: 0;
+  overflow: hidden scroll;
+  height: 80vh;
+  transition: opacity 1s ease-in-out;
 }
 
 @keyframes opacity {

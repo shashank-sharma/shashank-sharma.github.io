@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+{% include head.html %}
+
+<body>
+
+<img class="ss-logo" id="ss-logo" src="{{ site.baseurl }}/img/shashank.png"/>
+
+<!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+		 content to avoid any CSS collisions with our real content. -->
+<div class="loading-page" id="loading-page"></div>
+<div class="header-writing" id="header-writing">writings ⟶</div>
+<div class="header-design" id="header-design">⟵ designs</div>
+<div class="home-header" id="home-header">
+	<div class="home-header-image" align="center">
+		<img class="home-header-portal" src="{{ site.baseurl }}/public/svg/portal.svg"/>
+	</div>
+	<div class="home-header-text" id="home-header-text">
+		<p>
+			{{ site.description }}
+		</p>
+	</div>
+</div>
+<div class="home-writing container" id="home-writing">
+	{{ content }}
+</div>
+<div class="home-design container" id="home-design">
+	Coming soon
+</div>
+
+<!--<div class="container content">-->
+	<!---->
+<!--</div>-->
+<iframe class="terminal-plugin" style="visibility:hidden;" title="Terminal plugin"></iframe>
+</body>
+</html>
