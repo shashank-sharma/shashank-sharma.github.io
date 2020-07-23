@@ -5,33 +5,43 @@
 
 <body>
 
+<svg class="loader" width="100px" height="100px" viewBox="0 0 100 100">
+	<circle id="loader" class="anicircle" cx="50" cy="50" r="40"/>
+</svg>
 <img class="ss-logo" id="ss-logo" src="{{ site.baseurl }}/img/shashank.png"/>
 
-<!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-		 content to avoid any CSS collisions with our real content. -->
-<div class="loading-page" id="loading-page"></div>
-<div class="header-writing" id="header-writing">writings ⟶</div>
-<div class="header-design" id="header-design">⟵ designs</div>
-<div class="home-header" id="home-header">
-	<div class="home-header-image" align="center">
-		<img class="home-header-portal" src="{{ site.baseurl }}/public/svg/portal.svg"/>
+<!--<div class="design-container" id="design-container"></div>-->
+<div class="main-content" id="main-content">
+	<div class="header-writing" id="header-writing">writings ⟶</div>
+	<div class="header-design" id="header-design">⟵ designs</div>
+	<div class="home-header" id="home-header">
+		<div class="home-header-image" align="center">
+			<div class="home-header-place">
+				<div class="loading-page" id="loading-page"></div>
+				<img class="home-header-portal" id="home-header-portal" src="{{ site.baseurl }}/public/svg/portal.svg"/>
+				<img class="home-header-vector" src="{{ site.baseurl }}/img/header-background.png"/>
+				<img class="home-header-vector floating" src="{{ site.baseurl }}/img/header-adventure.png"/>
+				<img class="home-header-vector floating-less" src="{{ site.baseurl }}/img/header-anime.png"/>
+				<img class="home-header-vector" src="{{ site.baseurl }}/img/header-moon.png"/>
+			</div>
+		</div>
+		<div class="home-header-text" id="home-header-text">
+			<p>
+				{{ site.description }}
+			</p>
+		</div>
 	</div>
-	<div class="home-header-text" id="home-header-text">
-		<p>
-			{{ site.description }}
-		</p>
+	<div class="home-writing container" id="home-writing">
+		{{ content }}
+	</div>
+	<div class="home-design container" id="home-design">
+		{% for section in page.sections %}
+		<p><a href="{{ section.url }}" class="home-design-heading" target="_blank">
+			{{ section.title | textilize }}
+		</a></p>
+		{% endfor %}
 	</div>
 </div>
-<div class="home-writing container" id="home-writing">
-	{{ content }}
-</div>
-<div class="home-design container" id="home-design">
-	Coming soon
-</div>
-
-<!--<div class="container content">-->
-	<!---->
-<!--</div>-->
 <iframe class="terminal-plugin" style="visibility:hidden;" title="Terminal plugin"></iframe>
 </body>
 </html>

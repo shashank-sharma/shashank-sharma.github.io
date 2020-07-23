@@ -1,4 +1,5 @@
 window.onload = function () {
+  const main_content = document.getElementById("main-content");
   const footer_portal = document.getElementById("footer-portal");
   const footer_expand_portal = document.getElementById("footer-expand-portal");
   const footer_expand_content = document.getElementById("footer-expand-content");
@@ -10,6 +11,10 @@ window.onload = function () {
   const header_body = document.getElementById("home-header");
   const ss_logo = document.getElementById("ss-logo");
   const home_header_text = document.getElementById("home-header-text");
+  const home_header_portal = document.getElementById("home-header-portal");
+  const loader = document.getElementById("loader");
+  const open_timer = document.getElementById("open-timer");
+  let open_timer_func = null;
   let page_state = "home";
 
   const height = window.innerHeight;
@@ -18,6 +23,9 @@ window.onload = function () {
   loadingPage.style.setProperty("--height", height);
 
   loadingPage.classList.add("collapse");
+
+  home_header_portal.style.marginTop = "30vh";
+  home_header_portal.style.transform = "rotate3d(1, 0, 0, 65deg)";
 
   header_writing.onclick = function () {
     page_state = "writing";
@@ -142,4 +150,20 @@ window.onload = function () {
       header_body.style.left = "0";
     }
   };
+
+  open_timer.onmouseover = function () {
+    loader.style.strokeDashoffset = "0";
+    open_timer_func = setTimeout(() => {
+      window.open(this.href);
+    }, 2000);
+  };
+
+  open_timer.onmouseout = function () {
+    clearTimeout(open_timer_func);
+    loader.style.transition = "stroke-dashoffset 400ms linear";
+    loader.style.strokeDashoffset = "300";
+    setTimeout(() => {
+      loader.style.transition = "stroke-dashoffset 2000ms linear";
+    }, 400)
+  }
 };

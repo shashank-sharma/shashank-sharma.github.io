@@ -33,6 +33,22 @@
  *
  * Update the foundational and global aspects of the page.
  */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: black white;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: white;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 20px;
+  border: 3px solid white;
+}
 
 html {
   scroll-behavior: smooth;
@@ -580,9 +596,28 @@ a.pagination-item:hover {
 }
 
 .home-header-portal {
+  /*width: 50vmin;*/
+  /*z-index: 21;*/
+  /*position: relative;*/
+
   width: 50vmin;
-  z-index: 21;
+  position: absolute;
+  margin-top: 0;
+  z-index: 2;
+  transition: all 2s ease-in-out;
+}
+
+.home-header-place {
+  width: 50vmin;
+  z-index: 19;
   position: relative;
+  height: 50vh;
+}
+
+.home-header-vector {
+  position: absolute;
+  width: 50vmin;
+  transition: all 2s ease-in-out;
 }
 
 @media (max-width: 60em) {
@@ -590,7 +625,7 @@ a.pagination-item:hover {
     width: 90% !important;
     position: absolute !important;
     top: 0 !important;
-    left: 8vw !important;
+    left: 10vw !important;
     padding: 30px !important;
     margin-top: 15vh;
   }
@@ -622,8 +657,9 @@ a.pagination-item:hover {
   width: 100%;
   position: fixed;
   top: 0;
+  left: 0;
   background-color: black;
-  z-index: 20;
+  z-index: 1;
 }
 
 .loading-page.collapse {
@@ -702,6 +738,51 @@ a.pagination-item:hover {
   transition: opacity 1s ease-in-out;
 }
 
+.home-design-heading {
+  font-weight: 600;
+  font-size: 2rem;
+  color: #161f38;
+  direction: ltr;
+  text-decoration: none;
+}
+
+.anicircle {
+  fill: none;
+  display: block;
+  stroke-width: 2px;
+  stroke: black;
+  stroke-dasharray: 300 300;
+  stroke-dashoffset: 300;
+  transition: stroke-dashoffset 2000ms linear;
+}
+.anicircle:hover {
+  stroke-dashoffset: 0;
+}
+
+.loader {
+  position: absolute;
+  margin-left: 10px;
+}
+
+.main-content {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.floating {
+  animation-name: float;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.floating-less {
+  animation-name: float-less;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
 @keyframes opacity {
   to { opacity: 1; }
 }
@@ -717,5 +798,54 @@ a.pagination-item:hover {
   100% {
     transform: scaleX(calc(1 / var(--width))) scaleY(calc(1 / var(--height)));
     opacity: 0;
+  }
+}
+
+@-webkit-keyframes float{
+  0%, 50% {
+    -webkit-transform: translate(0, 0px);
+    transform: translate(0,  0px);
+    -webkit-animation-timing-function: cubic-bezier(.2,.25,.55,1);
+    animation-timing-function: cubic-bezier(.2,.25,.55,1)
+  }
+  25% {
+    -webkit-transform: translate(0, -12px);
+    transform: translate(0,  -12px);
+    -webkit-animation-timing-function: cubic-bezier(.45,0,.8,.75);
+    animation-timing-function: cubic-bezier(.45,0,.8,.75)
+  }
+  75% {
+    -webkit-transform: translate(0, 12px);
+    transform: translate(0, 12px);
+    -webkit-animation-timing-function: cubic-bezier(.45,0,.8,.75);
+    animation-timing-function: cubic-bezier(.45,0,.8,.75)
+  }
+  to {
+    -webkit-transform: translate(0, 0px);
+    transform: translate(0, 0px);
+  }
+}
+@-webkit-keyframes float-less{
+  0%, 50% {
+    -webkit-transform: translate(0, 0px);
+    transform: translate(0,  0px);
+    -webkit-animation-timing-function: cubic-bezier(.2,.25,.55,1);
+    animation-timing-function: cubic-bezier(.2,.25,.55,1)
+  }
+  25% {
+    -webkit-transform: translate(0, -7px);
+    transform: translate(0,  -7px);
+    -webkit-animation-timing-function: cubic-bezier(.45,0,.8,.75);
+    animation-timing-function: cubic-bezier(.45,0,.8,.75)
+  }
+  75% {
+    -webkit-transform: translate(0, 7px);
+    transform: translate(0, 7px);
+    -webkit-animation-timing-function: cubic-bezier(.45,0,.8,.75);
+    animation-timing-function: cubic-bezier(.45,0,.8,.75)
+  }
+  to {
+    -webkit-transform: translate(0, 0px);
+    transform: translate(0, 0px);
   }
 }
