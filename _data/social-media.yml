@@ -1,9 +1,3 @@
-email:
-  id: 'shashank.sharma98@gmail.com'
-  href: 'mailto:'
-  title: 'Email'
-  fa-icon: 'fa-envelope-square'
-
 github:
   id: 'shashank-sharma'
   href: 'https://github.com/'

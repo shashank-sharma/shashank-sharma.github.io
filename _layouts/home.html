@@ -14,10 +14,13 @@
 <div class="main-content" id="main-content">
 	<div class="header-writing" id="header-writing">writings ⟶</div>
 	<div class="header-design" id="header-design">⟵ designs</div>
+	<div class="header-hello" id="header-hello">👋</div>
 	<div class="home-header" id="home-header">
 		<div class="home-header-image" align="center">
 			<div class="home-header-place">
 				<div class="loading-page" id="loading-page"></div>
+				<div class="pointer-anime" id="pointer-anime"></div>
+				<div class="pointer-moon" id="pointer-moon"></div>
 				<img class="home-header-portal" id="home-header-portal" src="{{ site.baseurl }}/public/svg/portal.svg"/>
 				<img class="home-header-vector" src="{{ site.baseurl }}/img/header-background.png"/>
 				<img class="home-header-vector floating" src="{{ site.baseurl }}/img/header-adventure.png"/>
@@ -26,9 +29,7 @@
 			</div>
 		</div>
 		<div class="home-header-text" id="home-header-text">
-			<p>
 				{{ site.description }}
-			</p>
 		</div>
 	</div>
 	<div class="home-writing container" id="home-writing">
@@ -40,6 +41,11 @@
 			{{ section.title | textilize }}
 		</a></p>
 		{% endfor %}
+	</div>
+	<div class="home-hello custom-container" id="home-hello">
+		<p>Want to discuss something ? Feedback or any random thing ... Mail it right away</p>
+		<p>shashank.sharma98@gmail.com</p>
+		{% include social-media-links.html %}
 	</div>
 </div>
 <iframe class="terminal-plugin" style="visibility:hidden;" title="Terminal plugin"></iframe>
