@@ -1,0 +1,106 @@
+body {
+    background-color: black;
+    color: white !important;
+    font-family: Gilroy, serif;
+}
+
+.vis-item-content {
+    color: white;
+}
+
+.vis-item.internship {
+    border-width: 0 0 0 5px;
+    color: white;
+    font-weight: 500;
+    background-color: black;
+    border-color: #c72c41;
+    padding: 5px;
+}
+
+.vis-item.project {
+    border-width: 0 0 0 5px;
+    color: white;
+    font-weight: 500;
+    background-color: black;
+    border-color: rgb(144,126, 81);
+    padding: 5px;
+}
+
+.vis-item.volunteer {
+    border-width: 0 0 0 5px;
+    color: white;
+    font-weight: 500;
+    background-color: black;
+    border-color: #29a19c;
+    padding: 5px;
+}
+
+.vis-item.certification {
+    border-width: 0 0 0 5px;
+    color: white;
+    font-weight: 500;
+    background-color: black;
+    border-color: #b030b0;
+    padding: 5px;
+}
+
+.vis-item.hackathon {
+    border-width: 0 0 0 5px;
+    color: white;
+    font-weight: 500;
+    background-color: black;
+    border-color: #3b2c85;
+    padding: 5px;
+}
+
+.vis-item.event {
+    border-width: 0 0 0 5px;
+    color: white;
+    font-weight: 500;
+    background-color: black;
+    border-color: rgb(144,126, 81);
+    padding: 5px;
+}
+
+.vis-time-axis .vis-text {
+    color: white !important;
+    font-weight: bold !important;
+}
+
+.vis-item.vis-background.eleven-standard {
+    background-color: rgba(95, 95, 95, 0.5);
+}
+
+.vis-item.vis-background.twelve-standard {
+    background-color: rgba(57, 57, 57, 0.5);
+}
+
+.vis-item.vis-background.first-year {
+    background-color: rgba(95, 95, 95, 0.5);
+}
+
+.vis-item.vis-background.second-year {
+    background-color: rgba(57, 57, 57, 0.5);
+}
+
+.vis-item.vis-background.third-year {
+    background-color: rgba(95, 95, 95, 0.5);
+}
+
+.vis-item.vis-background.fourth-year {
+    background-color: rgba(57, 57, 57, 0.5);
+}
+
+.indicator {
+    left: 0;
+    position: fixed;
+    top: 0;
+    margin: 20px;
+    z-index: 2 !important;
+}
+
+.indicator-card {
+    margin: 5px;
+    border-width: 1px 1px 1px 5px !important;
+    position: relative !important;
+}
