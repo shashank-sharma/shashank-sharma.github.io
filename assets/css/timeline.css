@@ -1,94 +1,154 @@
 body {
-    background-color: black;
-    color: white !important;
+    background-color: white;
+    color: #161f38 !important;
     font-family: Gilroy, serif;
 }
 
 .vis-item-content {
-    color: white;
+    color: #161f38;
+}
+
+.vis-item.vis-selected {
+    border-color: black !important;
+    background-color: #dcdcdc !important;
+    z-index: 2;
 }
 
 .vis-item.internship {
     border-width: 0 0 0 5px;
-    color: white;
     font-weight: 500;
-    background-color: black;
+    background-color: #eeeeee;
+    border-color: #c72c41;
+    padding: 5px;
+    opacity: 1;
+    display: block;
+    transition: opacity 1s ease-in-out;
+}
+
+
+.vis-item.internship-indicator {
+    border-width: 0 0 0 5px;
+    font-weight: 500;
+    background-color: #eeeeee;
     border-color: #c72c41;
     padding: 5px;
 }
 
 .vis-item.project {
     border-width: 0 0 0 5px;
-    color: white;
     font-weight: 500;
-    background-color: black;
+    background-color: #eeeeee;
+    border-color: rgb(144,126, 81);
+    padding: 5px;
+    opacity: 1;
+    display: block;
+    transition: opacity 1s ease-in-out;
+}
+
+.vis-item.project-indicator {
+    border-width: 0 0 0 5px;
+    font-weight: 500;
+    background-color: #eeeeee;
     border-color: rgb(144,126, 81);
     padding: 5px;
 }
 
 .vis-item.volunteer {
     border-width: 0 0 0 5px;
-    color: white;
     font-weight: 500;
-    background-color: black;
+    background-color: #eeeeee;
+    border-color: #29a19c;
+    padding: 5px;
+    opacity: 1;
+    display: block;
+    transition: opacity 1s ease-in-out;
+}
+
+.vis-item.volunteer-indicator {
+    border-width: 0 0 0 5px;
+    font-weight: 500;
+    background-color: #eeeeee;
     border-color: #29a19c;
     padding: 5px;
 }
 
 .vis-item.certification {
     border-width: 0 0 0 5px;
-    color: white;
     font-weight: 500;
-    background-color: black;
+    background-color: #eeeeee;
+    border-color: #b030b0;
+    padding: 5px;
+    opacity: 1;
+    display: block;
+    transition: opacity 1s ease-in-out;
+}
+
+.vis-item.certification-indicator {
+    border-width: 0 0 0 5px;
+    font-weight: 500;
+    background-color: #eeeeee;
     border-color: #b030b0;
     padding: 5px;
 }
 
 .vis-item.hackathon {
     border-width: 0 0 0 5px;
-    color: white;
     font-weight: 500;
-    background-color: black;
+    background-color: #eeeeee;
+    border-color: #3b2c85;
+    padding: 5px;
+    opacity: 1;
+    display: block;
+    transition: opacity 1s ease-in-out;
+}
+
+.vis-item.hackathon-indicator {
+    border-width: 0 0 0 5px;
+    font-weight: 500;
+    background-color: #eeeeee;
     border-color: #3b2c85;
     padding: 5px;
 }
 
 .vis-item.event {
     border-width: 0 0 0 5px;
-    color: white;
     font-weight: 500;
-    background-color: black;
+    background-color: #eeeeee;
     border-color: rgb(144,126, 81);
     padding: 5px;
 }
 
 .vis-time-axis .vis-text {
-    color: white !important;
+    color: #161f38 !important;
     font-weight: bold !important;
 }
 
+.no-end {
+    border-width: 1px 1px 1px 5px !important;
+}
+
 .vis-item.vis-background.eleven-standard {
-    background-color: rgba(95, 95, 95, 0.5);
+    background-color: rgba(238, 238, 238, 0.5);
 }
 
 .vis-item.vis-background.twelve-standard {
-    background-color: rgba(57, 57, 57, 0.5);
+    background-color: rgba(249, 249, 249, 0.5);
 }
 
 .vis-item.vis-background.first-year {
-    background-color: rgba(95, 95, 95, 0.5);
+    background-color: rgba(238, 238, 238, 0.5);
 }
 
 .vis-item.vis-background.second-year {
-    background-color: rgba(57, 57, 57, 0.5);
+    background-color: rgba(249, 249, 249, 0.5);
 }
 
 .vis-item.vis-background.third-year {
-    background-color: rgba(95, 95, 95, 0.5);
+    background-color: rgba(238, 238, 238, 0.5);
 }
 
 .vis-item.vis-background.fourth-year {
-    background-color: rgba(57, 57, 57, 0.5);
+    background-color: rgba(249, 249, 249, 0.5);
 }
 
 .indicator {
@@ -96,11 +156,36 @@ body {
     position: fixed;
     top: 0;
     margin: 20px;
-    z-index: 2 !important;
+    z-index: 3 !important;
+    cursor: pointer;
+}
+
+.vis-item.vis-box {
+    text-align: left !important;
 }
 
 .indicator-card {
     margin: 5px;
     border-width: 1px 1px 1px 5px !important;
     position: relative !important;
+}
+
+.profile-timeline-left {
+    background-image: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0.2), rgba(0,0,0,0));
+    height: 100vh;
+    width: 10vw;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
+.profile-timeline-right {
+    background-image: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0.2), rgba(0,0,0,0));
+    height: 100vh;
+    width: 10vw;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
 }

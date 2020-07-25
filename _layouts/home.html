@@ -4,17 +4,16 @@
 {% include head.html %}
 
 <body>
-
-<svg class="loader" width="100px" height="100px" viewBox="0 0 100 100">
-	<circle id="loader" class="anicircle" cx="50" cy="50" r="40"/>
-</svg>
-<img class="ss-logo" id="ss-logo" src="{{ site.baseurl }}/img/shashank.png"/>
-
 <!--<div class="design-container" id="design-container"></div>-->
 <div class="main-content" id="main-content">
+	<svg class="loader" width="100px" height="100px" viewBox="0 0 100 100">
+		<circle id="loader" class="anicircle" cx="50" cy="50" r="40"/>
+	</svg>
+	<img class="ss-logo" id="ss-logo" src="{{ site.baseurl }}/img/shashank.png"/>
 	<div class="header-writing" id="header-writing">writings ⟶</div>
 	<div class="header-design" id="header-design">⟵ designs</div>
 	<div class="header-hello" id="header-hello">👋</div>
+	<div class="header-timeline" id="header-timeline">timeline</div>
 	<div class="home-header" id="home-header">
 		<div class="home-header-image" align="center">
 			<div class="home-header-place">
@@ -47,6 +46,19 @@
 		<p>shashank.sharma98@gmail.com</p>
 		{% include social-media-links.html %}
 	</div>
+</div>
+<div class="home-timeline" id="home-timeline">
+	<i class="fa fa-2x fa-window-close home-timeline-close" id="home-timeline-close" style="color: black"></i>
+	<div class="indicator">
+		<div class="vis-item vis-range internship-indicator indicator-card" id="internship-indicator">Internship</div><br/>
+		<div class="vis-item vis-range volunteer-indicator indicator-card" id="volunteer-indicator">Volunteer</div><br/>
+		<div class="vis-item vis-range certification-indicator indicator-card" id="certification-indicator">Certification</div><br/>
+		<div class="vis-item vis-range hackathon-indicator indicator-card" id="hackathon-indicator">Hackathon</div><br/>
+		<div class="vis-item vis-range project-indicator indicator-card" id="project-indicator">Project</div>
+	</div>
+	<div class="profile-timeline-left"></div>
+	<div class="profile-timeline-right"></div>
+	<div id="visualization"></div>
 </div>
 <iframe class="terminal-plugin" style="visibility:hidden;" title="Terminal plugin"></iframe>
 </body>
