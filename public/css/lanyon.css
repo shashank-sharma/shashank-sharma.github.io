@@ -903,6 +903,10 @@ a.pagination-item:hover {
   cursor: pointer;
 }
 
+.timeline-visualization {
+  font-size: 0.6rem;
+}
+
 @keyframes pulse {
   0% {
     -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
