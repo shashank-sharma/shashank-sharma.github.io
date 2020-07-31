@@ -631,7 +631,7 @@ a.pagination-item:hover {
   }
 
   .header-timeline {
-    left: 37vw !important;
+    left: 41vw !important;
   }
 
   .home-header {
@@ -713,7 +713,7 @@ a.pagination-item:hover {
   font-size: 1.5rem;
   top: 0;
   right: 0;
-  margin: 20px;
+  margin: 34px;
   color: #161f38;
   z-index: 2;
   cursor: pointer;
@@ -723,8 +723,8 @@ a.pagination-item:hover {
   position: fixed;
   display: block;
   bottom: 0;
-  left: 45vw;
-  margin: 30px;
+  left: 47.5vw;
+  margin-bottom: 30px;
   color: #161f38;
   z-index: 2;
   cursor: pointer;
@@ -905,6 +905,25 @@ a.pagination-item:hover {
 
 .timeline-visualization {
   font-size: 0.6rem;
+}
+
+.header-sideways {
+  transform: rotate(-90deg);
+  position: fixed;
+  right: -43px;
+  top: 40vh;
+  z-index: 1;
+  font-weight: 600;
+  color: #c0c0c0;
+  word-spacing: 30px;
+  opacity: 1;
+  display: block;
+  transition: all 1s ease-in-out;
+}
+
+.link-style {
+  text-decoration: none !important;
+  color: #c0c0c0;
 }
 
 @keyframes pulse {
