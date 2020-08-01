@@ -1,7 +1,7 @@
 /*body {*/
-    /*background-color: white;*/
-    /*color: #161f38 !important;*/
-    /*font-family: Gilroy, serif;*/
+/*background-color: white;*/
+/*color: #161f38 !important;*/
+/*font-family: Gilroy, serif;*/
 /*}*/
 
 .vis-item-content {
@@ -25,7 +25,6 @@
     transition: opacity 1s ease-in-out;
 }
 
-
 .vis-item.internship-indicator {
     border-width: 0 0 0 5px;
     font-weight: 500;
@@ -38,7 +37,7 @@
     border-width: 0 0 0 5px;
     font-weight: 500;
     background-color: white;
-    border-color: rgb(144,126, 81);
+    border-color: rgb(144, 126, 81);
     padding: 5px;
     opacity: 1;
     display: block;
@@ -49,7 +48,7 @@
     border-width: 0 0 0 5px;
     font-weight: 500;
     background-color: white;
-    border-color: rgb(144,126, 81);
+    border-color: rgb(144, 126, 81);
     padding: 5px;
 }
 
@@ -114,7 +113,7 @@
     border-width: 0 0 0 5px;
     font-weight: 500;
     background-color: white;
-    border-color: rgb(144,126, 81);
+    border-color: rgb(144, 126, 81);
     padding: 5px;
 }
 
@@ -128,7 +127,7 @@
 }
 
 .vis-item.vis-background.eleven-standard {
-    background-color: rgba(238, 238, 238, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .vis-item.vis-background.twelve-standard {
@@ -136,7 +135,7 @@
 }
 
 .vis-item.vis-background.first-year {
-    background-color: rgba(238, 238, 238, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .vis-item.vis-background.second-year {
@@ -144,7 +143,7 @@
 }
 
 .vis-item.vis-background.third-year {
-    background-color: rgba(238, 238, 238, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .vis-item.vis-background.fourth-year {
@@ -172,7 +171,7 @@
 }
 
 .profile-timeline-left {
-    background-image: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0.2), rgba(0,0,0,0));
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
     height: 100vh;
     width: 10vw;
     position: fixed;
@@ -182,11 +181,15 @@
 }
 
 .profile-timeline-right {
-    background-image: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0.2), rgba(0,0,0,0));
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
     height: 100vh;
     width: 10vw;
     position: fixed;
     z-index: 2;
     top: 0;
     right: 0;
+}
+
+.timeline-stripes {
+    background: repeating-linear-gradient(45deg, #fff, #fff 5px, #f0f0f0 0, #f0f0f0 10px);
 }

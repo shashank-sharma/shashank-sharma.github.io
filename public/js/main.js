@@ -104,7 +104,7 @@ window.onload = function () {
     {
       id: "Google-code-in",
       content: '<span style="font-weight:600;">Dec 12</span><br/>Google Code-in 2015',
-      start: "2015-12-12", end: "2016-03-01", className: "volunteer"
+      start: "2015-12-12", end: "2016-03-01", className: "volunteer timeline-stripes"
     },
     {
       id: 0,
@@ -117,14 +117,14 @@ window.onload = function () {
       content: '<span style="font-weight:600;">Aug 12</span><br/>Codechef | competitive coding',
       start: "2016-08-12",
       end: "2016-12-31",
-      className: "project"
+      className: "project timeline-stripes"
     },
     {
       id: "competitive-hackerearth-start",
       content: '<span style="font-weight:600;">Oct 01</span><br/>Hackerearth',
       start: "2016-10-01",
       end: "2017-10-10",
-      className: "project"
+      className: "project timeline-stripes"
     },
     // Aug 3, 2017
     {
@@ -132,70 +132,70 @@ window.onload = function () {
       content: '<span style="font-weight:600;">Aug 03</span><br/>Newrubric',
       start: "2017-08-03",
       end: "2018-03-12",
-      className: "internship"
+      className: "internship timeline-stripes"
     },
     {
       id: "internship-2",
       content: '<span style="font-weight:600;">Nov 20</span><br/>Teknuance',
       start: "2017-11-20",
       end: "2018-05-08",
-      className: "internship"
+      className: "internship timeline-stripes"
     },
     {
       id: "internship-3",
       content: '<span style="font-weight:600;">Feb 02</span><br/>AudienceSutra',
       start: "2018-02-06",
       end: "2018-08-15",
-      className: "internship"
+      className: "internship timeline-stripes"
     },
     {
       id: "internship-4",
       content: '<span style="font-weight:600;">Jun 07</span><br/>YourDOST',
       start: "2018-06-07",
       end: "2018-09-25",
-      className: "internship"
+      className: "internship timeline-stripes"
     },
     {
       id: "internship-5",
       content: '<span style="font-weight:600;">Sep 03</span><br/>AbsoluteFace',
       start: "2018-09-03",
       end: "2018-11-01",
-      className: "internship"
+      className: "internship timeline-stripes"
     },
     {
       id: "internship-6",
       content: '<span style="font-weight:600;">Oct 23</span><br/>Omoads',
       start: "2018-10-23",
       end: "2018-12-22",
-      className: "internship"
+      className: "internship timeline-stripes"
     },
     {
       id: "internship-7",
       content: '<span style="font-weight:600;">May 05</span><br/>Axcelorate Labs pvt ltd',
       start: "2019-05-05",
       end: "2019-12-02",
-      className: "internship"
+      className: "internship timeline-stripes"
     },
     {
       id: "internship-8",
       content: '<span style="font-weight:600;">Dec 09</span><br/>Atlan',
       start: "2019-12-09",
       end: "2020-06-20",
-      className: "internship"
+      className: "internship timeline-stripes"
     },
     {
       id: "certification-0",
       content: '<span style="font-weight:600;">Jan 11</span><br/>NPTEL: Introduction to Python',
       start: "2017-01-11",
       end: "2017-6-15",
-      className: "certification"
+      className: "certification timeline-stripes"
     },
     {
       id: "certification-1",
       content: '<span style="font-weight:600;">Sep 01</span><br/>CS50: Harvard University',
       start: "2017-09-01",
       end: "2018-01-10",
-      className: "certification"
+      className: "certification timeline-stripes"
     },
     {
       id: "certification-2",
@@ -220,7 +220,7 @@ window.onload = function () {
       content: '<span style="font-weight:600;">Aug 01</span><br/>DSC: Project Lead',
       start: "2019-08-01",
       end: "2020-06-01",
-      className: "volunteer"
+      className: "volunteer timeline-stripes"
     },
     {
       id: "volunteer-3",
@@ -245,7 +245,7 @@ window.onload = function () {
       content: '<span style="font-weight:600;">Feb 01</span><br/>GirlScript Summer of Code',
       start: "2020-02-01",
       end: "2020-06-01",
-      className: "volunteer"
+      className: "volunteer timeline-stripes"
     },
     {
       id: "hackathon-1",
