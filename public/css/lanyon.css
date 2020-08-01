@@ -786,7 +786,7 @@ a.pagination-item:hover {
 }
 
 .home-header-vector-body {
-  top: 25vh;
+  top: 20vmin;
   position: relative;
   opacity: 0;
   transition: all 1s ease-in-out;
