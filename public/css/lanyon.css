@@ -785,6 +785,13 @@ a.pagination-item:hover {
   text-decoration: none;
 }
 
+.home-header-vector-body {
+  top: 25vh;
+  position: relative;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
 .anicircle {
   fill: none;
   display: block;

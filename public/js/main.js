@@ -25,6 +25,7 @@ window.onload = function () {
   const home_header_portal = document.getElementById("home-header-portal");
   const home_timeline = document.getElementById("home-timeline");
   const home_timeline_close = document.getElementById("home-timeline-close");
+  const home_header_vector_body = document.getElementById("home-header-vector-body");
   const loader = document.getElementById("loader");
 
   const pointer_anime = document.getElementById("pointer-anime");
@@ -388,6 +389,11 @@ window.onload = function () {
   loadingPage.style.setProperty("--height", height);
 
   loadingPage.classList.add("collapse");
+
+  setTimeout(() => {
+    home_header_vector_body.style.top = "0";
+    home_header_vector_body.style.opacity = "1";
+  }, 1000);
 
   setTimeout(() => {
     loadingPage.style.zIndex = "0";
