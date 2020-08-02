@@ -792,6 +792,12 @@ a.pagination-item:hover {
   transition: all 1s ease-in-out;
 }
 
+.home-header-vector-background {
+  position: relative;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
 .anicircle {
   fill: none;
   display: block;
@@ -799,7 +805,7 @@ a.pagination-item:hover {
   stroke: black;
   stroke-dasharray: 300 300;
   stroke-dashoffset: 300;
-  transition: stroke-dashoffset 2000ms linear;
+  transition: stroke-dashoffset 100ms linear;
 }
 .anicircle:hover {
   stroke-dashoffset: 0;
@@ -846,6 +852,24 @@ a.pagination-item:hover {
   left: 0;
   position: fixed;
   transition: all 1s ease-in-out;
+}
+
+.post-container {
+  width: 32rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 38em) {
+  .post-container{
+    width: 32rem;
+  }
+}
+@media (min-width: 56em) {
+  .post-container {
+    width: 42rem;
+  }
 }
 
 .custom-container {

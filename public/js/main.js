@@ -26,6 +26,7 @@ window.onload = function () {
   const home_timeline = document.getElementById("home-timeline");
   const home_timeline_close = document.getElementById("home-timeline-close");
   const home_header_vector_body = document.getElementById("home-header-vector-body");
+  const home_header_vector_background = document.getElementById("home-header-vector-background");
   const loader = document.getElementById("loader");
 
   const pointer_anime = document.getElementById("pointer-anime");
@@ -343,7 +344,7 @@ window.onload = function () {
         }, 100);
       }
     }
-  }
+  };
 
   function timelineOnChange() {
     timeline.on("rangechanged", function ({start, end}) {
@@ -389,6 +390,10 @@ window.onload = function () {
   loadingPage.style.setProperty("--height", height);
 
   loadingPage.classList.add("collapse");
+
+  setTimeout(() => {
+    home_header_vector_background.style.opacity = "1";
+  }, 900);
 
   setTimeout(() => {
     home_header_vector_body.style.top = "0";

@@ -25,15 +25,18 @@
   <link rel="stylesheet" href="{{ site.baseurl }}/public/css/footer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/public/css/fonts.css">
+
+  {% if page.title == "Home" %}
   <script src="{{ base.url | prepend: site.url }}/public/js/main.js"></script>
   <link rel="stylesheet" href="{{ base.url | prepend: site.url }}/assets/css/terminal-plugin.css"/>
 
-  {% if page.title == "Home" %}
   <link rel="stylesheet" href="{{ base.url | prepend: site.url }}/assets/css/timeline.css"/>
   <!--<script src="{{ base.url | prepend: site.url }}/assets/js/timeline.js"></script>-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  {% else %}
+  <script src="{{ base.url | prepend: site.url }}/public/js/default.js"></script>
   {% endif %}
 
   <!-- Icons -->
