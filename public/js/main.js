@@ -34,6 +34,9 @@ window.onload = function () {
   const timeline_presentation_title = document.getElementById("timeline-presentation-title");
   const timeline_presentation_duration = document.getElementById("timeline-presentation-duration");
   const timeline_presentation_text = document.getElementById("timeline-presentation-text");
+  const timeline_presentation_image = document.getElementById("timeline-presentation-image");
+  const timeline_presentation_image_container = document.getElementById("timeline-presentation-image-container");
+  const timeline_presentation_caption = document.getElementById("timeline-presentation-caption");
   const timeline_notice = document.getElementById("timeline-notice");
   const loader = document.getElementById("loader");
 
@@ -50,7 +53,7 @@ window.onload = function () {
   let page_state = "home";
   let header_state = "default";
 
-  const container = document.getElementById("visualization");
+  const timeline_container = document.getElementById("visualization");
   const internship_indicator = document.getElementById("internship-indicator");
   const hackathon_indicator = document.getElementById("hackathon-indicator");
   const certification_indicator = document.getElementById("certification-indicator");
@@ -114,12 +117,17 @@ window.onload = function () {
       id: "school-1",
       content: '<span style="font-weight:600;">Mar 24</span><br/>Codechef | Started',
       start: "2015-03-24", className: "project no-end",
-      text: "The day when I first started competitive coding"
+      text: "The day when I first started competitive coding",
+      image: "/img/timeline/codechef-school.png",
+      caption: "- Frustrated guy trying to pass checks :'c"
     },
     {
       id: "Google-code-in",
       content: '<span style="font-weight:600;">Dec 12</span><br/>Google Code-in 2015',
-      start: "2015-12-12", end: "2016-03-01", className: "volunteer timeline-stripes"
+      start: "2015-12-12", end: "2016-03-01", className: "volunteer timeline-stripes",
+      text: "During GCI, I solved 40 tasks and contributed to Ubuntu, FOSSASIA and other organizations",
+      image: "/img/timeline/google-code-in-shashank.jpg",
+      caption: "- Participation certificate for GCI"
     },
     {
       id: 0,
@@ -578,27 +586,37 @@ window.onload = function () {
           }, 1000);
         }, 4000);
         console.log("Creating timeline");
-        timeline = new vis.Timeline(container, timeline_items, options);
+        timeline = new vis.Timeline(timeline_container, timeline_items, options);
         timelineOnChange();
       }
     }, 1100)
   };
 
   function startTimelineInterval() {
-    timeline_indicator_counter += 1;
-    if (timeline_indicator_counter < timeline_list.length) {
-      while (timeline_list[timeline_indicator_counter]['type'] === "background") {
-        timeline_indicator_counter += 1;
-      }
+    if ((timeline_indicator_counter + 1) < timeline_list.length) {
       const id = "myid";
       timeline_indicator_pointer = setTimeout(() => {
+        timeline_indicator_counter += 1;
+        while (timeline_list[timeline_indicator_counter]['type'] === "background") {
+          timeline_indicator_counter += 1;
+        }
+        timeline_container.style.display = "block";
+        timeline_container.style.opacity = "1";
         paintPresentation(timeline_list[timeline_indicator_counter]['content'],
           new Date(timeline_list[timeline_indicator_counter]['start']).getYear() + 1900,
-          timeline_list[timeline_indicator_counter]['text'] || "");
+          timeline_list[timeline_indicator_counter]['text'] || "",
+          timeline_list[timeline_indicator_counter]['image'] || false,
+          timeline_list[timeline_indicator_counter]['caption'] || "");
         timeline.moveTo(timeline_list[timeline_indicator_counter]['start']);
         timeline.setCustomTime(new Date(timeline_list[timeline_indicator_counter]['start']), id);
+        setTimeout(() => {
+          timeline_container.style.opacity = "0";
+          setTimeout(() => {
+            timeline_container.style.display = "none";
+          }, 1000);
+        }, 1500);
         startTimelineInterval();
-      }, 4000);
+      }, 7000);
     }
   }
 
@@ -607,7 +625,7 @@ window.onload = function () {
     clearTimeout(timeline_indicator_pointer);
   }
 
-  function paintPresentation(title, duration, text) {
+  function paintPresentation(title, duration, text, src, caption="") {
     timeline_presentation_title.style.top = "30px";
     timeline_presentation_title.style.opacity = "0";
 
@@ -617,11 +635,21 @@ window.onload = function () {
     timeline_presentation_text.style.top = "30px";
     timeline_presentation_text.style.opacity = "0";
 
+    timeline_presentation_image_container.style.top = "30px";
+    timeline_presentation_image_container.style.opacity = 0;
+
     setTimeout(() => {
       timeline_presentation_title.innerHTML = title;
       timeline_presentation_duration.innerHTML = duration;
       timeline_presentation_text.innerHTML = text;
-
+      setTimeout(() => {
+        if (src) {
+          timeline_presentation_image.src =src;
+          timeline_presentation_caption.innerHTML = caption;
+          timeline_presentation_image_container.style.top = "0";
+          timeline_presentation_image_container.style.opacity = "1";
+        }
+      }, 500);
       timeline_presentation_title.style.top = "0";
       timeline_presentation_title.style.opacity = "1";
 
@@ -658,7 +686,16 @@ window.onload = function () {
           timeline.moveTo('1998-07-08');
           timeline.addCustomTime(eventProps, id);
           timeline_indicator_icon.classList.add("fa-pause");
-          paintPresentation("Shashank Sharma", "8th July, 1998", "The day when I was born");
+          paintPresentation("Shashank Sharma", "8th July, 1998",
+            "The day when I was born",
+            "/img/timeline/shashank-sharma.jpg",
+            "- It's me");
+          setTimeout(() => {
+            timeline_container.style.opacity = "0";
+            setTimeout(() => {
+              timeline_container.style.display = "none";
+            }, 1000);
+          }, 1500);
         }, 1000);
         timeline_indicator_pointer = setTimeout(() => {
           startTimelineInterval();

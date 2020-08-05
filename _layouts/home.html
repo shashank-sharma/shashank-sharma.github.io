@@ -36,7 +36,7 @@
 			</div>
 		</div>
 		<div class="home-header-text" id="home-header-text">
-				{{ site.description }}
+			{{ site.description }}
 		</div>
 	</div>
 	<div class="home-writing container" id="home-writing">
@@ -59,21 +59,34 @@
 	<div class="timeline-notice" id="timeline-notice">This is still in experimentation !</div>
 	<i class="fa fa-2x fa-window-close home-timeline-close" id="home-timeline-close" style="color: black"></i>
 	<div class="indicator" id="timeline-indicator">
-		<div class="vis-item vis-range internship-indicator indicator-card" id="internship-indicator">Internship</div><br/>
-		<div class="vis-item vis-range volunteer-indicator indicator-card" id="volunteer-indicator">Volunteer</div><br/>
-		<div class="vis-item vis-range certification-indicator indicator-card" id="certification-indicator">Certification</div><br/>
-		<div class="vis-item vis-range hackathon-indicator indicator-card" id="hackathon-indicator">Hackathon</div><br/>
+		<div class="vis-item vis-range internship-indicator indicator-card" id="internship-indicator">Internship</div>
+		<br/>
+		<div class="vis-item vis-range volunteer-indicator indicator-card" id="volunteer-indicator">Volunteer</div>
+		<br/>
+		<div class="vis-item vis-range certification-indicator indicator-card" id="certification-indicator">Certification
+		</div>
+		<br/>
+		<div class="vis-item vis-range hackathon-indicator indicator-card" id="hackathon-indicator">Hackathon</div>
+		<br/>
 		<div class="vis-item vis-range project-indicator indicator-card" id="project-indicator">Project</div>
 	</div>
 	<div class="profile-timeline-left"></div>
 	<div class="profile-timeline-right"></div>
 	<div class="timeline-presentation" id="timeline-presentation">
-		<h1 class="timeline-presentation-title" id="timeline-presentation-title"></h1>
-		<p class="timeline-presentation-duration" id="timeline-presentation-duration"></p>
-		<p class="timeline-presentation-text" id="timeline-presentation-text"></p>
+		<div class="tp-text-container">
+			<h1 class="timeline-presentation-title" id="timeline-presentation-title"></h1>
+			<p class="timeline-presentation-duration" id="timeline-presentation-duration"></p>
+			<p class="timeline-presentation-text" id="timeline-presentation-text"></p>
+		</div>
+		<div style="vertical-align: top;display: inline-block;">
+			<div class="timeline-presentation-image" id="timeline-presentation-image-container">
+				<img class="timeline-image" id="timeline-presentation-image" src="" alt=""/>
+				<p style="font-size: 0.8rem;" id="timeline-presentation-caption"></p>
+			</div>
+		</div>
 	</div>
 	<div class="timeline-visualization" id="visualization"></div>
-	<div class="timeline-indicator" id="timeline-indicator-button" >
+	<div class="timeline-indicator" id="timeline-indicator-button">
 		<i class="fa fa-play timeline-indicator-button" id="timeline-indicator-icon" style="color: white"></i>
 	</div>
 </div>

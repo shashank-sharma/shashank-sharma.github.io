@@ -936,6 +936,9 @@ a.pagination-item:hover {
 
 .timeline-visualization {
   font-size: 0.6rem;
+  opacity: 1;
+  display: block;
+  transition: opacity 1s ease-in-out;
 }
 
 .vis-timeline {
@@ -1028,6 +1031,39 @@ a.pagination-item:hover {
   transition: all 500ms ease-in-out;
 }
 
+.timeline-presentation-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 60px;
+  display: block;
+  opacity: 0;
+  transition: all 500ms ease-in-out;
+}
+
+.timeline-image {
+  max-width: 45vw;
+  max-height: 75vh;
+}
+
+@media (max-width: 60em) {
+  .timeline-presentation-image {
+    position: relative !important;
+    margin: auto;
+    width: 90%;
+  }
+
+  .tp-text-container {
+    max-width: 90vw !important;
+    vertical-align: top;
+  }
+
+  .timeline-image {
+    max-width: 95vw !important;
+    max-height: 45vh !important;
+  }
+}
+
 .timeline-notice {
   position: fixed;
   top: 0;
@@ -1040,6 +1076,12 @@ a.pagination-item:hover {
   display: block;
   opacity: 1;
   transition: opacity 1s ease-in-out;
+}
+
+.tp-text-container {
+  max-width: 40vw;
+  vertical-align: top;
+  display: inline-block;
 }
 
 @keyframes pulse {
