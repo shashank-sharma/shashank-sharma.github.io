@@ -6,9 +6,6 @@
 <body>
 <!--<div class="design-container" id="design-container"></div>-->
 <div class="main-content" id="main-content">
-	<svg class="loader" width="100px" height="100px" viewBox="0 0 100 100">
-		<circle id="loader" class="anicircle" cx="50" cy="50" r="40"/>
-	</svg>
 	<img class="ss-logo" id="ss-logo" src="{{ site.baseurl }}/img/shashank.png"/>
 	<div class="header-writing" id="header-writing">writings ⟶</div>
 	<div class="header-design" id="header-design">⟵ designs</div>
@@ -56,6 +53,9 @@
 	</div>
 </div>
 <div class="home-timeline" id="home-timeline">
+	<svg class="timeline-loader" width="100px" height="100px" viewBox="0 0 100 100">
+		<circle id="loader" class="anicircle" cx="50" cy="50" r="40"/>
+	</svg>
 	<div class="timeline-notice" id="timeline-notice">This is still in experimentation !</div>
 	<i class="fa fa-2x fa-window-close home-timeline-close" id="home-timeline-close" style="color: black"></i>
 	<div class="indicator" id="timeline-indicator">
@@ -88,6 +88,9 @@
 	<div class="timeline-visualization" id="visualization"></div>
 	<div class="timeline-indicator" id="timeline-indicator-button">
 		<i class="fa fa-play timeline-indicator-button" id="timeline-indicator-icon" style="color: white"></i>
+	</div>
+	<div class="timeline-forward-indicator" id="timeline-forward-button">
+		<i class="fa fa-forward timeline-indicator-button" style="color: white"></i>
 	</div>
 </div>
 <iframe class="terminal-plugin" style="visibility:hidden;" title="Terminal plugin"></iframe>

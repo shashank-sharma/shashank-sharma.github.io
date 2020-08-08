@@ -31,6 +31,7 @@ window.onload = function () {
   const timeline_indicator_icon = document.getElementById("timeline-indicator-icon");
   const timeline_presentation = document.getElementById("timeline-presentation");
   const timeline_indicator = document.getElementById("timeline-indicator");
+  const timeline_forward_button = document.getElementById("timeline-forward-button");
   const timeline_presentation_title = document.getElementById("timeline-presentation-title");
   const timeline_presentation_duration = document.getElementById("timeline-presentation-duration");
   const timeline_presentation_text = document.getElementById("timeline-presentation-text");
@@ -133,21 +134,26 @@ window.onload = function () {
       id: 0,
       content: '<span style="font-weight:600;">May 09</span><br/>College started',
       start: "2016-05-09",
-      className: "event no-end"
+      className: "event no-end",
+      text: "I officially joined Acropolis Technical Campus (2016-2020) as CSE",
+      image: "/img/timeline/college.jpeg",
+      caption: "- College which I was part of"
     },
     {
       id: "competitive-codechef-start",
       content: '<span style="font-weight:600;">Aug 12</span><br/>Codechef | competitive coding',
       start: "2016-08-12",
       end: "2016-12-31",
-      className: "project timeline-stripes"
+      className: "project timeline-stripes",
+      text: "I used to solve codechef questions just for the sake of understanding Python 2.7"
     },
     {
       id: "competitive-hackerearth-start",
       content: '<span style="font-weight:600;">Oct 01</span><br/>Hackerearth',
       start: "2016-10-01",
       end: "2017-10-10",
-      className: "project timeline-stripes"
+      className: "project timeline-stripes",
+      text: "I liked structured problems and started my journey ahead with Hackerearth"
     },
     // Aug 3, 2017
     {
@@ -155,168 +161,236 @@ window.onload = function () {
       content: '<span style="font-weight:600;">Aug 03</span><br/>Newrubric',
       start: "2017-08-03",
       end: "2018-03-12",
-      className: "internship timeline-stripes"
+      className: "internship timeline-stripes",
+      text: "My first Internship where I got exposed to learn about frontend and backend technologies, working with PDF and interacting with other technologies",
+      image: "/img/timeline/internship-1.png",
+      caption: "- Company logo"
     },
     {
       id: "internship-2",
       content: '<span style="font-weight:600;">Nov 20</span><br/>Teknuance',
       start: "2017-11-20",
       end: "2018-05-08",
-      className: "internship timeline-stripes"
+      className: "internship timeline-stripes",
+      text: "During that time, I was on fire and doing 2 internships at a same time and I got to learn a lot here for my favourate language which was Python.\n" +
+      "Also this is where I got my chance to make use of newly developed skill Django and understood APIs, CRON Jobs using celery, Google APIs usage and ML models",
+      image: "/img/timeline/internship-2.png",
+      caption: "- Company logo"
     },
     {
       id: "internship-3",
       content: '<span style="font-weight:600;">Feb 02</span><br/>AudienceSutra',
       start: "2018-02-06",
       end: "2018-08-15",
-      className: "internship timeline-stripes"
+      className: "internship timeline-stripes",
+      text: "Yes, still on fire and doing 2 internships at a same time, that's why timeline is colliding with previous one.\n" +
+      "Here I got to actually work with Django using Django REST Framework and creating APIs with totally new challenges"
     },
     {
       id: "internship-4",
       content: '<span style="font-weight:600;">Jun 07</span><br/>YourDOST',
       start: "2018-06-07",
       end: "2018-09-25",
-      className: "internship timeline-stripes"
+      className: "internship timeline-stripes",
+      text: "Still on fire, doing 2 internships but this time I got to experience on-office work at Bangalore and most importantly, polishing my skills as a Fullstack Developer",
+      image: "/img/timeline/internship-4.png",
+      caption: "- Company logo"
     },
     {
       id: "internship-5",
       content: '<span style="font-weight:600;">Sep 03</span><br/>AbsoluteFace',
       start: "2018-09-03",
       end: "2018-11-01",
-      className: "internship timeline-stripes"
+      className: "internship timeline-stripes",
+      text: "And finally, I was doing 1 internship at a time and to be honest I was rusty during this time period, hence I started working on my personal development.\n" +
+      "During this internship, I got to work with latest problems faced by industries and integrating it in production"
     },
     {
       id: "internship-6",
       content: '<span style="font-weight:600;">Oct 23</span><br/>Omoads',
       start: "2018-10-23",
       end: "2018-12-22",
-      className: "internship timeline-stripes"
+      className: "internship timeline-stripes",
+      text: "I joined this company to get experience working with 360 VR Technologies in advertisement sector with Django and other technologies which was fun working with it",
+      image: "/img/timeline/internship-6.png",
+      caption: "- Company logo"
     },
     {
       id: "internship-7",
       content: '<span style="font-weight:600;">May 05</span><br/>Axcelorate Labs pvt ltd',
       start: "2019-05-05",
       end: "2019-12-02",
-      className: "internship timeline-stripes"
+      className: "internship timeline-stripes",
+      text: "This internship was eye opener in my case and it literally connected all the dots which were floating in my brain and created one huge picture.\n" +
+      "I got to learn about Microservices, APIs, Docker, Orchestrating with Kubernetes, Testing, Transaction and Optimization"
     },
     {
       id: "internship-8",
       content: '<span style="font-weight:600;">Dec 09</span><br/>Atlan',
       start: "2019-12-09",
       end: "2020-06-20",
-      className: "internship timeline-stripes"
+      className: "internship timeline-stripes",
+      text: "My last internship, which literally introduced me to this whole new world of data where I got to work with ELT pipelines, Data Quality module, Data Governance, Authentication and Authorization layer of it",
+      image: "/img/timeline/internship-8.jpg",
+      caption: "- Company logo / poster"
+    },
+    {
+      id: "job-1",
+      content: '<span style="font-weight:600;">Jul 27</span><br/>CivicDataLab',
+      start: "2020-27-07",
+      end: new Date(),
+      className: "internship timeline-stripes",
+      text: "My first job as Backend Developer",
+      image: "/img/timeline/cdl.jpg",
+      caption: "- Company logo"
     },
     {
       id: "certification-0",
       content: '<span style="font-weight:600;">Jan 11</span><br/>NPTEL: Introduction to Python',
       start: "2017-01-11",
       end: "2017-6-15",
-      className: "certification timeline-stripes"
+      className: "certification timeline-stripes",
+      text: "My first certification which I was a part of just to test my knowledge and understanding remaining concepts"
     },
     {
       id: "certification-1",
       content: '<span style="font-weight:600;">Sep 01</span><br/>CS50: Harvard University',
       start: "2017-09-01",
       end: "2018-01-10",
-      className: "certification timeline-stripes"
+      className: "certification timeline-stripes",
+      text: "Just to be a part of community and to make my fundamentals quite strong, that's why I did this certification"
     },
     {
       id: "certification-2",
       content: '<span style="font-weight:600;">Feb 01</span><br/>Udacity: Google India Challenge Scholarship',
       start: "2018-02-01",
-      className: "certification no-end"
+      className: "certification no-end",
+      text: "I got scholarship from Udacity for this course and being a part of wonderful community"
     },
     {
       id: "certification-3",
       content: '<span style="font-weight:600;">Aug 14</span><br/>Infosys Certified',
       start: "2019-08-14",
-      className: "certification no-end"
+      className: "certification no-end",
+      text: "It was just a certification by Infosys with 2 competitive questions and 20 mcq which I did it in under 20min over 3 hours time slot and got 80%"
     },
     {
       id: "volunteer-1",
       content: '<span style="font-weight:600;">May 01</span><br/>College: Technical Club',
       start: "2018-05-01",
-      className: "volunteer no-end"
+      className: "volunteer no-end",
+      text: "I really wanted to start Technical club in our college in hope for having one strong community"
     },
     {
       id: "volunteer-2",
       content: '<span style="font-weight:600;">Aug 01</span><br/>DSC: Project Lead',
       start: "2019-08-01",
       end: "2020-06-01",
-      className: "volunteer timeline-stripes"
+      className: "volunteer timeline-stripes",
+      text: "I was Project lead for our DSC Community in college and responsible for creating websites, seminars and knowledge sharing sessions"
     },
     {
       id: "volunteer-3",
       content: '<span style="font-weight:600;">Aug 14</span><br/>DjangoGirls: Mentor',
       start: "2019-08-14",
-      className: "volunteer no-end"
+      className: "volunteer no-end",
+      text: "I was been a part of DjangoGirls Indore and I played as a part of Mentor + Designing Posters",
+      image: "/img/timeline/djangogirls-indore-poster.jpg",
+      caption: "- DjangoGirls Indore Poster"
     },
     {
       id: "volunteer-4",
       content: '<span style="font-weight:600;">Feb 22</span><br/>Isohack: Hackathon organized',
       start: "2020-02-22",
-      className: "volunteer no-end"
+      className: "volunteer no-end",
+      text: "It was my dream to organize Hackathon, later it became everyone dream to organize it and that's what we did :)",
+      image: "/img/timeline/isohack.jpg",
+      caption: "- Isohack Team, will miss that"
     },
     {
       id: "volunteer-5",
       content: '<span style="font-weight:600;">Nov 01</span><br/>DjangoGirls: Co-organizer',
       start: "2019-11-01",
-      className: "volunteer no-end"
+      className: "volunteer no-end",
+      text: "Later on, I got the opportunity to be a Co-Organizer which was crazy :P"
     },
     {
       id: "volunteer-6",
       content: '<span style="font-weight:600;">Feb 01</span><br/>GirlScript Summer of Code',
       start: "2020-02-01",
       end: "2020-06-01",
-      className: "volunteer timeline-stripes"
+      className: "volunteer timeline-stripes",
+      text: "Here, I participated as a Mentor to actually help Open source community from my end through Gssoc"
     },
     {
       id: "hackathon-1",
       content: '<span style="font-weight:600;">Mar 28</span><br/>Smart India Hackathon 2018',
       start: "2018-03-28",
-      className: "hackathon no-end"
+      className: "hackathon no-end",
+      text: "This was my very First Hackathon (I was in Second Year) and being a Team Lead we went to Grand Finale and came in Top 10",
+      image: "/img/timeline/sih-2018.jpg",
+      caption: "- During that time, I had 101 fever and survived with paracetamol, crazy times"
     },
     {
       id: "hackathon-2",
       content: '<span style="font-weight:600;">Sep 29</span><br/>NITI: Pune Hackathon',
       start: "2018-09-29",
-      className: "hackathon no-end"
+      className: "hackathon no-end",
+      text: "Our second hackathon and being a Team leader we again got to the Finals after multiple rounds but didn't won :c",
+      image: "/img/timeline/niti-hackathon.jpg",
+      caption: "- Group photo, nothing much to add"
     },
     {
       id: "hackathon-3",
       content: '<span style="font-weight:600;">Oct 30</span><br/>HackAcro | Winner',
       start: "2018-10-30",
-      className: "hackathon no-end"
+      className: "hackathon no-end",
+      text: "Competitive coding competition with 5 questions and on fixed time we secured first position",
     },
     {
       id: "hackathon-4",
       content: '<span style="font-weight:600;">Apr 05</span><br/>Void Hacks, Indore',
       start: "2019-04-05",
-      className: "hackathon no-end"
+      className: "hackathon no-end",
+      text: "Third hackathon, but this time only 2 of them were there and that too working with Blockchain which we had no idea of, crazy times but worth it",
+      image: "/img/timeline/void-hacks.jpg",
+      caption: "- Used to be status, but now it's in my website :P"
     },
     {
       id: "hackathon-5",
       content: '<span style="font-weight:600;">Aug 26</span><br/>College: Winner, Project Exhibition',
       start: "2019-8-26",
-      className: "hackathon no-end"
+      className: "hackathon no-end",
+      text: "College level project competition where we got first for our unique solution over Automated Feedback system",
+      image: "/img/timeline/hackacro.jpg",
+      caption: "- Had this, just working on my project and finalizing within 1 hour"
     },
     {
       id: "hackathon-6",
       content: '<span style="font-weight:600;">Oct 04</span><br/>HackIndore 2.0',
       start: "2019-10-04",
-      className: "hackathon no-end"
+      className: "hackathon no-end",
+      text: "My Fourth Hackathon where we again failed to win, maybe because there was no Machine Learning (that's what judges asked T-T)",
+      image: "/img/timeline/hackindore.jpeg",
+      caption: "- Random moment, but obviously we were discussing something"
     },
     {
       id: "hackathon-7",
       content: '<span style="font-weight:600;">Oct 11</span><br/>Version Beta 2.0, Bhopal',
       start: "2019-10-11",
-      className: "hackathon no-end"
+      className: "hackathon no-end",
+      text: "My Fifth and final Hackathon where we failed miserably because of unknown reasons, but trust me we enjoyed so much :)",
+      image: "/img/timeline/version-beta.jpg",
+      caption: "- Goodies before Hackathon started"
     },
     {
       id: "project-1",
       content: '<span style="font-weight:600;">Jan 02</span><br/>#100DaysOfCode',
       start: "2017-01-02",
-      className: "volunteer no-end"
+      className: "volunteer no-end",
+      text: "My first ever participated over FreeCodeCamp community and I officially started at the same time when it was declared in 2016 and started from Jan 2017. I was officially part of this :D",
+      image: "/img/timeline/100daysofcode.png",
+      caption: "- Contribution made (just because it's not all green doesn't mean I didn't code :P"
     },
   ];
   const timeline_items = new vis.DataSet(timeline_list);
@@ -407,6 +481,7 @@ window.onload = function () {
 
   home_timeline_close.onclick = function () {
     home_timeline.style.opacity = "0";
+    resetTimeline();
     setTimeout(() => {
       home_timeline.style.display = "none";
       main_content.style.opacity = "1";
@@ -592,10 +667,11 @@ window.onload = function () {
     }, 1100)
   };
 
-  function startTimelineInterval() {
+  function startTimelineInterval(recursive) {
     if ((timeline_indicator_counter + 1) < timeline_list.length) {
+      document.getElementById("loader").style.transition = "stroke-dashoffset 300ms linear";
+      document.getElementById("loader").style.strokeDashoffset = 300;
       const id = "myid";
-      timeline_indicator_pointer = setTimeout(() => {
         timeline_indicator_counter += 1;
         while (timeline_list[timeline_indicator_counter]['type'] === "background") {
           timeline_indicator_counter += 1;
@@ -615,13 +691,69 @@ window.onload = function () {
             timeline_container.style.display = "none";
           }, 1000);
         }, 1500);
-        startTimelineInterval();
-      }, 7000);
+        if (recursive) {
+          setTimeout(() => {
+            timeline_indicator_pointer = setTimeout(() => {
+              startTimelineInterval(true);
+            }, 6000);
+            document.getElementById("loader").style.transition = "stroke-dashoffset 6s linear";
+            document.getElementById("loader").style.strokeDashoffset = 0;
+          }, 1000);
+        }
+    } else {
+      resetTimeline();
     }
+  }
+
+  function resetTimeline() {
+    timeline_indicator_icon.classList.remove("fa-pause");
+    timeline_indicator_icon.classList.add("fa-play");
+    pauseTimelineInterval();
+
+    timeline_forward_button.style.opacity = "0";
+    setTimeout(()=> {
+      timeline_forward_button.style.display = "none";
+    }, 1000);
+
+    document.getElementById("loader").style.transition = "stroke-dashoffset 300ms linear";
+    document.getElementById("loader").style.strokeDashoffset = 300;
+
+    timeline_presentation_title.style.top = "30px";
+    timeline_presentation_title.style.opacity = "0";
+
+    timeline_presentation_duration.style.top = "30px";
+    timeline_presentation_duration.style.opacity = "0";
+
+    timeline_presentation_text.style.top = "30px";
+    timeline_presentation_text.style.opacity = "0";
+
+    timeline_presentation_image_container.style.top = "30px";
+    timeline_presentation_image_container.style.opacity = "0";
+
+    timeline_container.style.display = "block";
+    timeline_container.style.opacity = "1";
+
+    timeline_indicator_status = false;
+    timeline_indicator_started = false;
+
+    try {
+      timeline.removeCustomTime("myid");
+    }
+    catch(err) {
+      console.log("Timeline not played");
+    }
+
+    timeline_indicator_counter = -1;
+    timeline.options.height = "100vh";
+    timeline_presentation.style.height = "0";
+    timeline.options.horizontalScroll = true;
+    timeline.setWindow(new Date("January 01, 2015"), new Date("May 21, 2018"));
   }
 
   function pauseTimelineInterval() {
     timeline_indicator_started = false;
+    document.getElementById("loader").style.transition = "stroke-dashoffset 500ms linear";
+    document.getElementById("loader").style.strokeDashoffset = 300;
     clearTimeout(timeline_indicator_pointer);
   }
 
@@ -636,20 +768,22 @@ window.onload = function () {
     timeline_presentation_text.style.opacity = "0";
 
     timeline_presentation_image_container.style.top = "30px";
-    timeline_presentation_image_container.style.opacity = 0;
+    timeline_presentation_image_container.style.opacity = "0";
 
     setTimeout(() => {
       timeline_presentation_title.innerHTML = title;
       timeline_presentation_duration.innerHTML = duration;
       timeline_presentation_text.innerHTML = text;
+      if (src) {
+        timeline_presentation_image.src =src;
+      }
       setTimeout(() => {
         if (src) {
-          timeline_presentation_image.src =src;
           timeline_presentation_caption.innerHTML = caption;
           timeline_presentation_image_container.style.top = "0";
           timeline_presentation_image_container.style.opacity = "1";
         }
-      }, 500);
+      }, 700);
       timeline_presentation_title.style.top = "0";
       timeline_presentation_title.style.opacity = "1";
 
@@ -661,7 +795,21 @@ window.onload = function () {
     }, 1000);
   }
 
+  timeline_forward_button.onclick = () => {
+    timeline_indicator_icon.classList.remove("fa-pause");
+    timeline_indicator_icon.classList.add("fa-play");
+    document.getElementById("loader").style.strokeDashoffset = 300;
+    document.getElementById("loader").style.transition = "stroke-dashoffset 500ms linear";
+    clearTimeout(timeline_indicator_pointer);
+    startTimelineInterval(false);
+  };
+
   timeline_indicator_button.onclick = () => {
+    document.getElementById("loader").style.strokeDashoffset = 300;
+
+    timeline_forward_button.style.display = "block";
+    timeline_forward_button.style.opacity = "1";
+
     timeline_indicator_icon.classList.remove("fa-play");
     if (timeline_indicator_started) {
       timeline_indicator_icon.classList.remove("fa-pause");
@@ -686,6 +834,7 @@ window.onload = function () {
           timeline.moveTo('1998-07-08');
           timeline.addCustomTime(eventProps, id);
           timeline_indicator_icon.classList.add("fa-pause");
+          // TODO: Put it inside timeline object
           paintPresentation("Shashank Sharma", "8th July, 1998",
             "The day when I was born",
             "/img/timeline/shashank-sharma.jpg",
@@ -698,7 +847,7 @@ window.onload = function () {
           }, 1500);
         }, 1000);
         timeline_indicator_pointer = setTimeout(() => {
-          startTimelineInterval();
+          startTimelineInterval(true);
         }, 5000);
       } else {
         startTimelineInterval();
