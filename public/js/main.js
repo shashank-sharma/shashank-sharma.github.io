@@ -692,11 +692,11 @@ window.onload = function () {
           }, 1000);
         }, 1500);
         if (recursive) {
+          timeline_indicator_pointer = setTimeout(() => {
+            startTimelineInterval(true);
+          }, 7000);
           setTimeout(() => {
-            timeline_indicator_pointer = setTimeout(() => {
-              startTimelineInterval(true);
-            }, 6000);
-            document.getElementById("loader").style.transition = "stroke-dashoffset 6s linear";
+            document.getElementById("loader").style.transition = "stroke-dashoffset 7s linear";
             document.getElementById("loader").style.strokeDashoffset = 0;
           }, 1000);
         }
