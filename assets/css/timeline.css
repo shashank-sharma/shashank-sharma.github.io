@@ -193,3 +193,31 @@
 .timeline-stripes {
     background: repeating-linear-gradient(45deg, #fff, #fff 5px, #f0f0f0 0, #f0f0f0 10px);
 }
+
+.timeline-play-instruction {
+    z-index: 6;
+    font-size: 1.5rem;
+    padding: 5vw 5vw 5vh 5vw;
+    background-color: white;
+    color: #161f38;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    display: none;
+    top: 0;
+    transition: opacity 500ms ease-in-out;
+}
+
+.timeline-instruction {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.timeline-play-start {
+    cursor: pointer;
+    border: 1px solid #161f38;
+    padding: 20px;
+    margin-top: 30px;
+    display: inline-block;
+}

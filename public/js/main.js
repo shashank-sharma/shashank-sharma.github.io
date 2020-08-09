@@ -4,7 +4,8 @@ window.onload = function () {
       "default": "I'm Shashank Sharma, just a guy who loves coding, designing and anime.",
       "anime": "I love watching/reading anime, manga, manhua and manhwa.",
       "moon": "In my name, Shashank is also referred as Moon"
-    }
+    },
+    month: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
   };
   const main_content = document.getElementById("main-content");
   const footer_portal = document.getElementById("footer-portal");
@@ -38,6 +39,8 @@ window.onload = function () {
   const timeline_presentation_image = document.getElementById("timeline-presentation-image");
   const timeline_presentation_image_container = document.getElementById("timeline-presentation-image-container");
   const timeline_presentation_caption = document.getElementById("timeline-presentation-caption");
+  const timeline_play_instruction = document.getElementById("timeline-play-instruction");
+  const timeline_instruction_button = document.getElementById("timeline-instruction-button");
   const timeline_notice = document.getElementById("timeline-notice");
   const loader = document.getElementById("loader");
 
@@ -48,6 +51,7 @@ window.onload = function () {
   let timeline_indicator_counter = -1;
   let timeline_indicator_status = false;
   let timeline_indicator_started = false;
+  let timeline_instruction_status = false;
   var timeline_indicator_pointer = null;
   let header_timer_func = null;
   let timeline = null;
@@ -237,7 +241,7 @@ window.onload = function () {
     {
       id: "job-1",
       content: '<span style="font-weight:600;">Jul 27</span><br/>CivicDataLab',
-      start: "2020-27-07",
+      start: "2020-07-27",
       end: new Date(),
       className: "internship timeline-stripes",
       text: "My first job as Backend Developer",
@@ -418,6 +422,7 @@ window.onload = function () {
   function reveal_cards(type, toggle = true) {
     const card_list = document.getElementsByClassName(type);
     const indicator = document.getElementById(type + "-indicator");
+    const instruction = document.getElementById(type + "-instruction");
     const includeStatus = timeline_hide[type] || false;
     let toggleStatus = false;
 
@@ -435,13 +440,14 @@ window.onload = function () {
     for (let card of card_list) {
       if (toggleStatus) {
         indicator.style.textDecoration = "line-through";
+        instruction.style.textDecoration = "line-through";
         card.style.opacity = "0";
         setTimeout(() => {
           card.style.display = "none";
         }, 1000)
       } else {
         indicator.style.textDecoration = "none";
-
+        instruction.style.textDecoration = "none";
         card.style.display = "block";
         setTimeout(() => {
           card.style.opacity = "1";
@@ -476,6 +482,26 @@ window.onload = function () {
   };
 
   project_indicator.onclick = function () {
+    reveal_cards("project");
+  };
+
+  document.getElementById("internship-instruction").onclick = function () {
+    reveal_cards("internship");
+  };
+
+  document.getElementById("hackathon-instruction").onclick = function () {
+    reveal_cards("hackathon");
+  };
+
+  document.getElementById("volunteer-instruction").onclick = function () {
+    reveal_cards("volunteer");
+  };
+
+  document.getElementById("certification-instruction").onclick = function () {
+    reveal_cards("certification");
+  };
+
+  document.getElementById("project-instruction").onclick = function () {
     reveal_cards("project");
   };
 
@@ -673,8 +699,12 @@ window.onload = function () {
       document.getElementById("loader").style.strokeDashoffset = 300;
       const id = "myid";
         timeline_indicator_counter += 1;
-        while (timeline_list[timeline_indicator_counter]['type'] === "background") {
+        while (timeline_list[timeline_indicator_counter]['type'] === "background" ||
+        timeline_hide[timeline_list[timeline_indicator_counter]['className'].split(" ")[0]]) {
           timeline_indicator_counter += 1;
+          if (timeline_indicator_counter >= timeline_list.length) {
+            resetTimeline();
+          }
         }
         timeline_container.style.display = "block";
         timeline_container.style.opacity = "1";
@@ -682,7 +712,8 @@ window.onload = function () {
           new Date(timeline_list[timeline_indicator_counter]['start']).getYear() + 1900,
           timeline_list[timeline_indicator_counter]['text'] || "",
           timeline_list[timeline_indicator_counter]['image'] || false,
-          timeline_list[timeline_indicator_counter]['caption'] || "");
+          timeline_list[timeline_indicator_counter]['caption'] || "",
+          timeline_list[timeline_indicator_counter]['end'] || false);
         timeline.moveTo(timeline_list[timeline_indicator_counter]['start']);
         timeline.setCustomTime(new Date(timeline_list[timeline_indicator_counter]['start']), id);
         setTimeout(() => {
@@ -706,8 +737,10 @@ window.onload = function () {
   }
 
   function resetTimeline() {
+    timeline_instruction_status = false;
     timeline_indicator_icon.classList.remove("fa-pause");
-    timeline_indicator_icon.classList.add("fa-play");
+    timeline_indicator_icon.classList.remove("fa-play");
+    timeline_indicator_icon.classList.add("fa-tv");
     pauseTimelineInterval();
 
     timeline_forward_button.style.opacity = "0";
@@ -736,6 +769,14 @@ window.onload = function () {
     timeline_indicator_status = false;
     timeline_indicator_started = false;
 
+    timeline_indicator.style.display = "block";
+    timeline_indicator.style.opacity = "1";
+
+    timeline_play_instruction.style.opacity = "0";
+    setTimeout(() => {
+      timeline_play_instruction.style.display = "none";
+    }, 1000);
+
     try {
       timeline.removeCustomTime("myid");
     }
@@ -757,7 +798,7 @@ window.onload = function () {
     clearTimeout(timeline_indicator_pointer);
   }
 
-  function paintPresentation(title, duration, text, src, caption="") {
+  function paintPresentation(title, duration, text, src, caption="", end="") {
     timeline_presentation_title.style.top = "30px";
     timeline_presentation_title.style.opacity = "0";
 
@@ -771,7 +812,18 @@ window.onload = function () {
     timeline_presentation_image_container.style.opacity = "0";
 
     setTimeout(() => {
-      timeline_presentation_title.innerHTML = title;
+      if (end) {
+        const end_date = new Date(end);
+        const temp_title = title.split("</span>");
+        timeline_presentation_title.innerHTML = temp_title[0] +
+          " - " +
+          config.month[end_date.getMonth()] +
+          " " +
+          String(end_date.getDay()).padStart(2, "0") +
+          "</span>" + temp_title[1];
+      } else {
+        timeline_presentation_title.innerHTML = title;
+      }
       timeline_presentation_duration.innerHTML = duration;
       timeline_presentation_text.innerHTML = text;
       if (src) {
@@ -793,6 +845,74 @@ window.onload = function () {
       timeline_presentation_text.style.top = "0";
       timeline_presentation_text.style.opacity = "1";
     }, 1000);
+  };
+
+  function timelinePlay() {
+    if (!timeline_instruction_status) {
+      timeline_instruction_status = true;
+      timeline_play_instruction.style.display = "block";
+      setTimeout(() => {
+        timeline_play_instruction.style.opacity = "1";
+      },100);
+      setTimeout(() => {
+        timeline_indicator_icon.classList.remove("fa-tv");
+        timeline_indicator_icon.classList.add("fa-play");
+      }, 500);
+    } else {
+      timeline_play_instruction.style.opacity = "0";
+      setTimeout(() => {
+        timeline_play_instruction.style.display = "none";
+      }, 1000);
+      document.getElementById("loader").style.strokeDashoffset = 300;
+
+      timeline_forward_button.style.display = "block";
+      timeline_forward_button.style.opacity = "1";
+
+      timeline_indicator_icon.classList.remove("fa-play");
+      if (timeline_indicator_started) {
+        timeline_indicator_icon.classList.remove("fa-pause");
+        timeline_indicator_icon.classList.add("fa-play");
+        pauseTimelineInterval();
+      } else {
+        timeline_indicator_started = true;
+        if (!timeline_indicator_status) {
+          timeline_indicator.style.opacity = "0";
+          setTimeout(() => {
+            timeline_indicator.style.display = "none";
+          }, 1000);
+
+          timeline_indicator_status = true;
+          const id = "myid";
+          const eventProps = new Date('1998-07-08');
+          timeline.options.height = "40vh";
+          timeline_presentation.style.height = "60vh";
+          timeline.options.horizontalScroll = false;
+          timeline.setWindow("2015-01-01", "2016-01-01");
+          setTimeout(() => {
+            timeline.moveTo('1998-07-08');
+            timeline.addCustomTime(eventProps, id);
+            timeline_indicator_icon.classList.add("fa-pause");
+            // TODO: Put it inside timeline object
+            paintPresentation("Shashank Sharma", "8th July, 1998",
+              "The day when I was born",
+              "/img/timeline/shashank-sharma.jpg",
+              "- It's me");
+            setTimeout(() => {
+              timeline_container.style.opacity = "0";
+              setTimeout(() => {
+                timeline_container.style.display = "none";
+              }, 1000);
+            }, 1500);
+          }, 1000);
+          timeline_indicator_pointer = setTimeout(() => {
+            startTimelineInterval(true);
+          }, 5000);
+        } else {
+          startTimelineInterval();
+          timeline_indicator_icon.classList.add("fa-pause");
+        }
+      }
+    }
   }
 
   timeline_forward_button.onclick = () => {
@@ -804,56 +924,12 @@ window.onload = function () {
     startTimelineInterval(false);
   };
 
+  timeline_instruction_button.onclick = () => {
+    timelinePlay();
+  };
+
   timeline_indicator_button.onclick = () => {
-    document.getElementById("loader").style.strokeDashoffset = 300;
-
-    timeline_forward_button.style.display = "block";
-    timeline_forward_button.style.opacity = "1";
-
-    timeline_indicator_icon.classList.remove("fa-play");
-    if (timeline_indicator_started) {
-      timeline_indicator_icon.classList.remove("fa-pause");
-      timeline_indicator_icon.classList.add("fa-play");
-      pauseTimelineInterval();
-    } else {
-      timeline_indicator_started = true;
-      if (!timeline_indicator_status) {
-        timeline_indicator.style.opacity = "0";
-        setTimeout(() => {
-          timeline_indicator.style.display = "none";
-        }, 1000);
-
-        timeline_indicator_status = true;
-        const id = "myid";
-        const eventProps = new Date('1998-07-08');
-        timeline.options.height = "40vh";
-        timeline_presentation.style.height = "60vh";
-        timeline.options.horizontalScroll = false;
-        timeline.setWindow("2015-01-01", "2016-01-01");
-        setTimeout(() => {
-          timeline.moveTo('1998-07-08');
-          timeline.addCustomTime(eventProps, id);
-          timeline_indicator_icon.classList.add("fa-pause");
-          // TODO: Put it inside timeline object
-          paintPresentation("Shashank Sharma", "8th July, 1998",
-            "The day when I was born",
-            "/img/timeline/shashank-sharma.jpg",
-            "- It's me");
-          setTimeout(() => {
-            timeline_container.style.opacity = "0";
-            setTimeout(() => {
-              timeline_container.style.display = "none";
-            }, 1000);
-          }, 1500);
-        }, 1000);
-        timeline_indicator_pointer = setTimeout(() => {
-          startTimelineInterval(true);
-        }, 5000);
-      } else {
-        startTimelineInterval();
-        timeline_indicator_icon.classList.add("fa-pause");
-      }
-    }
+    timelinePlay();
   };
 
   // Show terminal

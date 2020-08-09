@@ -923,6 +923,8 @@ a.pagination-item:hover {
   transition: all 1s ease-in-out;
   height: 100vh;
   width: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .home-timeline-close {
@@ -930,7 +932,7 @@ a.pagination-item:hover {
   right: 0;
   margin: 20px;
   position: fixed;
-  z-index: 3;
+  z-index: 999 !important;
   cursor: pointer;
 }
 
@@ -1101,7 +1103,7 @@ a.pagination-item:hover {
 }
 
 .timeline-loader {
-  position: absolute;
+  position: fixed;
   width: 70px;
   margin: 10px;
   height: 70px;
