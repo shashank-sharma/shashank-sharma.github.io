@@ -916,12 +916,16 @@ window.onload = function () {
   }
 
   timeline_forward_button.onclick = () => {
+    timeline_forward_button.style.display = "none";
     timeline_indicator_icon.classList.remove("fa-pause");
     timeline_indicator_icon.classList.add("fa-play");
     document.getElementById("loader").style.strokeDashoffset = 300;
     document.getElementById("loader").style.transition = "stroke-dashoffset 500ms linear";
     clearTimeout(timeline_indicator_pointer);
     startTimelineInterval(false);
+    setTimeout(() => {
+      timeline_forward_button.style.display = "block";
+    }, 2000)
   };
 
   timeline_instruction_button.onclick = () => {
