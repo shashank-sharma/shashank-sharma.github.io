@@ -586,41 +586,44 @@ window.onload = function () {
   }
 
   home_timeline_close.onclick = function () {
-    closeTimeline();
+    if (!is_homepage) {
+      is_homepage = true;
+      window.history.back();
+    }
   };
 
   if (pageValue === "designs" || pageValue === "writings"
-  || pageValue === "timelime" || pageValue === "about") {
+  || pageValue === "timeline" || pageValue === "about") {
     window.history.pushState('page1', 'Home', '');
   }
 
   changeState(pageValue);
 
   window.onpopstate = () => {
-    changeState(getParameterByName('page'));
+    changeState(getParameterByName('page'), 0);
   };
 
-  function changeState(page_value) {
+  function changeState(page_value, page_speed=1000) {
     if (page_value === "designs") {
       showHomepageVector();
       setTimeout(() => {
         showHomepageDesign();
-      }, 1000);
+      }, page_speed);
     } else if (page_value === "writings") {
       showHomepageVector();
       setTimeout(() => {
         showHomepageWriting();
-      }, 1000);
+      }, page_speed);
     } else if (page_value === "timeline") {
       showHomepageVector();
       setTimeout(() => {
         showHomepageTimeline();
-      }, 1000);
+      }, page_speed);
     } else if (page_value === "about") {
       showHomepageVector();
       setTimeout(() => {
         showHomepageAbout();
-      }, 1000);
+      }, page_speed);
     } else {
       console.log("Changed to homepage");
       is_homepage = true;
@@ -756,7 +759,7 @@ window.onload = function () {
     } else {
       window.history.replaceState('page2', 'Writings', '?page=writings');
     }
-    showHomepageWriting();
+    changeState(getParameterByName('page'), 0);
   };
 
   header_design.onclick = function () {
@@ -766,7 +769,7 @@ window.onload = function () {
     } else {
       window.history.replaceState('page3', 'Designs', '?page=designs');
     }
-    showHomepageDesign();
+    changeState(getParameterByName('page'), 0);
   };
 
   header_hello.onclick = function () {
@@ -776,7 +779,7 @@ window.onload = function () {
     } else {
       window.history.replaceState('page4', 'About', '?page=about');
     }
-    showHomepageAbout();
+    changeState(getParameterByName('page'), 0);
   };
 
   ss_logo.onclick = function () {
@@ -784,7 +787,6 @@ window.onload = function () {
       is_homepage = true;
       window.history.back();
     }
-    showHomepage();
   };
 
   header_timeline.onclick = function () {
@@ -794,7 +796,7 @@ window.onload = function () {
     } else {
       window.history.replaceState('page5', 'Timeline', '?page=timeline');
     }
-    showHomepageTimeline();
+    changeState(getParameterByName('page'), 0);
   };
 
   function startTimelineInterval(recursive) {
