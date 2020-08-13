@@ -467,7 +467,7 @@ window.onload = function () {
   function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+    const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
       results = regex.exec(url);
     if (!results) return null;
     if (!results[2]) return '';
@@ -476,7 +476,6 @@ window.onload = function () {
 
   function timelineOnChange() {
     timeline.on("rangechanged", function ({start, end}) {
-      // console.log(start.toString(), end.toString());
       for (let type of Object.keys(timeline_hide)) {
         reveal_cards(type, false);
       }
@@ -625,7 +624,6 @@ window.onload = function () {
         showHomepageAbout();
       }, page_speed);
     } else {
-      console.log("Changed to homepage");
       is_homepage = true;
       showHomepageVector();
       showHomepage();
@@ -744,7 +742,6 @@ window.onload = function () {
             timeline_notice.style.display = "none";
           }, 1000);
         }, 4000);
-        console.log("Creating timeline");
         timeline = new vis.Timeline(timeline_container, timeline_items, options);
         timelineOnChange();
       }
@@ -802,7 +799,7 @@ window.onload = function () {
   function startTimelineInterval(recursive) {
     if ((timeline_indicator_counter + 1) < timeline_list.length) {
       document.getElementById("loader").style.transition = "stroke-dashoffset 300ms linear";
-      document.getElementById("loader").style.strokeDashoffset = 300;
+      document.getElementById("loader").style.strokeDashoffset = "300";
       const id = "myid";
         timeline_indicator_counter += 1;
         while (timeline_list[timeline_indicator_counter]['type'] === "background" ||
@@ -834,7 +831,7 @@ window.onload = function () {
           }, 7000);
           setTimeout(() => {
             document.getElementById("loader").style.transition = "stroke-dashoffset 7s linear";
-            document.getElementById("loader").style.strokeDashoffset = 0;
+            document.getElementById("loader").style.strokeDashoffset = "0";
           }, 1000);
         }
     } else {
@@ -855,7 +852,7 @@ window.onload = function () {
     }, 1000);
 
     document.getElementById("loader").style.transition = "stroke-dashoffset 300ms linear";
-    document.getElementById("loader").style.strokeDashoffset = 300;
+    document.getElementById("loader").style.strokeDashoffset = "300";
 
     timeline_presentation_title.style.top = "30px";
     timeline_presentation_title.style.opacity = "0";
@@ -902,7 +899,7 @@ window.onload = function () {
   function pauseTimelineInterval() {
     timeline_indicator_started = false;
     document.getElementById("loader").style.transition = "stroke-dashoffset 500ms linear";
-    document.getElementById("loader").style.strokeDashoffset = 300;
+    document.getElementById("loader").style.strokeDashoffset = "300";
     clearTimeout(timeline_indicator_pointer);
   }
 
@@ -953,7 +950,7 @@ window.onload = function () {
       timeline_presentation_text.style.top = "0";
       timeline_presentation_text.style.opacity = "1";
     }, 1000);
-  };
+  }
 
   function timelinePlay() {
     if (!timeline_instruction_status) {
@@ -971,7 +968,7 @@ window.onload = function () {
       setTimeout(() => {
         timeline_play_instruction.style.display = "none";
       }, 1000);
-      document.getElementById("loader").style.strokeDashoffset = 300;
+      document.getElementById("loader").style.strokeDashoffset = "300";
 
       timeline_forward_button.style.display = "block";
       timeline_forward_button.style.opacity = "1";
@@ -1027,7 +1024,7 @@ window.onload = function () {
     timeline_forward_button.style.display = "none";
     timeline_indicator_icon.classList.remove("fa-pause");
     timeline_indicator_icon.classList.add("fa-play");
-    document.getElementById("loader").style.strokeDashoffset = 300;
+    document.getElementById("loader").style.strokeDashoffset = "300";
     document.getElementById("loader").style.transition = "stroke-dashoffset 500ms linear";
     clearTimeout(timeline_indicator_pointer);
     startTimelineInterval(false);
