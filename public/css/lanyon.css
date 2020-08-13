@@ -625,9 +625,10 @@ a.pagination-item:hover {
     width: 90% !important;
     position: absolute !important;
     top: 0 !important;
-    left: 10vw !important;
+    left: 5vw !important;
     padding: 30px !important;
     margin-top: 15vh;
+    text-align: center;
   }
 
   .header-timeline {
@@ -713,7 +714,7 @@ a.pagination-item:hover {
   font-size: 1.5rem;
   top: 0;
   right: 0;
-  margin: 34px;
+  margin: 28px 34px;
   color: #161f38;
   z-index: 2;
   cursor: pointer;
@@ -1068,7 +1069,7 @@ a.pagination-item:hover {
   .timeline-presentation-image {
     position: relative !important;
     margin: auto;
-    width: 90%;
+    width: 100%;
   }
 
   .tp-text-container {
@@ -1077,7 +1078,7 @@ a.pagination-item:hover {
   }
 
   .timeline-image {
-    max-width: 95vw !important;
+    max-width: 90vw !important;
     max-height: 45vh !important;
   }
 }
