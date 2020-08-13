@@ -48,13 +48,16 @@ window.onload = function () {
   const pointer_moon = document.getElementById("pointer-moon");
   // const open_timer = document.getElementById("open-timer");
   // let open_timer_func = null;
+  let pageValue = getParameterByName('page');
   let timeline_indicator_counter = -1;
   let timeline_indicator_status = false;
   let timeline_indicator_started = false;
   let timeline_instruction_status = false;
+  let is_timeline_created = false;
   var timeline_indicator_pointer = null;
   let header_timer_func = null;
   let timeline = null;
+  let is_homepage = false;
   let page_state = "home";
   let header_state = "default";
 
@@ -67,6 +70,11 @@ window.onload = function () {
 
   let timeline_hide = {};
 
+  const height = window.innerHeight;
+  const width = window.innerWidth;
+  loadingPage.style.setProperty("--width", width);
+  loadingPage.style.setProperty("--height", height);
+  loadingPage.classList.add("collapse");
 
   // Create a DataSet (allows two way data-binding)
   const timeline_list = [
@@ -454,7 +462,17 @@ window.onload = function () {
         }, 100);
       }
     }
-  };
+  }
+
+  function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+      results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+  }
 
   function timelineOnChange() {
     timeline.on("rangechanged", function ({start, end}) {
@@ -463,6 +481,56 @@ window.onload = function () {
         reveal_cards(type, false);
       }
     });
+  }
+
+  function showHomepage() {
+    page_state = "home";
+    home_design.style.opacity = "0";
+    home_hello.style.opacity = "0";
+    home_writing.style.opacity = "0";
+    home_header_text.style.display = "block";
+    header_sideways.style.display = "block";
+
+    header_body.style.left = "0";
+    setTimeout(() => {
+      home_design.style.display = "none";
+      header_design.style.display = "block";
+
+      home_writing.style.display = "none";
+      header_writing.style.display = "block";
+
+      home_hello.style.display = "none";
+      header_hello.style.display = "block";
+      header_body.style.opacity = "1";
+      setTimeout(() => {
+        home_header_text.style.opacity = "1";
+        header_sideways.style.opacity = "1";
+        header_sideways.style.right = "-43px";
+        home_header_text.style.top = "-40px";
+        pointer_anime.style.display = "block";
+        pointer_moon.style.display = "block";
+      }, 800)
+    }, 900);
+  }
+
+  function showHomepageVector() {
+    setTimeout(() => {
+      home_header_vector_background.style.opacity = "1";
+    }, 900);
+
+    setTimeout(() => {
+      home_header_vector_body.style.top = "0";
+      home_header_vector_body.style.opacity = "1";
+    }, 1000);
+
+    setTimeout(() => {
+      loadingPage.style.zIndex = "0";
+      home_header_portal.style.zIndex = "0";
+    }, 1000);
+
+    home_header_portal.style.marginTop = "27vmin";
+    home_header_portal.style.transform = "rotate3d(1, 0, 0, 65deg)";
+
   }
 
   internship_indicator.onclick = function () {
@@ -505,7 +573,7 @@ window.onload = function () {
     reveal_cards("project");
   };
 
-  home_timeline_close.onclick = function () {
+  function closeTimeline() {
     home_timeline.style.opacity = "0";
     resetTimeline();
     setTimeout(() => {
@@ -515,38 +583,54 @@ window.onload = function () {
       timeline_indicator_icon.classList.add("fa-play");
       pauseTimelineInterval();
     }, 1100);
+  }
+
+  home_timeline_close.onclick = function () {
+    closeTimeline();
   };
 
-  const height = window.innerHeight;
-  const width = window.innerWidth;
-  loadingPage.style.setProperty("--width", width);
-  loadingPage.style.setProperty("--height", height);
+  if (pageValue === "designs" || pageValue === "writings"
+  || pageValue === "timelime" || pageValue === "about") {
+    window.history.pushState('page1', 'Home', '');
+  }
 
-  loadingPage.classList.add("collapse");
+  changeState(pageValue);
 
-  setTimeout(() => {
-    home_header_vector_background.style.opacity = "1";
-  }, 900);
+  window.onpopstate = () => {
+    changeState(getParameterByName('page'));
+  };
 
-  setTimeout(() => {
-    home_header_vector_body.style.top = "0";
-    home_header_vector_body.style.opacity = "1";
-  }, 1000);
+  function changeState(page_value) {
+    if (page_value === "designs") {
+      showHomepageVector();
+      setTimeout(() => {
+        showHomepageDesign();
+      }, 1000);
+    } else if (page_value === "writings") {
+      showHomepageVector();
+      setTimeout(() => {
+        showHomepageWriting();
+      }, 1000);
+    } else if (page_value === "timeline") {
+      showHomepageVector();
+      setTimeout(() => {
+        showHomepageTimeline();
+      }, 1000);
+    } else if (page_value === "about") {
+      showHomepageVector();
+      setTimeout(() => {
+        showHomepageAbout();
+      }, 1000);
+    } else {
+      console.log("Changed to homepage");
+      is_homepage = true;
+      showHomepageVector();
+      showHomepage();
+      closeTimeline();
+    }
+  }
 
-  setTimeout(() => {
-    loadingPage.style.zIndex = "0";
-    home_header_portal.style.zIndex = "0";
-  }, 1000);
-
-  home_header_portal.style.marginTop = "27vmin";
-  home_header_portal.style.transform = "rotate3d(1, 0, 0, 65deg)";
-
-  setTimeout(() => {
-    home_header_text.style.opacity = "1";
-    home_header_text.style.top = "-40px";
-  }, 1300);
-
-  header_writing.onclick = function () {
+  function showHomepageWriting() {
     page_state = "writing";
     pointer_anime.style.display = "none";
     pointer_moon.style.display = "none";
@@ -576,9 +660,9 @@ window.onload = function () {
         header_writing.style.display = "none";
       }, 200);
     }, 600);
-  };
+  }
 
-  header_design.onclick = function () {
+  function showHomepageDesign() {
     page_state = "design";
     pointer_anime.style.display = "none";
     pointer_moon.style.display = "none";
@@ -608,9 +692,9 @@ window.onload = function () {
         header_design.style.display = "none";
       }, 200);
     }, 600);
-  };
+  }
 
-  header_hello.onclick = function () {
+  function showHomepageAbout() {
     page_state = "hello";
     pointer_anime.style.display = "none";
     pointer_moon.style.display = "none";
@@ -640,46 +724,17 @@ window.onload = function () {
         header_hello.style.display = "none";
       }, 200);
     }, 600);
-  };
+  }
 
-  ss_logo.onclick = function () {
-    page_state = "home";
-    home_design.style.opacity = "0";
-    home_hello.style.opacity = "0";
-    home_writing.style.opacity = "0";
-    home_header_text.style.display = "block";
-    header_sideways.style.display = "block";
-
-    header_body.style.left = "0";
-    setTimeout(() => {
-      home_design.style.display = "none";
-      header_design.style.display = "block";
-
-      home_writing.style.display = "none";
-      header_writing.style.display = "block";
-
-      home_hello.style.display = "none";
-      header_hello.style.display = "block";
-      header_body.style.opacity = "1";
-      setTimeout(() => {
-        home_header_text.style.opacity = "1";
-        header_sideways.style.opacity = "1";
-        header_sideways.style.right = "-43px";
-        home_header_text.style.top = "-40px";
-        pointer_anime.style.display = "block";
-        pointer_moon.style.display = "block";
-      }, 800)
-    }, 900);
-  };
-
-  header_timeline.onclick = function () {
+  function showHomepageTimeline() {
     main_content.style.opacity = "0";
     setTimeout(() => {
       home_timeline.style.display = "block";
       setTimeout(() => {
         home_timeline.style.opacity = "1";
       }, 100);
-      if (home_timeline.style.opacity === "") {
+      if (!is_timeline_created) {
+        is_timeline_created = true;
         setTimeout(() => {
           timeline_notice.style.opacity = "0";
           setTimeout(() => {
@@ -690,7 +745,56 @@ window.onload = function () {
         timeline = new vis.Timeline(timeline_container, timeline_items, options);
         timelineOnChange();
       }
-    }, 1100)
+    }, 1100);
+  }
+
+
+  header_writing.onclick = function () {
+    if (is_homepage) {
+      is_homepage = false;
+      window.history.pushState('page2', 'Writings', '?page=writings');
+    } else {
+      window.history.replaceState('page2', 'Writings', '?page=writings');
+    }
+    showHomepageWriting();
+  };
+
+  header_design.onclick = function () {
+    if (is_homepage) {
+      is_homepage = false;
+      window.history.pushState('page3', 'Designs', '?page=designs');
+    } else {
+      window.history.replaceState('page3', 'Designs', '?page=designs');
+    }
+    showHomepageDesign();
+  };
+
+  header_hello.onclick = function () {
+    if (is_homepage) {
+      is_homepage = false;
+      window.history.pushState('page4', 'About', '?page=about');
+    } else {
+      window.history.replaceState('page4', 'About', '?page=about');
+    }
+    showHomepageAbout();
+  };
+
+  ss_logo.onclick = function () {
+    if (!is_homepage) {
+      is_homepage = true;
+      window.history.back();
+    }
+    showHomepage();
+  };
+
+  header_timeline.onclick = function () {
+    if (is_homepage) {
+      is_homepage = false;
+      window.history.pushState('page5', 'Timeline', '?page=timeline');
+    } else {
+      window.history.replaceState('page5', 'Timeline', '?page=timeline');
+    }
+    showHomepageTimeline();
   };
 
   function startTimelineInterval(recursive) {
@@ -785,10 +889,12 @@ window.onload = function () {
     }
 
     timeline_indicator_counter = -1;
-    timeline.options.height = "100vh";
     timeline_presentation.style.height = "0";
-    timeline.options.horizontalScroll = true;
-    timeline.setWindow(new Date("January 01, 2015"), new Date("May 21, 2018"));
+    if (timeline) {
+      timeline.options.height = "100vh";
+      timeline.options.horizontalScroll = true;
+      timeline.setWindow(new Date("January 01, 2015"), new Date("May 21, 2018"));
+    }
   }
 
   function pauseTimelineInterval() {
