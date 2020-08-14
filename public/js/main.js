@@ -6,6 +6,8 @@ window.onload = function () {
       "moon": "In my name, Shashank is also referred as Moon"
     },
     month: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    sunEmoji: "⛅",
+    moonEmoji: "🌑"
   };
   const main_content = document.getElementById("main-content");
   const footer_portal = document.getElementById("footer-portal");
@@ -19,7 +21,10 @@ window.onload = function () {
   const header_sideways = document.getElementById("header-sideways");
   const home_writing = document.getElementById("home-writing");
   const home_design = document.getElementById("home-design");
+  const home_design_heading = document.getElementById("home-design-heading");
+  const home_circle_background = document.getElementById("home-circle-background");
   const home_hello = document.getElementById("home-hello");
+  const header_switch_background = document.getElementById("header-switch-background");
   const header_body = document.getElementById("home-header");
   const ss_logo = document.getElementById("ss-logo");
   const home_header_text = document.getElementById("home-header-text");
@@ -53,6 +58,8 @@ window.onload = function () {
   let timeline_indicator_status = false;
   let timeline_indicator_started = false;
   let timeline_instruction_status = false;
+  let dark_mode = false;
+  let create_timeline_theme = false;
   let is_timeline_created = false;
   var timeline_indicator_pointer = null;
   let header_timer_func = null;
@@ -405,7 +412,7 @@ window.onload = function () {
       caption: "- Contribution made (just because it's not all green doesn't mean I didn't code :P"
     },
   ];
-  const timeline_items = new vis.DataSet(timeline_list);
+  // const timeline_items = new vis.DataSet(timeline_list);
   timeline_list.sort(function(a, b) {
     const keyA = new Date(a.start),
       keyB = new Date(b.start);
@@ -464,6 +471,64 @@ window.onload = function () {
     }
   }
 
+  function adjustTimelineTheme(color) {
+    if (color === "white") {
+      document.getElementById("profile-timeline-left").style.backgroundImage = "linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0))";
+      document.getElementById("profile-timeline-right").style.backgroundImage = "linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0))";
+    } else {
+      document.getElementById("profile-timeline-left").style.backgroundImage = "linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0))";
+      document.getElementById("profile-timeline-right").style.backgroundImage = "linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0))";
+    }
+  }
+
+  function changeBackgroundTo(color) {
+
+    const htmlElement = document.getElementsByTagName("html")[0];
+    for (const element of document.getElementsByTagName("a")) {
+      element.style.color = color;
+    }
+
+    htmlElement.style.color = color;
+    if (color === "white") {
+      htmlElement.style.scrollbarColor = "white black";
+
+    } else {
+      htmlElement.style.scrollbarColor = "black white";
+    }
+
+  }
+
+  function toggleBackground() {
+    if (!dark_mode) {
+      dark_mode = true;
+
+      changeBackgroundTo("white");
+      home_circle_background.style.transform = "scale(1)";
+      header_switch_background.innerHTML = config.sunEmoji;
+      ss_logo.src = "/img/shashank-white.png";
+      home_timeline.style.backgroundColor = "black";
+      document.querySelector("body").style.backgroundColor = "black";
+      document.getElementsByClassName("anicircle")[0].style.stroke = "white";
+      home_timeline_close.style.color = "white";
+    } else {
+      dark_mode = false;
+
+      changeBackgroundTo("#161f38");
+      home_circle_background.style.transform = "scale(0)";
+      header_switch_background.innerHTML = config.moonEmoji;
+      ss_logo.src = "/img/shashank.png";
+      home_timeline.style.backgroundColor = "white";
+      document.querySelector("body").style.backgroundColor = "white";
+      document.getElementsByClassName("anicircle")[0].style.stroke = "black";
+      home_timeline_close.style.color = "black";
+    }
+  }
+
+  header_switch_background.onclick = function() {
+    create_timeline_theme = is_timeline_created;
+    toggleBackground();
+  };
+
   function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, '\\$&');
@@ -476,6 +541,13 @@ window.onload = function () {
 
   function timelineOnChange() {
     timeline.on("rangechanged", function ({start, end}) {
+      console.log(dark_mode);
+      if (dark_mode) {
+        adjustTimelineTheme("white");
+      } else {
+        adjustTimelineTheme("black");
+      }
+
       for (let type of Object.keys(timeline_hide)) {
         reveal_cards(type, false);
       }
@@ -734,15 +806,46 @@ window.onload = function () {
       setTimeout(() => {
         home_timeline.style.opacity = "1";
       }, 100);
-      if (!is_timeline_created) {
+      if (!is_timeline_created || create_timeline_theme) {
+        console.log("Creating timeline");
+        const temp = JSON.parse(JSON.stringify(timeline_list));
+        if (dark_mode) {
+          adjustTimelineTheme("white");
+          for (const element of temp) {
+            if (element['className'].includes("timeline-stripes")) {
+              element['className'] = element['className'].replace("timeline-stripes", "timeline-stripes-dark");
+            }
+            if (element['type'] === "background") {
+              element['className'] += "-dark"
+            } else {
+              element['className'] += " dark-theme-node";
+            }
+          }
+        } else {
+          adjustTimelineTheme("black");
+          for (const element of temp) {
+            if (element['type'] !== "background") {
+              element['className'] += " light-theme-node";
+            }
+          }
+        }
+        const new_timeline_items = new vis.DataSet(temp);
         is_timeline_created = true;
+        create_timeline_theme = false;
         setTimeout(() => {
           timeline_notice.style.opacity = "0";
           setTimeout(() => {
             timeline_notice.style.display = "none";
           }, 1000);
         }, 4000);
-        timeline = new vis.Timeline(timeline_container, timeline_items, options);
+        document.getElementById("visualization").innerHTML = "";
+        timeline = new vis.Timeline(timeline_container, new_timeline_items, options);
+        timeline
+        if (dark_mode) {
+          document.querySelector(".vis-panel.vis-bottom").style.color = "white";
+        } else {
+          document.querySelector(".vis-panel.vis-bottom").style.color = "black";
+        }
         timelineOnChange();
       }
     }, 1100);
@@ -1013,7 +1116,7 @@ window.onload = function () {
             startTimelineInterval(true);
           }, 5000);
         } else {
-          startTimelineInterval();
+          startTimelineInterval(true);
           timeline_indicator_icon.classList.add("fa-pause");
         }
       }

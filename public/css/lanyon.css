@@ -33,10 +33,6 @@
  *
  * Update the foundational and global aspects of the page.
  */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: black white;
-}
 
 *::-webkit-scrollbar {
   width: 12px;
@@ -52,6 +48,13 @@
 
 html {
   scroll-behavior: smooth;
+  color: #161f38;
+  scrollbar-width: thin;
+  scrollbar-color: black white;
+}
+
+a {
+  color: #161f38;
 }
 
 /* Prevent scroll on narrow devices */
@@ -66,7 +69,6 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
-  color: #313131;
   letter-spacing: -.025rem;
 }
 
@@ -652,7 +654,8 @@ a.pagination-item:hover {
   width: 35%;
   position: relative;
   top: 0;
-  color: #161f38;
+  /*color: #161f38;*/
+  z-index: 2;
   transition: opacity 0.5s ease-in-out, top 0.5s ease-in-out;
 }
 
@@ -692,8 +695,8 @@ a.pagination-item:hover {
   bottom: 0;
   right: 0;
   margin: 30px;
-  color: #161f38;
-  z-index: 2;
+  /*color: #161f38;*/
+  z-index: 3;
   cursor: pointer;
 }
 
@@ -703,8 +706,8 @@ a.pagination-item:hover {
   bottom: 0;
   left: 0;
   margin: 30px;
-  color: #161f38;
-  z-index: 2;
+  /*color: #161f38;*/
+  z-index: 3;
   cursor: pointer;
 }
 
@@ -715,8 +718,20 @@ a.pagination-item:hover {
   top: 0;
   right: 0;
   margin: 28px 34px;
-  color: #161f38;
-  z-index: 2;
+  /*color: #161f38;*/
+  z-index: 3;
+  cursor: pointer;
+}
+
+.header-switch-background {
+  position: fixed;
+  display: block;
+  font-size: 1.5rem;
+  top: 0;
+  right: 0;
+  margin: 78px 31px;
+  /*color: #161f38;*/
+  z-index: 3;
   cursor: pointer;
 }
 
@@ -726,8 +741,8 @@ a.pagination-item:hover {
   bottom: 0;
   left: 47.5vw;
   margin-bottom: 30px;
-  color: #161f38;
-  z-index: 2;
+  /*color: #161f38;*/
+  z-index: 3;
   cursor: pointer;
 }
 
@@ -751,6 +766,7 @@ a.pagination-item:hover {
   overflow: hidden scroll;
   height: 83vh;
   transition: opacity 1s ease-in-out;
+  z-index: 2;
 }
 
 .home-design {
@@ -763,6 +779,7 @@ a.pagination-item:hover {
   overflow: hidden scroll;
   height: 80vh;
   transition: opacity 1s ease-in-out;
+  z-index: 2;
 }
 
 .home-hello {
@@ -776,12 +793,13 @@ a.pagination-item:hover {
   overflow: hidden scroll;
   height: 83vh;
   transition: opacity 1s ease-in-out;
+  z-index: 2;
 }
 
 .home-design-heading {
   font-weight: 600;
   font-size: 2rem;
-  color: #161f38;
+  /*color: #161f38;*/
   direction: ltr;
   text-decoration: none;
 }
@@ -797,6 +815,22 @@ a.pagination-item:hover {
   position: relative;
   opacity: 0;
   transition: all 1s ease-in-out;
+}
+
+.home-circle-background {
+  position: fixed;
+  width: 120vmax;
+  height: 120vmax;
+  top: 50%;
+  left: 50%;
+  margin-top: -60vmax;
+  margin-left: -60vmax;
+  /*background-image: linear-gradient(rgb(39, 0, 78), rgb(73, 0, 154));*/
+  background-color: black;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: all 1s ease 0ms;
+  z-index: 1;
 }
 
 .anicircle {
@@ -864,7 +898,7 @@ a.pagination-item:hover {
 }
 @media (min-width: 38em) {
   .post-container{
-    width: 32rem;
+    width: 26rem;
   }
 }
 @media (min-width: 56em) {
@@ -966,7 +1000,7 @@ a.pagination-item:hover {
 
 .link-style {
   text-decoration: none !important;
-  color: #c0c0c0;
+  opacity: 0.4;
 }
 
 .vis-custom-time {
