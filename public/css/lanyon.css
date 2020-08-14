@@ -890,7 +890,6 @@ a.pagination-item:hover {
 }
 
 .post-container {
-  width: 32rem;
   padding-left: 1rem;
   padding-right: 1rem;
   margin-left: auto;
@@ -898,12 +897,22 @@ a.pagination-item:hover {
 }
 @media (min-width: 38em) {
   .post-container{
-    width: 26rem;
+    width: 32rem;
   }
 }
 @media (min-width: 56em) {
   .post-container {
     width: 42rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-hello {
+    margin: 28px 20px !important;
+  }
+
+  .header-switch-background {
+    margin: 70px 19px !important;
   }
 }
 
