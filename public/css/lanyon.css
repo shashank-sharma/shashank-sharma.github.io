@@ -864,6 +864,20 @@ a.pagination-item:hover {
   animation-timing-function: ease-in-out;
 }
 
+.floating-max {
+  animation-name: float-max;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.floating-min {
+  animation-name: float-min;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
 .floating-less {
   animation-name: float-less;
   animation-duration: 4s;
@@ -1237,6 +1251,54 @@ a.pagination-item:hover {
   75% {
     -webkit-transform: translate(0, 7px);
     transform: translate(0, 7px);
+    -webkit-animation-timing-function: cubic-bezier(.45,0,.8,.75);
+    animation-timing-function: cubic-bezier(.45,0,.8,.75)
+  }
+  to {
+    -webkit-transform: translate(0, 0px);
+    transform: translate(0, 0px);
+  }
+}
+@-webkit-keyframes float-min{
+  0%, 50% {
+    -webkit-transform: translate(0, 0px);
+    transform: translate(0,  0px);
+    -webkit-animation-timing-function: cubic-bezier(.2,.25,.55,1);
+    animation-timing-function: cubic-bezier(.2,.25,.55,1)
+  }
+  25% {
+    -webkit-transform: translate(0, -5px);
+    transform: translate(0,  -9px);
+    -webkit-animation-timing-function: cubic-bezier(.45,0,.8,.75);
+    animation-timing-function: cubic-bezier(.45,0,.8,.75)
+  }
+  75% {
+    -webkit-transform: translate(0, 5px);
+    transform: translate(0, 9px);
+    -webkit-animation-timing-function: cubic-bezier(.45,0,.8,.75);
+    animation-timing-function: cubic-bezier(.45,0,.8,.75)
+  }
+  to {
+    -webkit-transform: translate(0, 0px);
+    transform: translate(0, 0px);
+  }
+}
+@-webkit-keyframes float-max{
+  0%, 50% {
+    -webkit-transform: translate(0, 0px);
+    transform: translate(0,  0px);
+    -webkit-animation-timing-function: cubic-bezier(.2,.25,.55,1);
+    animation-timing-function: cubic-bezier(.2,.25,.55,1)
+  }
+  25% {
+    -webkit-transform: translate(0, -15px);
+    transform: translate(0,  -9px);
+    -webkit-animation-timing-function: cubic-bezier(.45,0,.8,.75);
+    animation-timing-function: cubic-bezier(.45,0,.8,.75)
+  }
+  75% {
+    -webkit-transform: translate(0, 15px);
+    transform: translate(0, 15px);
     -webkit-animation-timing-function: cubic-bezier(.45,0,.8,.75);
     animation-timing-function: cubic-bezier(.45,0,.8,.75)
   }
