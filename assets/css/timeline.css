@@ -207,6 +207,16 @@
     text-decoration: none;
 }
 
+.indicator-card-light {
+    background-color: white !important;
+    color: black !important;
+}
+
+.indicator-card-dark {
+    background-color: black !important;
+    color: white !important;
+}
+
 .profile-timeline-left {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
     height: 100vh;

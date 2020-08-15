@@ -490,10 +490,10 @@ window.onload = function () {
 
     htmlElement.style.color = color;
     if (color === "white") {
-      htmlElement.style.scrollbarColor = "white black";
+      htmlElement.style.scrollbarColor = "white rgba(0, 0, 0, 0)";
 
     } else {
-      htmlElement.style.scrollbarColor = "black white";
+      htmlElement.style.scrollbarColor = "black rgba(0, 0, 0, 0)";
     }
 
   }
@@ -512,6 +512,11 @@ window.onload = function () {
       }, 1000);
       document.getElementsByClassName("anicircle")[0].style.stroke = "white";
       home_timeline_close.style.color = "white";
+      for (const element of document.querySelectorAll(".indicator-card")) {
+        element.classList.remove("indicator-card-light");
+        element.classList.add("indicator-card-dark");
+      }
+
     } else {
       dark_mode = false;
 
@@ -523,6 +528,10 @@ window.onload = function () {
       document.querySelector("body").style.backgroundColor = "white";
       document.getElementsByClassName("anicircle")[0].style.stroke = "black";
       home_timeline_close.style.color = "black";
+      for (const element of document.querySelectorAll(".indicator-card")) {
+        element.classList.remove("indicator-card-dark");
+        element.classList.add("indicator-card-light");
+      }
     }
   }
 
@@ -543,7 +552,6 @@ window.onload = function () {
 
   function timelineOnChange() {
     timeline.on("rangechanged", function ({start, end}) {
-      console.log(dark_mode);
       if (dark_mode) {
         adjustTimelineTheme("white");
       } else {
@@ -665,7 +673,6 @@ window.onload = function () {
     }
   };
 
-  console.log(pageValue);
 
   if (pageValue === "designs" || pageValue === "writings"
   || pageValue === "timeline" || pageValue === "about") {
@@ -676,7 +683,6 @@ window.onload = function () {
   changeState(pageValue);
 
   window.onpopstate = () => {
-    console.log("on pop state");
     changeState(getParameterByName('page'), 0);
   };
 
@@ -813,7 +819,6 @@ window.onload = function () {
         home_timeline.style.opacity = "1";
       }, 100);
       if (!is_timeline_created || create_timeline_theme) {
-        console.log("Creating timeline");
         const temp = JSON.parse(JSON.stringify(timeline_list));
         if (dark_mode) {
           adjustTimelineTheme("white");

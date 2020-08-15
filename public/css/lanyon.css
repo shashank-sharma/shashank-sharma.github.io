@@ -34,23 +34,14 @@
  * Update the foundational and global aspects of the page.
  */
 
-*::-webkit-scrollbar {
-  width: 12px;
-}
-*::-webkit-scrollbar-track {
-  background: white;
-}
-*::-webkit-scrollbar-thumb {
-  background-color: black;
-  border-radius: 20px;
-  border: 3px solid white;
+* {
+  scrollbar-width: thin;
 }
 
 html {
   scroll-behavior: smooth;
   color: #161f38;
-  scrollbar-width: thin;
-  scrollbar-color: black white;
+  scrollbar-color: black rgba(0, 0, 0, 0);
 }
 
 a {
@@ -61,6 +52,7 @@ a {
 html,
 body {
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 html {
