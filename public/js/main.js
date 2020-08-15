@@ -507,7 +507,9 @@ window.onload = function () {
       header_switch_background.innerHTML = config.sunEmoji;
       ss_logo.src = "/img/shashank-white.png";
       home_timeline.style.backgroundColor = "black";
-      document.querySelector("body").style.backgroundColor = "black";
+      setTimeout(() => {
+        document.querySelector("body").style.backgroundColor = "black";
+      }, 1000);
       document.getElementsByClassName("anicircle")[0].style.stroke = "white";
       home_timeline_close.style.color = "white";
     } else {
@@ -663,14 +665,18 @@ window.onload = function () {
     }
   };
 
+  console.log(pageValue);
+
   if (pageValue === "designs" || pageValue === "writings"
   || pageValue === "timeline" || pageValue === "about") {
-    window.history.pushState('page1', 'Home', '');
+    history.replaceState("page1", "Home", "/");
+    window.history.pushState('page2', pageValue, '?page=' + pageValue);
   }
 
   changeState(pageValue);
 
   window.onpopstate = () => {
+    console.log("on pop state");
     changeState(getParameterByName('page'), 0);
   };
 
