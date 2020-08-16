@@ -967,7 +967,7 @@ window.onload = function () {
               timeline_presentation_caption.innerHTML = timeline_list[timeline_indicator_counter]['caption'];
               timeline_presentation_image_container.style.top = "0";
               timeline_presentation_image_container.style.opacity = "1";
-            }, 2000);
+            }, 1600);
 
             if (recursive) {
               timeline_indicator_pointer = setTimeout(() => {
@@ -1085,11 +1085,6 @@ window.onload = function () {
 
     timeline_presentation_image_container.style.top = "30px";
     timeline_presentation_image_container.style.opacity = "0";
-
-    setTimeout(() => {
-      timeline_presentation_image.src = "/public/svg/portal.svg";
-      timeline_presentation_caption.innerHTML = "- Loading ...";
-    }, 800);
 
     setTimeout(() => {
       if (end) {
