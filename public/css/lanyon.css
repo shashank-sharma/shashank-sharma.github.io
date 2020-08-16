@@ -689,6 +689,7 @@ a.pagination-item:hover {
   margin: 30px;
   /*color: #161f38;*/
   z-index: 3;
+  user-select: none;
   cursor: pointer;
 }
 
@@ -700,6 +701,7 @@ a.pagination-item:hover {
   margin: 30px;
   /*color: #161f38;*/
   z-index: 3;
+  user-select: none;
   cursor: pointer;
 }
 
@@ -735,6 +737,7 @@ a.pagination-item:hover {
   margin-bottom: 30px;
   /*color: #161f38;*/
   z-index: 3;
+  user-select: none;
   cursor: pointer;
 }
 
