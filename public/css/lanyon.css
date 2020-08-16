@@ -1161,6 +1161,18 @@ a.pagination-item:hover {
   bottom: 0;
 }
 
+.timeline-bottom-instruction {
+  top: 0;
+  left: 40vw;
+  margin: 20px;
+  z-index: 3;
+  position: fixed;
+  display: block;
+  opacity: 1;
+  font-weight: bold;
+  transition: all 1s ease-in-out;
+}
+
 @keyframes pulse {
   0% {
     -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
