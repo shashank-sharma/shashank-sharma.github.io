@@ -59,7 +59,7 @@ window.onload = function () {
   let timeline_indicator_status = false;
   let timeline_indicator_started = false;
   let timeline_instruction_status = false;
-  let dark_mode = false;
+  let dark_mode = localStorage.getItem("dark_mode") === "true";
   let create_timeline_theme = false;
   let is_timeline_created = false;
   var timeline_indicator_pointer = null;
@@ -83,6 +83,8 @@ window.onload = function () {
   loadingPage.style.setProperty("--width", width);
   loadingPage.style.setProperty("--height", height);
   loadingPage.classList.add("collapse");
+
+  console.log(dark_mode);
 
   // Create a DataSet (allows two way data-binding)
   const timeline_list = [
@@ -423,6 +425,26 @@ window.onload = function () {
     return 0;
   });
 
+  const current_hours = new Date().getHours();
+
+  if (dark_mode) {
+    toggleBackground(false);
+  }
+
+  if ((current_hours >= 18 || current_hours <= 5) && dark_mode === false) {
+    const temp_dom = document.getElementById("header-background-instruction");
+    temp_dom.style.display = "block";
+    setTimeout(() => {
+      temp_dom.style.opacity = "1";
+    }, 1000);
+    setTimeout(() => {
+      temp_dom.style.opacity = "0";
+      setTimeout(() => {
+        temp_dom.style.display = "none";
+      }, 1000)
+    }, 4000);
+  }
+
   // Configuration for the Timeline
   const options = {
     stack: true,
@@ -499,10 +521,12 @@ window.onload = function () {
 
   }
 
-  function toggleBackground() {
-    if (!dark_mode) {
-      dark_mode = true;
-
+  function toggleBackground(toggle=true) {
+    if (toggle) {
+      dark_mode = !dark_mode;
+      localStorage.setItem("dark_mode", dark_mode.toString());
+    }
+    if (dark_mode) {
       changeBackgroundTo("white");
       home_circle_background.style.transform = "scale(1)";
       header_switch_background.innerHTML = config.sunEmoji;
@@ -519,8 +543,6 @@ window.onload = function () {
       }
       document.getElementById("timeline-play-instruction").style.backgroundColor = "black";
     } else {
-      dark_mode = false;
-
       changeBackgroundTo("#161f38");
       home_circle_background.style.transform = "scale(0)";
       header_switch_background.innerHTML = config.moonEmoji;

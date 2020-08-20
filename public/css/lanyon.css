@@ -729,6 +729,22 @@ a.pagination-item:hover {
   cursor: pointer;
 }
 
+.header-background-instruction {
+  height: 50px;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  right: -10px;
+  margin: 74px 0 0 0;
+  z-index: 2;
+  opacity: 0;
+  border-radius: 5px;
+  display: none;
+  color: white;
+  padding: 10px 80px 10px 20px;
+  transition: all 1s ease-in-out;
+}
+
 .header-timeline {
   position: fixed;
   display: block;
@@ -922,6 +938,12 @@ a.pagination-item:hover {
 
   .header-switch-background {
     margin: 70px 19px !important;
+  }
+  
+  .header-background-instruction {
+    height: 35px !important;
+    margin: 69px 0 0 0 !important;
+    padding: 7px 60px 7px 10px !important;
   }
 }
 
