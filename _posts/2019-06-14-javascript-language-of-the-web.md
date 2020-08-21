@@ -72,14 +72,14 @@ Now if the monitor observe that the code segment is hot then it takes extra time
 
 Example: Type Optimization
 
-```
+{% highlight javascript %}
 function arraySum(arr) {
   var sum = 0;
   for (var i = 0; i < arr.length; i++) {
     sum += arr[i];
   }
 }
-```
+{% endhighlight %}
 
 Here `+=` takes more than one step to execute because of dynamic typing. There can be case when there are arr of 100 integers, then the code segment will warms up, now the baseline compiler will create stub for each operation in function, means there will be a stub for `sum += arr[i]` for integer addition. But there can be a case when there are no integers, in that case it will generate different machine code.
 
@@ -168,18 +168,20 @@ In short except of `null` and `undefined` all primitive values have object equiv
 Here array can be considered to be an object where numbers as property names and having values with them. Now whenever array is modified then its his work to modify all the corresponding details like length, last index etc.
 
 In case of Array, it's quite common to loop over them and the traditional way of doing it might look like:
-```
+
+{% highlight javascript %}
 for (let i=0; i<5;i++) {
     // Do something
 }
-```
+{% endhighlight %}
 
 But in modern javascript we do it like:
-```
+
+{% highlight javascript %}
 for (let i of <Any iterable>) {
     // Do something
 }
-```
+{% endhighlight %}
 
 Now some important methods are: push(x), pop, shift, unshift(x), indexOf(x), lastIndexOf(x), slice(x, y)
 
@@ -216,10 +218,10 @@ Function act as values, it can be passed as argument, can be reassigned and more
 
 Function declaration doesn't need to follow the top-bottom control flow as all the function declaration are moved at top by default. Example of Arrow function can be seen as:
 
-```
+{% highlight javascript %}
 const foo = (x) => {return x * x};
 const bar = x => x * x;
-```
+{% endhighlight %}
 
 To keep track of function calls, it make use of the call stack to see which function is called by whom.
 
@@ -265,13 +267,14 @@ Now before going in depth, one needs to first fully understand what an Object is
 ECMAScript does not use classes such as those in C++ or Java so instead classes we use objects which can be created in various ways like literal notation or via constructors. Objects are created by  using constructors in new expressions. New Date() creates new object while Date() returns string. So Objects are nothing but list of properties seperated by commas. Each property has a name followed by value.
 
 <b>Fun Fact:</b>
-```
+
+{% highlight javascript %}
 let data = [];
 
 function foo(dog, cat) {
   data.push({dog, cat});  // It is similar as dog: dog, cat: cat
 }
-```
+{% endhighlight %}
 
 
 Now according to ECMA-262 specifications, internal properties of objects can be:
@@ -310,12 +313,12 @@ Now when we create any new object then it is not entierly empty but have some bu
 
 Example:
 
-```
+{% highlight javascript %}
 var foo = {
    x: 1,
    y: 2
 };
-```
+{% endhighlight %}
 
 So now in this example we have 2 explicit (x, y) and 1 implicit properties (__proto__). But why Proto ?<br>
 Since ECMAScript has no concept of class so we needed one way to inherit some part because there might be the case where you needed to reuse some part of your code, so we used <b>delegation based inheritance</b> (in terms of ECMAScript it is <b>prototype based inheritance</b>). So to solve this problem we used <b>Prototype chain</b>
@@ -324,7 +327,8 @@ Since ECMAScript has no concept of class so we needed one way to inherit some pa
 > A prototype chain is a finite chain of objects which is used to implement inheritance and shared properties
 
 Example:
-```
+
+{% highlight javascript %}
 var a = {
    x: 10,
    calculate: function (z) {
@@ -342,7 +346,7 @@ var c = {
    __proto__: a
 };
 // Now we can call by using b.calculate(30); etc
-```
+{% endhighlight %}
 With the help of Prototype chaining we reuse the code, for example in this case we are using calculate method by both `b` and `c`.
 
 Now the question arises is, How to know which method to invoke ? Because there can be the case where where 2 methods are defined in different scope<br>
@@ -365,7 +369,8 @@ Constructor in short does:
 2. Automatically sets a prototype object for newly created objects (Found in ConstructorFunction.prototype property).
 
 <b>Example</b><br>
-```
+
+{% highlight javascript %}
 // Constructor function which have specified patterns common to multiple objects
 function Foo(y) {
     this.y = y;
@@ -391,7 +396,7 @@ b.calculate(40); // 80
 b.__proto__ === Foo.prototype
 c.__proto__ === Foo.prototype
 
-```
+{% endhighlight %}
 
 Also `Foo.prototype` automatically creates a special property called `constructor` which is a reference to the constructor function itself. So if we talk about `Foo` object then it consist of:
 
@@ -414,7 +419,7 @@ Function objects were used in ES5 but in later ES6.0 they were used widely and h
 Being a syntactic sugar it does work exactly like how we discussed in our previous example with prototype objects.<br>
 <b>Example:</b>
 
-```
+{% highlight javascript %}
 class Letter {
     constructor(number) {
         this.number = number;
@@ -424,7 +429,7 @@ class Letter {
         return this.number;
     }
 }
-```
+{% endhighlight %}
 
 Here class based inheritance is implemented on top of the prototype based delegation. Also "class" is represented as a "constructor function + prototype" pair. In short it creates object and also automatically sets the prototype for its newly created instance.
 
@@ -462,7 +467,8 @@ Now during ES3, An execution context was represented as a simple object with pro
 > A variable object is a container of data associated with the execution context. It’s a special object that stores variables and function declarations defined in the context.
 
 <b>Example</b><br>
-```
+
+{% highlight javascript %}
 var foo = 10;
 
 function bar() {} // Function Declaration
@@ -471,7 +477,7 @@ function bar() {} // Function Declaration
 console.log(this.foo == foo) // true
 console.log(window.bar == bar) // true
 console.log(baz); // Not defined
-```
+{% endhighlight %}
 
 So here Global context VO will have `foo` and `bar` with some built ins.<br>
 <b>Note: In global context the variable object is the global object itself, that's why we have an ability to refer global variables via property names of the global object</b><br>
@@ -486,7 +492,8 @@ So we talked about global context, in terms of eval context global variable obje
 When a function is called, a special object is created which is filled with formal parameters, special arguments (special because it is a map of formal parameters with index properties) which is used as variable object of the function context.
 
 Example:
-```
+
+{% highlight javascript %}
 function foo(x, y) {
     var z = 30;
     function bar() {} // FD
@@ -494,7 +501,7 @@ function foo(x, y) {
 }
 
 foo(10, 20);
-```
+{% endhighlight %}
 
 So our AO of the `foo` function will have:
 
@@ -512,7 +519,8 @@ This thing was removed from ECMAScript-262-5.1 but the concept is worth understa
 It is important because of nested functions usage. It is similar to prototype chain where if variable is not found in current scope (in it's own variable/activation object) then the lookup proceeds to its parent variable/activation object and repeats itself until it finds it else it is `undefined`. In contexts when a function refers in its code the identifier (name of var, FD, formal parameters) which is not local then it is called a free variable and to search these free variables exactly a scope chain is used.
 
 Example:
-```
+
+{% highlight javascript %}
 var x = 10;
 (function foo() {
   var y = 20;
@@ -522,7 +530,7 @@ var x = 10;
     console.log(x + y + z);
   })();
 })();
-```
+{% endhighlight %}
 
 So here scope chain objects are handled via the implicit `__parent__` property which is just a reference to the other activation object. For example:<br>
 `bar` AO will have declarations with `__parent__` pointing to `foo` AO and that will be pointing to global VO and that again will be pointing to null.
@@ -532,11 +540,12 @@ Now since they all are object, they may also have prototypes and prototype chain
 #### Note: Global variable object usually inherit from `Object.prototype` object hence Global VO `__proto__` refer to the `Object.prototype` (In case of SpiderMonkey but for different case it might inherit from something else).
 
 Right now we understood that object can inherit values from another object and at the same time have scope. So the question arises is which property/method will be looked-up first when asked. Whenever any variable is invoked then it is looked at `__proto__` first and then `__parent__`. So if we write something like:
-```
+
+{% highlight javascript %}
   with ({z: 50}) {
     console.log(x, z);
   }
-```
+{% endhighlight %}
 
 Then for x, it will see if there is anything defined in `with` object `__proto__` property, means it will see if anything is defined in `Object.prototype` object and if nothing is found then it will do scope chain and find in another activation object and it goes on.
 
@@ -556,21 +565,23 @@ Concept related with scope chain
 
 Real life usage can be seen as:
 
-```
+
+{% highlight javascript %}
 function multiplier(factor) {
   return number => number * factor;
 }
 
 let twice = multiplier(2);
 console.log(twice(5));
-```
+{% endhighlight %}
 
 So here the function body sees the environment in which it was created, not the environment in which it is called. Means it remembers this environment. Now something which we will discuss off the topic which is recursion, usually we avoid having recursion in our Javascript code because the time taken by recursion is far greater than iteration method but later in ES6 we have something called Tail Call Optimization which helps to optimize our recursive code. For example:
 
 If our code has nothing to do with the stack then it will optimize it by dropping the frame and adding the new one
 
 Example:
-```
+
+{% highlight javascript %}
 (function(){
     function fib(n, sum=0, prev=1) {
       if (n <= 1) return sum;
@@ -578,24 +589,25 @@ Example:
     }
     console.log(fib(20000));
 })();
-```
+{% endhighlight %}
 
 But the wrong usage can be:
-```
+
+{% highlight javascript %}
 function fib(n) {
     if (n <= 0) return 0;
     if (n === 1 || n === 2) return 1;
     return fib(n-1) + fib(n-2); // Here stack frame needs to be maintained as we needs to add 2 values together
 }
 console.log(fib(20000)); // maximum call stack size exceeded
-```
+{% endhighlight %}
 
 First problem is "Upward funarg problem"<br>
 When a function is returned and if it is using free variable then it should be able to access it even after when parent context is ended.<br>
 To solve that the inner function saved parent scope chain in its `[[Scope]]` property and when function is activated, the scope chain of its context is formed as combination of the activation object and this `[[Scope]]` property. So exactly at creation moments the parent context is saved in inner function.<br>
 Example:
 
-```
+{% highlight javascript %}
 function foo() {
     var x = 10;
     return function bar() {
@@ -606,7 +618,7 @@ function foo() {
 var returnedFunction = foo();
 var x = 20;
 returnedFunction(); // Output 10 but not 20
-```
+{% endhighlight %}
 
 This scope is static scope or lexical scope because variable was found in `[[Scope]]` first.<br>
 
@@ -619,7 +631,7 @@ Second problem is "Downward funarg problem"<br>
 
 In such case we use static scope. Example:
 
-```
+{% highlight javascript %}
 var x = 10;
 
 function foo() {
@@ -630,7 +642,7 @@ function foo() {
  var x = 20;
  funArg();
  })(foo);
-```
+{% endhighlight %}
 
 Now this will print 10 because in `foo` function global value x was statically saved in `[[Scope]]` property. So we conclude that:
 
@@ -645,7 +657,7 @@ In ECMAScript all functions are closuers because every function saved `[[Scope]]
 
 Because of above note creating function in loop result in same result. Example:
 
-```
+{% highlight javascript %}
 var data = []
 for (var k = 0; k < 3; k++) {
     data[k] = function() {
@@ -656,11 +668,11 @@ for (var k = 0; k < 3; k++) {
 data[0](); // 3
 data[1](); // 3
 data[2](); // 3
-```
+{% endhighlight %}
 
 To avoid this problem one can make use of another object to avoid sharing of scope. Example:
 
-```
+{% highlight javascript %}
 var data = []
 for (var k = 0; k < 3; k++) {
     data [k] = (function (x) {
@@ -669,7 +681,7 @@ for (var k = 0; k < 3; k++) {
             };
         })(k);
 }
-```
+{% endhighlight %}
 
 But now in ES6 if we simply write `let data = []` with `let k = 0` then this introduced block-scope bindings and easily give correct output
 
@@ -743,13 +755,13 @@ Now there are also Module Environment Records similar to this with different met
 
 Example:
 
-```
+{% highlight javascript %}
 var x = 10; // Legacy variables
 let y = 20; // Modern variables
 
 console.log(this.x, this.y) // this.y is undefined but x is accessable
 this['not valid ID'] = 30 // Can be accessed by this
-```
+{% endhighlight %}
 
 So here the Global Environment will have Object Environment records and this will have binding object refering to the Global binding object consisting of variable `x` and `not valid id`. Here x is accessable by both object enviornment record and binding object. Thats because earlier we saw that execution context was represented by Variable Object/Activation object and it was originally a part of 1 simple object but later in ES5 (ECMAScript-262-5.1) we started using environments.
 
@@ -784,7 +796,7 @@ Because there is possibiltiy of calling function declaration inside the `with` s
 
 Example:
 
-```
+{% highlight javascript %}
 var a = 10;
 // Function Declaration
 function foo() {
@@ -800,12 +812,13 @@ with ({a: 20}) { // New Lexical environment
 } // Lexical Environment Restored
 foo(); // 10
 bar(); // still 20
-```
+{% endhighlight %}
 
 One question might raised is that How `bar()` is able to execute outside the `with` statement ? Well thats because it is function-scoped not block-scoped and because of `var` usasge it is hoisted.
 
 > TODO:
-```
+
+{% highlight javascript %}
 (function() {
   var x = 10;
   let y = 20;
@@ -813,7 +826,7 @@ One question might raised is that How `bar()` is able to execute outside the `wi
   console.log(z); // 30
   console.log(m); // ReferenceError
 })();
-```
+{% endhighlight %}
 
 Now in ES6 they standardize block level function declarations and hence any function inside `with` statement will capture the lexical environment
 
@@ -824,7 +837,8 @@ Now generally in most of the language Static scoping is prefered means it will r
 So scope are of 3 types:
 
 1. Static Scope: Implemented by closures, through the mechanism of capturing free variables in the lexical environments
-```
+
+{% highlight javascript %}
 const x = 10;
 
 function print_x() {
@@ -837,9 +851,10 @@ function run() {
 }
 
 run();
-```
+{% endhighlight %}
 2. Dynamic Scope: If a caller defines an activation environment of a callee then it is Dynamic scope
-```
+
+{% highlight javascript %}
 function produce() {
   console.log(this.x);
 }
@@ -853,11 +868,11 @@ console.log(
   beta.produce(),  // 2
   gamma.produce(), // 3
 );
-```
+{% endhighlight %}
 
 3. Runtime Augmented Scope: Activatin frame is not statically determined and can be mutated by the callee itself.
 
-```
+{% highlight javascript %}
 let x = 10;
 
 let o = {x: 30};
@@ -887,7 +902,7 @@ let storage = {};
     foo(++flag);
   }
 })(1);
-```
+{% endhighlight %}
 
 Coming back to C language, over there generally a function was handles using call stack with activation records inside stack to track variables but in case of Javascript we called it activation object as of ES3. Now the problem was that there are closures too in our code, means even if function is ended we still need to save the properties because the returned function might access the parent function data in general. So in stack rather than pushing the data and popping it we push the references. So later we created Environments having properties as:
 
@@ -933,7 +948,7 @@ Another usage is generic interface function which be used in mixins or traits.
 
 Example:
 
-```
+{% highlight javascript %}
 // Generic Movable interface (mixin).
 let Movable = {
   /**
@@ -952,7 +967,7 @@ Object.assign(p1, Movable);
 // Can access `move` method.
 p1.move(100, 200);
 console.log(p1.getX()); // 100
-```
+{% endhighlight %}
 
 #### In general `this`
 
@@ -978,10 +993,11 @@ Value of reference type can be only in 2 cases generally:
 
 Naturally base value determines the scope like global, foo etc and propertyName is name of the identifier. Example, `var foo = 10` will have base global and propertyName as foo.<br>
 Now property accessor are of 2 types, it can be either dot notation or bracket notation like:
-```
+
+{% highlight javascript %}
 foo.bar();
 foo['bar']();
-```
+{% endhighlight %}
 Also to get value of reference type we have GetValue() method which returns the value or the property name if it is a reference. Now the general rule of determining the value `this` is:
 
 > The value of this in a function context is provided by the caller and determined by the current form of a call expression (how the function call is written syntactically).
@@ -991,7 +1007,8 @@ Also to get value of reference type we have GetValue() method which returns the 
 > In all other cases (i.e. with any other value type which is distinct from the Reference type), this value is always set to null. But since there is no any sense in null for this value, it is implicitly converted to global object.
 
 Example:
-```
+
+{% highlight javascript %}
 function foo() {
   return this;
 }
@@ -1003,14 +1020,15 @@ var foo = {
   }
 };
 foo.bar(); // foo
-```
+{% endhighlight %}
 
 Left hand side of parentheses there is a Reference type value which has base value global so global will be returned. So here we saw the difference in caller. But if we change the call expression then result will be different like:
 
-```
+
+{% highlight javascript %}
 var test = foo.bar;
 test(); // global
-```
+{% endhighlight %}
 
 Here test is identifier and produces other value of Reference type which base is the global object and used as `this` value.
 
@@ -1018,15 +1036,17 @@ Here test is identifier and produces other value of Reference type which base is
 
 But if the left side is not of reference type but any other type, then `this` value is set to null and as consequence set to the global object.<br>
 Example:
-```
+
+{% highlight javascript %}
 (function () {
   console.log(this); // null => global
 })();
-```
+{% endhighlight %}
 
 In this case on left side of parenthesis we have function object but not object of Reference type (it is not the identifier and not property accessor), hence null and then global object.<br>
 More example:
-```
+
+{% highlight javascript %}
 var foo = {
       bar: function () {
                    console.log(this);
@@ -1037,11 +1057,12 @@ foo.bar(); // Reference, OK => foo
 (foo.bar = foo.bar)(); // Assignment operator calls GetValue method
 (false || foo.bar)(); // OR operator forces them to call GetValue method
 (foo.bar, foo.bar)(); // Comma operator forces them to call GetValue method which gets function object which is not of ReferenceType
-```
+{% endhighlight %}
 There can also be a case when call expression determines on the left hand side of call parentheses the value of reference type but this value is set to null which means global object.
 
 Example:
-```
+
+{% highlight javascript %}
 function foo() {
   function bar() {
     function baz() {
@@ -1052,14 +1073,15 @@ function foo() {
   }
   bar(); // the same as AO.bar()
 }
-```
+{% endhighlight %}
 
 Since after ES5 we knew that Activation Object is not used so it will be found in function environment record found in lexical environment which is a part of execution context. Exception in `with` statement which shadows the global object properties and creates a new `this` value since new lexical environment is created.
 
 One more case with call of function as the constructor which creates the new `this` value. The `new` operator calls the internal [[Construct]] method of the function which in turn after object creation calls the internal [[Call]] method which creates new `this` value object.
 
 Example:
-```
+
+{% highlight javascript %}
 function A() {
       console.log(this); // newly created object, below - "a" object
         this.x = 10;
@@ -1067,11 +1089,12 @@ function A() {
 
 var a = new A();
 console.log(a.x); // 10
-```
+{% endhighlight %}
 Now function have some built-in methods to manipulate the `this` value in function by `call` and `apply` method. Both take first argument as `this` and second value in call can by anything but in `apply` it needs to be an array like object.
 
 Example:
-```
+
+{% highlight javascript %}
 var b = 10;
 function a(c) {
       console.log(this.b);
@@ -1080,7 +1103,7 @@ function a(c) {
 a(20); // this === global, this.b == 10, c == 20
 a.call({b: 20}, 30); // this === {b: 20}, this.b == 20, c == 30
 a.apply({b: 30}, [40]) // this === {b: 30}, this.b == 30, c == 40
-```
+{% endhighlight %}
 
 // TODO: Need content for Arrow functions
 
@@ -1165,21 +1188,23 @@ Stacking occurs whenever you call a function or eval and even a recursive functi
 
 Javascript first parse the code, collects function definitions, hoist variables and at second pass it actually executes the code.<br>
 Example:
-```
+
+{% highlight javascript %}
 foo();
 
 function foo() {
     console.log('bar');
 }
-```
+{% endhighlight %}
 This one will give reference error:
-```
+
+{% highlight javascript %}
 foo(); // Error: Foo is not defined
 
 foo = function() {
     console.log('bar');
 }
-```
+{% endhighlight %}
 
 One good question can be raised is:
 
