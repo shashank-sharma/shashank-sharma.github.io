@@ -45,7 +45,7 @@ html {
 }
 
 a {
-    color: #161f38;
+    color: #3588c5 !important;
 }
 
 /* Prevent scroll on narrow devices */
@@ -319,10 +319,10 @@ a.sidebar-nav-item:focus {
  * page is wrapped in `.page` and is only used on the page layout.
  */
 
-.page,
-.post {
-    margin-bottom: 4em;
-}
+/*.page,*/
+/*.post {*/
+    /*margin-bottom: 4em;*/
+/*}*/
 
 /* Blog post or page title */
 .page-title,
@@ -609,12 +609,12 @@ a.pagination-item:hover {
 
 .ss-logo {
     position: absolute;
-    z-index: 20;
     top: 0;
     left: 0;
     width: 60px;
     margin: 30px;
     cursor: pointer;
+    z-index: 999;
 }
 
 .anicircle {
@@ -633,6 +633,7 @@ a.pagination-item:hover {
 .loader {
     position: absolute;
     margin-left: 10px;
+    z-index: 998;
 }
 
 .post-container {
@@ -648,7 +649,7 @@ a.pagination-item:hover {
 }
 @media (min-width: 56em) {
     .post-container {
-        width: 42rem;
+        width: 52rem;
     }
 }
 
@@ -662,6 +663,17 @@ a.pagination-item:hover {
         height: 35px !important;
         margin: 23px 0 0 0 !important;
         padding: 7px 60px 7px 10px !important;
+    }
+
+    .loader {
+        height: 50px !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: 30px !important;
+    }
+
+    .anicircle {
+        stroke-width: 5px !important;
     }
 }
 

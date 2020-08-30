@@ -327,10 +327,10 @@ tbody tr:nth-child(odd) th {
  * page is wrapped in `.page` and is only used on the page layout.
  */
 
-.page,
-.post {
-  margin-bottom: 4em;
-}
+/*.page,*/
+/*.post {*/
+  /*margin-bottom: 4em;*/
+/*}*/
 
 /* Blog post or page title */
 .page-title,

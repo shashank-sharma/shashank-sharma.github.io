@@ -18,10 +18,7 @@
 <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
 		 content to avoid any CSS collisions with our real content. -->
 <div class="wrap">
-
-	<div class="post-container content" style="margin-top: 100px">
-		{{ content }}
-	</div>
+	{% include anchor_headings.html html=content anchorBody="#" %}
 </div>
 
 <div class="wrap">
