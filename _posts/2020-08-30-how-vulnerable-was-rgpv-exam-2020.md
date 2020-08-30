@@ -12,10 +12,10 @@ exam without any authentication.
 Impact of given vulnerabilities include:
 
 1. 49,000 students of RGPV student data leak which includes all possible PII data (like: phone number, email, etc)
-2. View question paper with any random enrollment number
-3. Submit exam for any random enrollment number without authentication
+2. Question paper leak
+3. Submit exam for any other student
 4. Unlimited image upload to their server
-5. LFI Exploit which allows you to fetch any local files from server
+5. LFI Exploit which allows you to see file content from their server
 6. View all student submission like question answered from final exams which held during 24th Aug - 27th Aug 2020
 
 
