@@ -9,6 +9,16 @@ and the impact of such mistakes. In this blog, I’ll be covering how the RGPV E
 exposed around 49 thousands of students' private data/submissions publicly and how it could have ruined everyone's 
 exam without any authentication.
 
+Impact of given vulnerabilities include:
+
+1. 49,000 students of RGPV student data leak which includes all possible PII data (like: phone number, email, etc)
+2. View question paper with any random enrollment number
+3. Submit exam for any random enrollment number without authentication
+4. Unlimited image upload to their server
+5. LFI Exploit which allows you to fetch any local files from server
+6. View all student submission like question answered from final exams which held during 24th Aug - 27th Aug 2020
+
+
 # Introduction
 
 After Covid-19 pandemic started, [RGPV University](https://en.wikipedia.org/wiki/Rajiv_Gandhi_Proudyogiki_Vishwavidyalaya) announced that for final year students, they are planning to organize an [exam](https://www.rgpv.ac.in/CDN/PubContent/Advertisement/Letter230720070203.pdf) which will consist of MCQ questions (total 40 questions) and it will be an open book exam as mentioned [here](https://www.rgpv.ac.in/CDN/PubContent/Advertisement/general%20instructions%2019%20Aug%202020190820064558.pdf). This process started by taking two mock exams
@@ -78,28 +88,28 @@ So for a typical exam in RGPV Exam portal, things were like:
 <b>Problem with all these steps is that except step 1 and 3, each POST request to an endpoint needs only `enrollment_no` as their body to get 
 a response which is worrying because ideally there has to be JWT token used in a header which acts as an authentication.</b>
 
-### Impact:
+### <b>Impact:</b>
 
 Given you have any person `enrollment_no` which exist in their database, anyone can:
 
-#### 1. Question Paper Leak
+#### <b>1. Question Paper Leak</b>
 
 <img src="{{ site.baseurl }}/img/post/rgpv_exam_post.png" alt="RGPV Exam Post" />
 
 Get full question paper in JSON format as a response. It includes all question list and answer list.
 
-#### 2. Create/Update/Delete Exam Submission
+#### <b>2. Create/Update/Delete Exam Submission</b>
 
 As explained above, with the enrollment number, anyone can overwrite the submission of another student easily without any authentication.
 
-#### 3. Upload Image without Auth
+#### <b>3. Upload Image without Auth</b>
 
 As of the third step, which is uploading your photo through webcam. From the client-side, it captures an image and requests to backend endpoint with only file content without any authentication. So, in reality, anyone can upload any image to the given endpoint and spam given AWS S3 server with their cat photos.
 
 <img src="{{ site.baseurl }}/img/post/rgpv-catto-upload.png" alt="RGPV Uploading image" />
 
 
-#### 4. Minor Data Leak
+#### <b>4. Minor Data Leak</b>
 As of the fourth step, it is just a confirmation page which takes enrollment_no and responds with:
 
 1. Name
@@ -236,11 +246,11 @@ I started with multiple strings like "exam", "user" or anything sensitive and th
 
 To show how serious is this, anyone with bad intention might have written a script with common table names and might have spammed a given endpoint to extract every single data from a given table.
 
-### Impact:
+### <b>Impact:</b>
 
 Given vulnerability existed till 28th of August 2020 which includes mock tests and two final exams for all possible branch
 
-#### 1. /common/student
+#### <b>1. /common/student</b>
 Reveals 49 thousand student information present in the database who registered for the RGPV Exam portal and this includes every PII which RGPV has (like dob, IP, phone_no, email, etc) including unique id, 
 OTP which was meant to be safely stored by each student and much more.
 
@@ -250,7 +260,7 @@ OTP which was meant to be safely stored by each student and much more.
 In general, the privacy of every student was compromised and no one knows 
 how many of them extracted all the given data and might have sold this or using it for marketing purposes.
 
-#### 2. /common/result
+#### <b>2. /common/result</b>
 Reveals every student submission, this submission includes all answers given 
 for the given question and at which time, which question was seen, and more.
 
@@ -259,7 +269,7 @@ for the given question and at which time, which question was seen, and more.
 
 In short, anyone will know which student gave which exam with how much correctness and how much time was taken.
 
-#### 3. /common/institute
+#### <b>3. /common/institute</b>
 All institute with their ID and name present in DB. 
 This was not much helpful in revealing sensitive data but not good to share.
 
