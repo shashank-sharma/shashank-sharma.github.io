@@ -240,7 +240,7 @@ To show how serious is this, anyone with bad intention might have written a scri
 
 Given vulnerability existed till 28th of August 2020 which includes mock tests and two final exams for all possible branch
 
-####1. /common/student
+#### 1. /common/student
 Reveals 49 thousand student information present in the database who registered for the RGPV Exam portal and this includes every PII which RGPV has (like dob, IP, phone_no, email, etc) including unique id, 
 OTP which was meant to be safely stored by each student and much more.
 
@@ -250,7 +250,7 @@ OTP which was meant to be safely stored by each student and much more.
 In general, the privacy of every student was compromised and no one knows 
 how many of them extracted all the given data and might have sold this or using it for marketing purposes.
 
-####2. /common/result
+#### 2. /common/result
 Reveals every student submission, this submission includes all answers given 
 for the given question and at which time, which question was seen, and more.
 
@@ -259,7 +259,7 @@ for the given question and at which time, which question was seen, and more.
 
 In short, anyone will know which student gave which exam with how much correctness and how much time was taken.
 
-####3. /common/institute
+#### 3. /common/institute
 All institute with their ID and name present in DB. 
 This was not much helpful in revealing sensitive data but not good to share.
 
