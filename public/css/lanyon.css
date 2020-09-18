@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (min-width: 56em) {
   .container {
-    max-width: 38rem;
+    max-width: 58rem;
   }
 }
 
@@ -949,14 +949,14 @@ a.pagination-item:hover {
 .custom-container {
   width: 28rem;
 }
-@media (min-width: 38em) {
+@media (min-width: 48em) {
   .custom-container{
     width: 32rem;
   }
 }
 @media (min-width: 56em) {
   .custom-container {
-    width: 42rem;
+    width: 58rem;
   }
 }
 
