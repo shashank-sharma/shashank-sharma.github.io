@@ -94,6 +94,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (min-width: 56em) {
   .container {
+    max-width: 32rem;
+  }
+}
+@media (min-width: 86em) {
+  .container {
+    max-width: 42rem;
+  }
+}
+@media (min-width: 100em) {
+  .container {
     max-width: 58rem;
   }
 }
@@ -576,11 +586,12 @@ a.pagination-item:hover {
 
 .home-header {
   height: 100vh;
-  background-color: white;
+  background-color: transparent;
   left: 0;
   overflow: hidden;
   transition: left 1.5s ease-in-out, opacity 1s ease-in-out, background-color 1s ease-in-out;
   position: relative;
+  z-index: 2;
 }
 
 .home-header-image {
