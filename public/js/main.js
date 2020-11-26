@@ -589,6 +589,7 @@ window.onload = function () {
   }
 
   function showHomepage() {
+    header_body.style.zIndex = "2";
     page_state = "home";
     home_design.style.opacity = "0";
     home_hello.style.opacity = "0";

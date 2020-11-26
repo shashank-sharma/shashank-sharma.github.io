@@ -591,7 +591,6 @@ a.pagination-item:hover {
   overflow: hidden;
   transition: left 1.5s ease-in-out, opacity 1s ease-in-out, background-color 1s ease-in-out;
   position: relative;
-  z-index: 2;
 }
 
 .home-header-image {
