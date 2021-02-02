@@ -301,6 +301,7 @@ window.onload = function () {
       content: '<span style="font-weight:600;">May 01</span><br/>College: Technical Club',
       start: "2018-05-01",
       className: "volunteer no-end",
+      image: "/img/timeline/technical-club.jpg",
       text: "I really wanted to start Technical club in our college in hope for having one strong community"
     },
     {
@@ -309,6 +310,7 @@ window.onload = function () {
       start: "2019-08-01",
       end: "2020-06-01",
       className: "volunteer timeline-stripes",
+      image: "/img/timeline/dsc-poster.png",
       text: "I was Project lead for our DSC Community in college and responsible for creating websites, seminars and knowledge sharing sessions"
     },
     {
