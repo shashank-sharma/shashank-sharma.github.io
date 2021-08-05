@@ -260,10 +260,20 @@ window.onload = function () {
       id: "job-1",
       content: '<span style="font-weight:600;">Jul 27</span><br/>CivicDataLab',
       start: "2020-07-27",
-      end: new Date(),
+      end: "2021-05-24",
       className: "internship timeline-stripes",
       text: "My first job as Backend Developer",
       image: "/img/timeline/cdl.jpg",
+      caption: "- Company logo"
+    },
+    {
+      id: "job-2",
+      content: '<span style="font-weight:600;">Jul 27</span><br/>Hackerrank',
+      start: "2021-07-29",
+      end: new Date(),
+      className: "internship timeline-stripes",
+      text: "Best Milestone ever",
+      image: "/img/timeline/hackerrank.png",
       caption: "- Company logo"
     },
     {
