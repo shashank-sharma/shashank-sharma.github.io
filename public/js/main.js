@@ -116,7 +116,7 @@ window.onload = function () {
       id: "IV",
       content: "Fourth Year",
       start: "2019-05-01",
-      end: new Date(),
+      end: "2020-05-01",
       type: "background",
       className: "fourth-year",
     },
