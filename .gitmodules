@@ -1,0 +1,3 @@
+[submodule "themes/virgo-extended"]
+	path = themes/virgo-extended
+	url = https://github.com/shashank-sharma/hugo-theme-virgo-extended
