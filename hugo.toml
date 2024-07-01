@@ -1,0 +1,80 @@
+baseURL = 'https://shashank-sharma.xyz'
+languageCode = 'en'
+title = 'Shashank Sharma'
+
+theme = 'virgo-extended'
+
+hasCJKLanguage = true
+summaryLength = 80
+paginate = 10000
+enableGitInfo = true
+timeZone = 'Asia/Kolkata'
+ignoreFiles = ['\\.obsidian/*']
+
+
+[params]
+    author = 'Shashank'
+    version = 'v.2024.07'
+    slogan = 'Just a guy, who is engineer for fun'
+    startDate = 2020
+    logo = '/img/shashank.png'
+    en = true
+    dark = true
+    isSingleColumnOfPostList = true
+    isShowPrevNextLink = true
+    hasActiveFloatingBox = true
+    isShowRelativePosts = true
+    isShowMinishipBoxOfNav = false
+    isShowShipBoxOfNav = true
+    isShowLocalSearch = true
+    isShowRecentPostsOfNav = true
+    hasActiveAnimate = true
+
+    # Test for later
+    hasActiveCool = false
+    coolBackground = 'color.jpg'
+    coolOpacity = 0.69
+    coolSaturate = '180%'
+    coolBlur = '6px'
+
+    hasFoldAllCodeBlocks = false
+
+    [params.img]
+        notImgButWords = false
+        src = 'cat.svg'
+        width = 0
+        words = ""
+
+    [params.contact]
+        email = 'shashank.sharma98@gmail.com'
+        github = 'shashank-sharma'
+        twitter = 'shashank_py'
+        instagram = 'shashank.py'
+        youtube = 'ShashankSharma98'
+        color = '#696969'
+
+        [params.contact.config]
+            target = '_self'
+            color = '#8a8a8a'
+
+    [params.utterances]
+        active = false
+        repo = "loveminimal/comment"
+        issueTerm = "pathname"
+        theme = "github-light"
+        crossorigin = "anonymous"
+
+
+[markup]
+    [markup.asciidocExt]
+        preserveTOC = true
+    [markup.highlight]
+        style = "github"
+        lineNos = true
+    [markup.tableOfContents]
+        endLevel = 3
+        ordered = false
+        startLevel = 2
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
