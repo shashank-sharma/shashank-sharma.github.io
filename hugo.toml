@@ -64,6 +64,10 @@ ignoreFiles = ['\\.obsidian/*']
         theme = "github-light"
         crossorigin = "anonymous"
 
+    [params.analytics]
+        provider = "umami"
+        umamiWebsiteId = "7a913bd4-fb60-4872-b970-761338fbc7d0"
+        umamiServerUrl = "umami.shashank-sharma.xyz"
 
 [markup]
     [markup.asciidocExt]
