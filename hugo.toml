@@ -39,6 +39,11 @@ ignoreFiles = ['\\.obsidian/*']
 
     hasFoldAllCodeBlocks = false
 
+    [params.git_info]
+    host = "github"
+    user = "shashank-sharma"
+    repo = "shashank-sharma.github.io"
+
     [params.img]
         notImgButWords = false
         src = 'cat.svg'
