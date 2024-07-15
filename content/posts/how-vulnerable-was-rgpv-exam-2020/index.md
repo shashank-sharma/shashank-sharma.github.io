@@ -3,6 +3,8 @@ title: How Vulnerable Was Rgpv Exam 2020
 aliases: []
 date: 2024-06-30
 time: 10:21
+categories:
+  - blog
 tags:
   - security
   - exploration

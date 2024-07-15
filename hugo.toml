@@ -12,6 +12,10 @@ timeZone = 'Asia/Kolkata'
 ignoreFiles = ['\\.obsidian/*']
 
 
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+
 [params]
     author = 'Shashank'
     version = 'v.2024.07'

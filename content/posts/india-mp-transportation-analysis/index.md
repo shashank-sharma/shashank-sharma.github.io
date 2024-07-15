@@ -3,6 +3,8 @@ title: India's MP Transportation Analysis through Python
 aliases: []
 date: 2017-04-16
 time: 10:21
+categories:
+  - blog
 tags:
   - analysis
   - python
