@@ -78,6 +78,9 @@ ignoreFiles = ['\\.obsidian/*']
         umamiWebsiteId = "7a913bd4-fb60-4872-b970-761338fbc7d0"
         umamiServerUrl = "umami.shashank-sharma.xyz"
 
+    [params.backend]
+        deviceApiEndpoint = "https://backend.shashank-sharma.xyz/api/track/getapp"
+
 [markup]
     [markup.asciidocExt]
         preserveTOC = true
