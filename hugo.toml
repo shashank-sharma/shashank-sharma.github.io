@@ -48,6 +48,12 @@ ignoreFiles = ['\\.obsidian/*']
     user = "shashank-sharma"
     repo = "shashank-sharma.github.io"
 
+    [params.video]
+        notImgButWords = false
+        src = '/video/tower.mp4'
+        width = 0
+        words = ""
+
     [params.img]
         notImgButWords = false
         src = 'cat.svg'
