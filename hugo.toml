@@ -50,7 +50,7 @@ ignoreFiles = ['\\.obsidian/*']
 
     [params.video]
         notImgButWords = false
-        src = ['/video/tower.mp4', '/video/main-tower.mp4']
+        src = ['/video/tower.mp4', '/video/main-tower.mp4', '/video/first-house.mp4']
         width = 0
         words = ""
 
