@@ -53,7 +53,8 @@ ignoreFiles = ['\\.obsidian/*']
         src = ['/video/tower.mp4',
                '/video/main-tower.mp4',
                '/video/first-house.mp4',
-               '/video/zero-home.mp4']
+               '/video/zero-home.mp4',
+               '/video/tower-water.mp4']
         width = 0
         words = ""
 
