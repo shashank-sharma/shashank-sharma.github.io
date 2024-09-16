@@ -1,13 +1,13 @@
 baseURL = 'https://shashank-sharma.xyz'
 languageCode = 'en'
 title = 'Shashank Sharma'
-
 theme = 'virgo-extended'
 
 hasCJKLanguage = true
 summaryLength = 80
 paginate = 10000
 enableGitInfo = true
+enableRobotsTXT = true
 timeZone = 'Asia/Kolkata'
 ignoreFiles = ['\\.obsidian/*']
 
@@ -20,6 +20,7 @@ ignoreFiles = ['\\.obsidian/*']
     author = 'Shashank'
     version = 'v.2024.07'
     slogan = 'Just a guy, who is engineer for fun'
+    description = 'Backend Engineer | Anime Lover | Artist'
     startDate = 2020
     logo = '/svg/logo.svg'
     en = true
