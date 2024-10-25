@@ -1,0 +1,114 @@
+{{/* layouts/shortcodes/image-scroll-captions.html */}}
+<div class="image-scroll-wrapper">
+    <div class="image-scroll">
+        {{- $images := split (.Get "images") ";" -}}
+        {{- range $images -}}
+            {{- $item := split . "," -}}
+            {{- $image := index $item 0 -}}
+            {{- $caption := "" -}}
+            {{- if ge (len $item) 2 -}}
+                {{- $caption = index $item 1 -}}
+            {{- end -}}
+            <div class="scroll-item">
+                <img src="{{ $image }}" alt="{{ $caption }}" loading="lazy">
+                {{ if $caption }}
+                    <div class="image-caption">{{ $caption }}</div>
+                {{ end }}
+            </div>
+        {{- end -}}
+    </div>
+</div>
+
+<style>
+    .image-scroll-wrapper {
+        width: 100%;
+        position: relative;
+    }
+
+    .image-scroll {
+        display: flex;
+        scroll-behavior: smooth;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: #888 #f1f1f1;
+    }
+
+    .image-scroll::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .image-scroll::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 3px;
+    }
+
+    .image-scroll::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 3px;
+    }
+
+    .image-scroll::-webkit-scrollbar-thumb:hover {
+        background: #666;
+    }
+
+    .scroll-item {
+        flex: 0 0 auto;
+        padding: 2px;
+        max-width: 300px;
+    }
+
+    .scroll-item img {
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+    }
+
+    .scroll-item img:hover {
+        transform: scale(1.05);
+    }
+
+    .image-caption {
+        color: #666;
+        text-align: center;
+        font-size: 0.13rem;
+    }
+
+    .image-scroll-wrapper::before,
+.image-scroll-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 40px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.image-scroll-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(177, 176, 176, 0.3), transparent);
+}
+
+.image-scroll-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(177, 176, 176, 0.3), transparent);
+}
+
+    @media (max-width: 768px) {
+        .scroll-item {
+            max-width: 250px;
+        }
+        
+        .scroll-item img {
+            width: 250px;
+            height: 170px;
+        }
+        
+        .image-caption {
+            max-width: 250px;
+        }
+    }
+</style>

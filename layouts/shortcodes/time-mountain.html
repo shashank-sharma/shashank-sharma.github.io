@@ -1,0 +1,131 @@
+{{ $data := .Get "data" | unmarshal }}
+
+<!-- Calculate totals -->
+{{ $totalHours := 0 }}
+{{ $totalSessions := len $data }}
+{{ range $entry := $data }}
+    {{ $totalHours = add $totalHours $entry.hours }}
+{{ end }}
+
+<div class="mountain-skills">
+  <div class="skills-grid">
+    {{ range $index, $entry := $data }}
+    <div class="mountain {{ if eq $index 0 }}first-date{{ end }} {{ if eq (add $index 1) $totalSessions }}last-date{{ end }}" 
+         style="--hours: {{ $entry.hours }}; --position: {{ $entry.position }}; --z-index: {{ $entry.hours }}">
+      <div class="mountain-shape" style="--opacity: {{ div $entry.hours 8.0 }}"></div>
+      <div class="skill-label">{{ $entry.date }}</div>
+      <div class="skill-hours">{{ $entry.hours }}h</div>
+      <div class="skill-line"></div>
+    </div>
+    {{ end }}
+  </div>
+  <div class="summary">
+    <div class="summary-line">In total I spent approx {{ printf "%.1f" $totalHours }} hours or more to write this blog post with {{ $totalSessions }} sessions.<br>Thank you for reading till the end :)</div>
+  </div>
+</div>
+
+<style>
+.mountain-skills {
+  width: 100%;
+  max-width: 1000px;
+  height: 300px;
+  position: relative;
+  opacity: 0.5;
+  margin-top: 1rem;
+}
+
+.skills-grid {
+  height: 200px;
+  position: relative;
+  width: 100%;
+  border-bottom: 2px solid #444;
+}
+
+.mountain {
+  position: absolute;
+  bottom: 0;
+  left: calc(var(--position) * 1%);
+  transform: translateX(-50%);
+  z-index: calc(var(--z-index));
+}
+
+.mountain-shape {
+  width: 0;
+  height: 0;
+  border-left: 75px solid transparent;
+  border-right: 75px solid transparent;
+  border-bottom: calc(var(--hours) * 25px) solid;
+  border-bottom-color: rgba(68, 68, 68, var(--opacity));
+  transition: border-bottom-width 1s ease;
+}
+
+.skill-label {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  color: #444;
+  font-size: 0.13rem;
+  font-weight: 500;
+}
+
+.skill-hours {
+  position: absolute;
+  bottom: calc(var(--hours) * 25px + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  color: #444;
+  font-size: 0.11rem;
+}
+
+.summary {
+  padding: 0.4rem 0;
+  font-size: 0.13rem;
+  text-align: center;
+  color: #666;
+}
+
+.summary-highlight {
+  color: #333;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 768px) {
+  .mountain-skills {
+    max-width: 100%;
+  }
+
+  .mountain-shape {
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+  }
+
+  .mountain .skill-label {
+    display: none;
+  }
+
+  .first-date .skill-label,
+  .last-date .skill-label {
+    display: block;
+    font-weight: 400;
+    padding-left: 0.3rem;
+  }
+
+  .skill-hours {
+    font-size: 0.10rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mountain-shape {
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+  }
+  
+  .skill-hours {
+    font-size: 0.09rem;
+  }
+}
+</style>

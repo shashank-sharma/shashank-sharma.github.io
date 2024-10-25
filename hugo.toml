@@ -18,7 +18,7 @@ ignoreFiles = ['\\.obsidian/*']
 
 [params]
     author = 'Shashank'
-    version = 'v.2024.07'
+    version = 'v.2024.10'
     slogan = 'Just a guy, who is engineer for fun'
     description = 'Backend Engineer | Anime Lover | Artist'
     startDate = 2020

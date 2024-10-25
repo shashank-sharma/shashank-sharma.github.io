@@ -43,20 +43,9 @@ Now being a Computer Science Engineer, I was already curious about this scenario
 tool and investigated what was happening. At first, I encountered one debugger state which they initialized in their `index.html` 
 file, which avoids people to debugging their javascript code. If you are curious, read this [here](https://stackoverflow.com/a/39784526/3523510).
 
-<aside>
-    <h4>Sidebar</h2>
-    <p>This is some content in the sidebar.</p>
-</aside>
-
 On bypassing this, I observed my Network tab and found that there was a 504 error returned, as shown in the image.
 
 <img src="imgs/rgpv-timeout-504.png" alt="RGPV 504 Error" />
-
-
-<aside class="left">
-    <h4>Sidebar</h2>
-    <p>This is some content in the sidebar.</p>
-</aside>
 
 Now as of the next step, I was more interested in knowing if their website is vulnerable or not? 
 This curiosity leads me to use the Nmap tool, I started one vulnerability check script, and after 5 min, there were two exploits which I found:
