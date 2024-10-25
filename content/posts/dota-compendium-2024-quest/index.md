@@ -72,13 +72,13 @@ One of the best visualization which I did, personally I dislike playing in the m
     <p>As per my Samsung sleep time statistics, my average bedtime is 04:55, hence a couple of games played even at around 04:00. Another interesting take, if you notice, 21:00 games played is lower compared to 20:00 and 22:00, reason being I eat my dinner at that time.</p>
 </aside>
 
-<img src="imgs/playtime.png" alt="Dota 2 Playtime Distribution" />
+<img class="img-150" src="imgs/playtime.png" alt="Dota 2 Playtime Distribution" />
 
 ### Playing patterns throught the week
 
 This is an interesting plot, which shows my playtime across the week/hours, where if you notice, on weekend, I have been very aggressive towards playing early or playing late until 05:00
 
-<img src="imgs/playpattern.png" alt="Dota 2 Playing Pattern" />
+<img class="img-200" src="imgs/playpattern.png" alt="Dota 2 Playing Pattern" />
 
 ### Heroes played throught my dota journey
 
