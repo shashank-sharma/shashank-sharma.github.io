@@ -21,7 +21,10 @@ My first-ever game of Dota 2 was at around May 2022, where I had no idea what I 
 
 ## The Journey Through Time
 
-All the visualization/animation is done via Python, you can have a look at notebook with all the code present: [Link](https://github.com/shashank-sharma/shashank-sharma.github.io/tree/master/content/posts/dota-compendium-2024-quest/data/dota2-player-analysis.ipynb)
+<aside>
+    <h4>Source Code</h2>
+    <p>All the visualization/animation is done via Python, you can have a look at notebook with all the code present: <a href="https://github.com/shashank-sharma/shashank-sharma.github.io/tree/master/content/posts/dota-compendium-2024-quest/data/dota2-player-analysis.ipynb">Link</a></p>
+</aside>
 
 ### Overall winrate progression
 
@@ -41,7 +44,7 @@ If you notice, initially, for a few 100 games, I struggled understanding the gam
     <p>Also, another quick observation, at some patches (blue lines), it requires players to complete objectives which makes them play into an uncomfortable position which leads to losing streak. For example, playing those heroes which they are not comfortable</p>
 </aside>
 
-### Win and Looses per month
+### Win and Losses per month
 
 This has always been surprising that my win/loss per month has been always approx 50%, still it doesn't mean a player is not improving, for example plot above shows win/loss progression has been changing, and game itself is adapting which is giving me tougher games and slowly making me grow rather than throwing me in some random unfair game continuously.
 
