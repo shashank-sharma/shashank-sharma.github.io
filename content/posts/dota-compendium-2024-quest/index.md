@@ -147,9 +147,9 @@ Hence, I recorded a points log video which scrolls from bottom to top and used e
 
 Full source code: [Link](https://gist.github.com/shashank-sharma/781652094e69b0595b88b2c841ba1136)
 
-Video link: [Link](https://shashank-sharma.xyz/posts/dota-compendium-2024-quest/imgs/aegis-logs.mp4)
+Video link: [Link](https://shashanksharma.xyz/posts/dota-compendium-2024-quest/imgs/aegis-logs.mp4)
 
-And finally, the parsed CSV file: [Link](https://shashank-sharma.xyz/posts/dota-compendium-2024-quest/data/compendium_logs.csv) (2 week of points missing)
+And finally, the parsed CSV file: [Link](https://shashanksharma.xyz/posts/dota-compendium-2024-quest/data/compendium_logs.csv) (2 week of points missing)
 
 ### Conclusion
 
