@@ -18,7 +18,7 @@ ignoreFiles = ['\\.obsidian/*']
 
 [params]
     author = 'Shashank'
-    version = 'v.2024.10'
+    version = 'v.2024.11'
     slogan = 'Just a guy, who is engineer for fun'
     description = 'Backend Engineer | Anime Lover | Artist'
     startDate = 2020
@@ -96,8 +96,19 @@ ignoreFiles = ['\\.obsidian/*']
     [markup.asciidocExt]
         preserveTOC = true
     [markup.highlight]
-        style = "github"
-        lineNos = true
+        anchorLineNos = false
+        codeFences = true
+        guessSyntax = false
+        hl_Lines = ''
+        hl_inline = false
+        lineAnchors = ''
+        lineNoStart = 1
+        lineNos = false
+        lineNumbersInTable = true
+        noClasses = true
+        noHl = false
+        style = 'emacs'
+        tabWidth = 4
     [markup.tableOfContents]
         endLevel = 3
         ordered = false

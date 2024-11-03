@@ -23,7 +23,7 @@ My first-ever game of Dota 2 was at around May 2022, where I had no idea what I 
 
 <aside>
     <h4>Source Code</h2>
-    <p>All the visualization/animation is done via Python, you can have a look at notebook with all the code present: <a href="https://github.com/shashank-sharma/shashank-sharma.github.io/tree/master/content/posts/dota-compendium-2024-quest/data/dota2-player-analysis.ipynb">Link</a></p>
+    <p>All the visualization/animation is done via Python, you can have a look at notebook with all the code present: [dota2-player-analysis.ipynb](/notebooks/dota2-player-analysis)</p>
 </aside>
 
 ### Overall winrate progression

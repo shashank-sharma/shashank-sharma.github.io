@@ -5,6 +5,11 @@ type: nav
 date: 2023-05-26 14:11
 ---
 
+### 📑 Pages
+
+- Python notebooks [Link](/notebooks)
+- Microblog [Link](/microblog)
+
 ### 🌞 Personal
 
 |       |       |       |       |       |

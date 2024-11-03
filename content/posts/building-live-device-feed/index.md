@@ -123,6 +123,10 @@ Doing all this does give you satisfaction of seeing all your activity in one pla
 3. Which application I have been using a lot lately, is it zoom for meetings, or slack for async communication
 4. And the one which I am actually interested is in LLM understanding or finding any anomaly which is difficult to find just by a SQL query/filters.
 
+## Bonus
+
+I have been able to create mountain graph which you can see at bottom because of these data itself, I have python notebook for fetching and generating the data, which can be found [here](/notebooks/blog-time-spent)
+
 
 {{< time-mountain data="[{\"date\": \"05 Aug\", \"hours\": 0.81, \"position\": 10}, {\"date\": \"06 Aug\", \"hours\": 0.25, \"position\": 16}, {\"date\": \"07 Aug\", \"hours\": 3.85, \"position\": 22}, {\"date\": \"08 Aug\", \"hours\": 4.42, \"position\": 28}, {\"date\": \"09 Aug\", \"hours\": 1.13, \"position\": 34}, {\"date\": \"10 Aug\", \"hours\": 3.89, \"position\": 40}, {\"date\": \"11 Aug\", \"hours\": 4.19, \"position\": 46}, {\"date\": \"12 Aug\", \"hours\": 0.85, \"position\": 52}, {\"date\": \"13 Aug\", \"hours\": 0.05, \"position\": 58}, {\"date\": \"14 Aug\", \"hours\": 3.04, \"position\": 64}, {\"date\": \"15 Aug\", \"hours\": 1.53, \"position\": 70}, {\"date\": \"16 Aug\", \"hours\": 1.41, \"position\": 76}, {\"date\": \"17 Aug\", \"hours\": 3.79, \"position\": 82}, {\"date\": \"18 Aug\", \"hours\": 1.55, \"position\": 88}]" >}}
 
