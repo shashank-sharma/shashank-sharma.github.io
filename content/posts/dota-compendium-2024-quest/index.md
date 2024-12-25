@@ -15,7 +15,7 @@ tags:
 
 ## Introduction
 
-I have been playing games for a while, and it has been usually FPS games, where it started from CS1.6 to CSGO for more than 3,000 hours and playing Valorant for 2 more years, and a couple of other ones, and at some point I realized I need to try some new style and started playing dota 2. 
+I have been playing games for a while, and it has been usually FPS games, where it started from CS1.6 to CSGO for more than 3,000 hours and playing Valorant for 2 more years, and a couple of other ones, and at some point I realized I need to try some new style and started playing dota 2.
 
 My first-ever game of Dota 2 was at around May 2022, where I had no idea what I was doing and why I was doing it, those 5 games I remember closing them in between and had no idea what to build by looking at the items in the shop. For context, Dota has around 125 heroes and understanding all the heroes takes significant amount of time, and even on top of it when I saw Rubick hero, which steals other hero's spells, I was so impressed by the game design and I devoted a major amount of time understanding and tried being good at it.
 
@@ -23,18 +23,18 @@ My first-ever game of Dota 2 was at around May 2022, where I had no idea what I 
 
 <aside>
     <h4>Source Code</h2>
-    <p>All the visualization/animation is done via Python, you can have a look at notebook with all the code present: [dota2-player-analysis.ipynb](/notebooks/dota2-player-analysis)</p>
+    <p>All the visualization/animation is done via Python, you can have a look at notebook with all the code present: <a href="/notebooks/dota2-player-analysis">dota2-player-analysis.ipynb</a></p>
 </aside>
 
 ### Overall winrate progression
 
 If you notice, initially, for a few 100 games, I struggled understanding the game because of which my net wins were in negative. But slowly, I started winning more than losses because of which win rate did increase and got almost linear thereafter.
 
-{{< rawhtml >}} 
+{{< rawhtml >}}
 
 <video width=100% controls autoplay>
     <source src="imgs/dota2-progression.mp4" type="video/webm">
-    Your browser does not support the video tag.  
+    Your browser does not support the video tag.
 </video>
 
 {{< /rawhtml >}}
@@ -93,7 +93,7 @@ View it in fullscreen for better experience
 
 <video width=100% controls autoplay>
     <source src="imgs/dota2-dynamic-animation.mp4" type="video/webm">
-    Your browser does not support the video tag.  
+    Your browser does not support the video tag.
 </video>
 
 ### Heroes played by their attributes
