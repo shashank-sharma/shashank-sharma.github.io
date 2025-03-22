@@ -108,7 +108,7 @@ So we will use these data in JSON format, load it into python script and then do
 <li>DEWAS - 240930</li>
 </ol>
 <br />
-<iframe frameborder="0" height="800" scrolling="no" src="https://plot.ly/~shashank-sharma/19.embed" width="900"></iframe><span style="font-size: large;"><br /></span><span style="font-size: medium;">Link:&nbsp;<a href="https://plot.ly/~shashank-sharma/19/">https://plot.ly/~shashank-sharma/19/</a></span><br />
+<iframe class="dark-invert" frameborder="0" height="800" scrolling="no" src="https://plot.ly/~shashank-sharma/19.embed" width="900"></iframe><span style="font-size: large;"><br /></span><span style="font-size: medium;">Link:&nbsp;<a href="https://plot.ly/~shashank-sharma/19/">https://plot.ly/~shashank-sharma/19/</a></span><br />
 <br />
 <span style="font-size: large;">Which color does people prefer while buying any transport vehicle ?</span><br />
 <ol style="text-align: left;">
@@ -125,7 +125,7 @@ So we will use these data in JSON format, load it into python script and then do
 </ol>
 <br />
 <br />
-<iframe frameborder="0" height="800" scrolling="no" src="https://plot.ly/~shashank-sharma/11.embed" width="900"></iframe><br />
+<iframe class="dark-invert" frameborder="0" height="800" scrolling="no" src="https://plot.ly/~shashank-sharma/11.embed" width="900"></iframe><br />
 <span style="font-size: medium;">Link:&nbsp;<a href="https://plot.ly/~shashank-sharma/11/">https://plot.ly/~shashank-sharma/11/</a></span><br />
 <span style="font-size: large;"><br /></span><span style="font-size: large;">Which company have its maximum vehicle in MP ?</span><br />
 <ol style="text-align: left;">
@@ -140,7 +140,7 @@ So we will use these data in JSON format, load it into python script and then do
 <li>MARUTI UDYOG LTD - 249949</li>
 <li>ESCORTS LTD - 139231</li>
 </ol>
-<iframe frameborder="0" height="800" scrolling="no" src="https://plot.ly/~shashank-sharma/13.embed" width="900"></iframe><br />
+<iframe class="dark-invert" frameborder="0" height="800" scrolling="no" src="https://plot.ly/~shashank-sharma/13.embed" width="900"></iframe><br />
 <span style="font-size: medium;">Link:&nbsp;<a href="https://plot.ly/~shashank-sharma/13/">https://plot.ly/~shashank-sharma/13/</a><br /><span style="font-size: large;"><br /></span></span><br />
 <span style="font-size: large;">In which year does maximum vehicle were issued ?</span><br />
 <br />
@@ -157,7 +157,7 @@ So we will use these data in JSON format, load it into python script and then do
 <li>2008 - 481315</li>
 <li>2007 - 471963</li>
 </ol>
-<iframe frameborder="0" height="800" scrolling="no" src="https://plot.ly/~shashank-sharma/15.embed" width="900"></iframe><br />
+<iframe class="dark-invert" frameborder="0" height="800" scrolling="no" src="https://plot.ly/~shashank-sharma/15.embed" width="900"></iframe><br />
 <span style="font-size: medium;">Link:&nbsp;<a href="https://plot.ly/~shashank-sharma/15/">https://plot.ly/~shashank-sharma/15/</a></span><br />
 <span style="font-size: large;">Which transport vehicle is in majority ?</span><br />
 <br />
@@ -173,7 +173,7 @@ So we will use these data in JSON format, load it into python script and then do
 <li>ACTIVA 3G EAS KS CBS BS3 - 162542</li>
 <li>PASSION PLUS - 146584</li>
 </ol>
-<iframe frameborder="0" height="800" scrolling="no" src="https://plot.ly/~shashank-sharma/17.embed" width="900"></iframe><br />
+<iframe class="dark-invert" frameborder="0" height="800" scrolling="no" src="https://plot.ly/~shashank-sharma/17.embed" width="900"></iframe><br />
 <span style="font-size: medium;">Link:&nbsp;<a href="https://plot.ly/~shashank-sharma/17/">https://plot.ly/~shashank-sharma/17/</a></span><br />
 <span style="font-size: large;">What type of vehicle does people have in majority ?</span><br />
 <br />
@@ -190,7 +190,7 @@ So we will use these data in JSON format, load it into python script and then do
 <li>TROLLY - 111358</li>
 <li>PICK UP VAN - 95238</li>
 </ol>
-<iframe frameborder="0" height="800" scrolling="no" src="https://plot.ly/~shashank-sharma/9.embed" width="900"></iframe>Link:&nbsp;<a href="https://plot.ly/~shashank-sharma/9/">https://plot.ly/~shashank-sharma/9/</a><br />
+<iframe class="dark-invert" frameborder="0" height="800" scrolling="no" src="https://plot.ly/~shashank-sharma/9.embed" width="900"></iframe>Link:&nbsp;<a href="https://plot.ly/~shashank-sharma/9/">https://plot.ly/~shashank-sharma/9/</a><br />
 <br />
 And that's how many more questions can be solved with the given data.<br />
 Thank you for reading till the end of this page. I hope by now you realized the real power of python.<br />

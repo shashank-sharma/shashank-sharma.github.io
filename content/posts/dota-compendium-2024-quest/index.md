@@ -11,7 +11,7 @@ tags:
   - data
 ---
 
-<img border="0" src="imgs/activity-2023.png" />
+<img border="0" class="dark-invert" src="imgs/activity-2023.png" />
 
 ## Introduction
 
@@ -32,7 +32,7 @@ If you notice, initially, for a few 100 games, I struggled understanding the gam
 
 {{< rawhtml >}}
 
-<video width=100% controls autoplay>
+<video class="dark-invert" width=100% controls autoplay>
     <source src="imgs/dota2-progression.mp4" type="video/webm">
     Your browser does not support the video tag.
 </video>
@@ -48,7 +48,7 @@ If you notice, initially, for a few 100 games, I struggled understanding the gam
 
 This has always been surprising that my win/loss per month has been always approx 50%, still it doesn't mean a player is not improving, for example plot above shows win/loss progression has been changing, and game itself is adapting which is giving me tougher games and slowly making me grow rather than throwing me in some random unfair game continuously.
 
-<img src="imgs/winrate.png" alt="Dota 2 Winrate" />
+<img class="dark-invert" src="imgs/winrate.png" alt="Dota 2 Winrate" />
 
 ### Dota 2 Gaming activity for past 3 years
 
@@ -57,11 +57,11 @@ This has always been surprising that my win/loss per month has been always appro
     <p>For past few weeks, I have been playing a bit less, since I started playing Deadlock</p>
 </aside>
 
-<img src="imgs/activity-2022.png" alt="Dota 2 Activity 2022" />
+<img class="dark-invert" src="imgs/activity-2022.png" alt="Dota 2 Activity 2022" />
 
-<img src="imgs/activity-2023.png" alt="Dota 2 Activity 2023" />
+<img class="dark-invert" src="imgs/activity-2023.png" alt="Dota 2 Activity 2023" />
 
-<img src="imgs/activity-2024.png" alt="Dota 2 Activity 2024" />
+<img class="dark-invert" src="imgs/activity-2024.png" alt="Dota 2 Activity 2024" />
 
 ### Playtime distribution
 
@@ -72,13 +72,13 @@ One of the best visualization which I did, personally I dislike playing in the m
     <p>As per my Samsung sleep time statistics, my average bedtime is 04:55, hence a couple of games played even at around 04:00. Another interesting take, if you notice, 21:00 games played is lower compared to 20:00 and 22:00, reason being I eat my dinner at that time.</p>
 </aside>
 
-<img class="img-150" src="imgs/playtime.png" alt="Dota 2 Playtime Distribution" />
+<img class="dark-invert img-150" src="imgs/playtime.png" alt="Dota 2 Playtime Distribution" />
 
 ### Playing patterns throught the week
 
 This is an interesting plot, which shows my playtime across the week/hours, where if you notice, on weekend, I have been very aggressive towards playing early or playing late until 05:00
 
-<img class="img-200" src="imgs/playpattern.png" alt="Dota 2 Playing Pattern" />
+<img class="dark-invert img-200" src="imgs/playpattern.png" alt="Dota 2 Playing Pattern" />
 
 ### Heroes played throught my dota journey
 
@@ -91,7 +91,7 @@ View it in fullscreen for better experience
     <p>As mentioned, Dota 2 has around 125 heroes, out of which I liked playing support heroes a lot, but it changed from 2023 where I started experimenting with a couple of heroes and enjoyed Offlane role as well, hence slow growth for top 10 heroes except Rubick, and new heroes coming in left side.</p>
 </aside>
 
-<video width=100% controls autoplay>
+<video class="dark-invert" width=100% controls autoplay>
     <source src="imgs/dota2-dynamic-animation.mp4" type="video/webm">
     Your browser does not support the video tag.
 </video>
@@ -100,7 +100,7 @@ View it in fullscreen for better experience
 
 Some interesting observation here, I hate playing agility heroes, and enjoy playing intelligence which are mostly supports and strength heroes which are offlaners.
 
-<img src="imgs/hero-performance.png" alt="Dota 2 Hero attributes" />
+<img class="dark-invert" src="imgs/hero-performance.png" alt="Dota 2 Hero attributes" />
 
 ## 2024 Compendium quest
 

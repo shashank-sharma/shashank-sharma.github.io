@@ -5,7 +5,8 @@ theme = 'virgo-extended'
 
 hasCJKLanguage = true
 summaryLength = 80
-paginate = 10000
+[pagination]
+  pagerSize = 10000
 enableGitInfo = true
 enableRobotsTXT = true
 timeZone = 'Asia/Kolkata'
@@ -91,6 +92,18 @@ ignoreFiles = ['\\.obsidian/*']
 
     [params.backend]
         deviceApiEndpoint = "https://backend.shashank-sharma.xyz/api/track/getapp"
+
+    [params.giscus]
+        active = true
+        repo = "shashank-sharma/shashank-sharma.github.io"
+        repoId = "MDEwOlJlcG9zaXRvcnk3OTgzNjY4Mw=="
+        category="General"
+        categoryId="DIC_kwDOBMI2C84CoWhh"
+        mapping = "title"
+        inputPosition = "bottom"
+        theme = "noborder_light"
+        crossorigin = "anonymous"
+        lang = "en"
 
 [markup]
     [markup.asciidocExt]
