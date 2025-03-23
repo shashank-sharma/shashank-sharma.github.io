@@ -91,7 +91,7 @@ ignoreFiles = ['\\.obsidian/*']
         umamiServerUrl = "umami.shashank-sharma.xyz"
 
     [params.backend]
-        deviceApiEndpoint = "https://backend.shashank-sharma.xyz/api/track/getapp"
+        deviceApiEndpoint = "https://backend.shashanksharma.xyz/api/track/getapp"
 
     [params.giscus]
         active = true
