@@ -10,7 +10,7 @@ tags:
   - python
 ---
 
-<img border="0" src="imgs/terminal.png" />
+<img class="blog-header-image" border="0" src="imgs/terminal.png" />
 
 ## Introduction
 

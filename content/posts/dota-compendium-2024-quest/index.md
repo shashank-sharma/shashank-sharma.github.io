@@ -11,7 +11,7 @@ tags:
   - data
 ---
 
-<img border="0" class="dark-invert" src="imgs/activity-2023.png" />
+<img class="blog-header-image" border="0" class="dark-invert" src="imgs/activity-2023.png" />
 
 ## Introduction
 

@@ -11,6 +11,7 @@ tags:
   - project
 ---
 
+<img class="blog-header-image" border="0" class="dark-invert" src="imgs/raspberrypi.jpg" />
 
 ## Introduction
 
