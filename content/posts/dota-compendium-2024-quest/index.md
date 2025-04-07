@@ -11,7 +11,7 @@ tags:
   - data
 ---
 
-<img class="blog-header-image" border="0" class="dark-invert" src="imgs/activity-2023.png" />
+<img class="blog-header-image" border="0" src="imgs/aegis.png" />
 
 ## Introduction
 
@@ -153,7 +153,9 @@ And finally, the parsed CSV file: [Link](https://shashanksharma.xyz/posts/dota-c
 
 ### Conclusion
 
-<img src="imgs/aegis.png" alt="Dota 2 Hero attributes" />
+And finally I got it today at 7th April, 2025
+
+<img src="imgs/dota2-irl.jpg" alt="Dota 2 Hero attributes" />
 
 Overall, I spent initial money to purchase compendium 2024, and 1 extra set of levels to complete my 300 levels, and as of now I am really looking forward to Aegis 2024, hence looking forward to posting an image here :)
 

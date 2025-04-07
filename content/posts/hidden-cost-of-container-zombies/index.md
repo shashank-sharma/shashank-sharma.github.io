@@ -1,8 +1,8 @@
 ---
 title: Understanding and Mitigating Zombie Processes in Container Runtimes
 aliases: []
-date: 2023-09-02
-time: 08:20
+date: 2025-04-03
+time: 23:06
 categories:
   - blog
 tags:
@@ -118,7 +118,7 @@ The `PR_SET_CHILD_SUBREAPER` flag was introduced in Linux kernel 3.4 to address 
 
 This mechanism was specifically designed for container orchestration to ensure proper cleanup of containerized processes. However, as our experiment showed, setting the flag is only half the solution. The process must still actively reap its adopted children using `wait()` or similar calls.
 
-Let's look at a couple of scenario based off what we discussed, assuming we are creating 20 containers and destorying it:
+Let's look at a couple of scenario based off what we discussed, assuming we are creating 20 containers and destorying it
 
 ### 1. No Fix Scenario (20 zombies)
 
