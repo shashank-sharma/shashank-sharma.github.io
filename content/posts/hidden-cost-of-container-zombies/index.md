@@ -27,6 +27,8 @@ Initially, my task was nowhere near this, I was planning to improve the overall 
 
 Now, the second problem statement is out of the scope of this blog; hence, we'll assume that the containers are readily available. It all started with an investigation, understanding what was happening with existing containers, and I noticed a concerning pattern in our monitoring dashboard. Some of our pods were showing steadily increasing memory usage over time
 
+<img class="dark-invert" src="imgs/metrics.png" alt="Metrics" />
+
 Obviously, it won't increase without any reason, and the pattern was clear: memory usage would gradually climb higher with increased query frequency. This was particularly concerning because our service is designed to handle sustained high loads, and memory leaks could eventually lead to service degradation or outages.
 
 ## The Smoking Gun: 8088 Zombies
