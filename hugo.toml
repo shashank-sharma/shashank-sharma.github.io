@@ -52,11 +52,18 @@ ignoreFiles = ['\\.obsidian/*']
 
     [params.video]
         notImgButWords = false
+        # Light mode videos (default)
         src = ['/video/tower.mp4',
                '/video/main-tower.mp4',
                '/video/first-house.mp4',
                '/video/zero-home.mp4',
                '/video/tower-water.mp4']
+        # Dark mode videos
+        darkSrc = ['/video/dark/tower.mp4',
+                   '/video/dark/main-tower.mp4',
+                   '/video/dark/first-house.mp4',
+                   '/video/dark/zero-home.mp4',
+                   '/video/dark/tower-water.mp4']
         width = 0
         words = ""
 
@@ -73,6 +80,7 @@ ignoreFiles = ['\\.obsidian/*']
         instagram = 'shashank.py'
         youtube = 'ShashankSharma98'
         color = '#696969'
+        about_url = 'https://about.shashanksharma.xyz'
 
         [params.contact.config]
             target = '_self'
