@@ -19,7 +19,7 @@ ignoreFiles = ['\\.obsidian/*']
 
 [params]
     author = 'Shashank'
-    version = 'v.2024.11'
+    version = 'v.2025.07'
     slogan = 'Just a guy, who is engineer for fun'
     description = 'Backend Engineer | Anime Lover | Artist'
     startDate = 2020
@@ -35,6 +35,7 @@ ignoreFiles = ['\\.obsidian/*']
     isShowLocalSearch = true
     isShowRecentPostsOfNav = true
     hasActiveAnimate = true
+    math = true
 
     # Test for later
     hasActiveCool = false
@@ -44,6 +45,8 @@ ignoreFiles = ['\\.obsidian/*']
     coolBlur = '6px'
 
     hasFoldAllCodeBlocks = false
+
+    enableHomepageDarkMode = false
 
     [params.git_info]
     host = "github"
@@ -137,3 +140,9 @@ ignoreFiles = ['\\.obsidian/*']
     [markup.goldmark]
         [markup.goldmark.renderer]
             unsafe = true
+        [markup.goldmark.extensions]
+            [markup.goldmark.extensions.passthrough]
+                enable = true
+                [markup.goldmark.extensions.passthrough.delimiters]
+                    block = [['\\[', '\\]'], ['$$', '$$']]
+                    inline = [['\\(', '\\)']]
