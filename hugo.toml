@@ -70,6 +70,12 @@ ignoreFiles = ['\\.obsidian/*']
         width = 0
         words = ""
 
+        [params.video.feature]
+            enabled = false
+            teaserText = "These worlds each hold a memory. Curious?"
+            buttonText = "Explore the story"
+            buttonUrl = "/worlds/"
+
     [params.img]
         notImgButWords = false
         src = 'cat.svg'
