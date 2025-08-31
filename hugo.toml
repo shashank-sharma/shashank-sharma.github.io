@@ -71,10 +71,19 @@ ignoreFiles = ['\\.obsidian/*']
         words = ""
 
         [params.video.feature]
-            enabled = false
+            enabled = true
             teaserText = "These worlds each hold a memory. Curious?"
             buttonText = "Explore the story"
             buttonUrl = "/worlds/"
+
+        # Map individual video slugs to a shared destination page
+        # Example: tower and main-tower both go to /worlds/towers/
+        [params.video.worldMap]
+            tower = "minecraft-season-2"
+            main-tower = "minecraft-season-2"
+            first-house = "minecraft-season-1"
+            zero-home = "minecraft-season-1"
+            tower-water = "minecraft-season-2"
 
     [params.img]
         notImgButWords = false
@@ -89,7 +98,7 @@ ignoreFiles = ['\\.obsidian/*']
         instagram = 'shashank.py'
         youtube = 'ShashankSharma98'
         color = '#696969'
-        about_url = 'https://about.shashanksharma.xyz'
+        about_url = '/about'
 
         [params.contact.config]
             target = '_self'

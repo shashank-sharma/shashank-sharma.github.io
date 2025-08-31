@@ -1,12 +1,15 @@
 ---
-title: "About"
+title: ""
 layout: "about"
 ---
 
-<div class="h1-custom">What I do?</div>
-<div class="thin-content">Software Engineer at Coursera</div>
-<br/>
-<hr>
-<br/>
-<div class="h1-custom">Got something to discuss?</div>
-<div class="thin-content">Drop me a mail at: shashank.sharma98@gmail.com</div>
+<div style="position: relative; padding-top: 56.25%; width: 100%; max-width: 100%;">
+  <iframe
+    src="https://about.shashanksharma.xyz"
+    title="About Shashank Sharma"
+    loading="lazy"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 8px;"
+    referrerpolicy="no-referrer"
+    sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+  ></iframe>
+</div>
