@@ -14,6 +14,13 @@ tags:
 
 ## Introduction
 
+I've been thinking about how vision drives evolution, even when technology can't keep up. For example, early video games designers in the 2000s envisioned characters with complex abilities and unique interactions, but they were working with primitive graphics engines. They couldn't show you detailed animations or flashy effects, so they had to distill their ideas down to pure mechanics and imagination. Players had to envision how cool it would look or maybe it was cool at that point in time, even when it was just basic sprites and simple animations.
+
+But here's the interesting part: those constraints didn't kill the vision - they refined it. The designers focused on making abilities feel right, creating strategic depth that would eventually translate beautifully when better technology arrived. Years later, when graphics caught up, those same mechanics became the stunning visual experiences we see today.
+This got me reflecting on my own creative journey and how my personal website has evolved over the years
+
+## Where it started
+
 When I was in high school, my first interaction with the internet was all about exploring online games. Kongregate was my go-to website, and I played a lot of games there — if you look at my profile, you'll see activity going all the way back to 2011. Surprisingly I have this screenshot handy, which I took and saved it in google drive.
 
 <aside class="left">
